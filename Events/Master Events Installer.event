@@ -1,0 +1,7 @@
+//World Map Events Installer
+// #define WorldMapIntroPointerTable(id,offset) "PUSH; ORG 0x8B3ad8+(4*id); POIN offset; POP"
+ALIGN 4
+{
+  #include "Ch1Events.txt"
+}
+ALIGN 4
