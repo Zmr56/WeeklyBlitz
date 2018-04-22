@@ -1,0 +1,292 @@
+﻿#include EAstdlib.event
+
+EventPointerTable(EventTableID,ThisChapter)
+
+ORG StartOffset
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TURN 0x0 RIPCliff [3,0] 0x0
+TURN 0x0 Spawn1 [4,0] 0x0
+TURN 0x0 Spawn1 [6,0] 0x0
+TURN 0x0 Spawn1 [8,0] 0x0
+TURN 0x0 Spawn2 [6,0] 0x0
+TURN 0x0 Spawn2 [8,0] 0x0
+TURN 0x0 Spawn2 [10,0] 0x0
+TURN 0x0 Spawn3 [8,0] 0x0
+TURN 0x0 Spawn3 [10,0] 0x0
+TURN 0x0 Spawn3 [12,0] 0x0
+TURN 0x0 Brigand1 [5,0] 0x0
+TURN 0x0 Brigand2 [10,0] 0x0
+TURN 0x0 Fliers1 [11,0] 0x0
+TURN 0x0 Fliers2 [13,0] 0x0
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Seize(23,2)
+Village(0x7,Village1,8,2)
+Village(0x8,Village2,21,9)
+Village(0x9,Village3,6,11)
+House(0xa,House1,13,9)
+House(0xb,House2,4,17)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Kathy Lord 0x00 Level(5, Ally, 0) [3,17] 0x00 0x00 0x0 0x00 [IronSword, Vulnerary] NoAI
+UNIT Morps Paladin 0x00 Level(5, Ally, 0) [2,18] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin 0x00 Level(5, Ally, 0) [4,18] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin 0x00 Level(5, Ally, 0) [3,19] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin 0x00 Level(5, Ally, 0) [1,17] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin 0x00 Level(5, Ally, 0) [2,16] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin 0x00 Level(5, Ally, 0) [1,15] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin 0x00 Level(5, Ally, 0) [0,16] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+
+Bad1:
+UNIT RaynorBoss Pirate 0x00 Level(8, Enemy, 0) [23,2] 0x02 0x00 0x0 0x00 [Halberd, HandAxe, MasterProof] NeverMoveAI
+UNIT Baddie SwordKnight RaynorBoss Level(9, Enemy, 1) [22,3] 0x00 0x00 0x0 0x00 [IronSword, SteelLance] ChaseOnceApproachedAI
+UNIT Baddie SwordKnight RaynorBoss Level(9, Enemy, 1) [24,3] 0x02 0x00 0x0 0x00 [IronSword, SteelLance] ChaseOnceApproachedAI
+UNIT Baddie SwordKnight RaynorBoss Level(9, Enemy, 1) [23,4] 0x00 0x00 0x0 0x00 [IronSword, SteelLance] ChaseOnceApproachedAI
+UNIT Baddie SwordKnight RaynorBoss Level(8, Enemy, 1) [18,13] 0x00 0x00 0x0 0x00 [IronBlade, Javelin] GuardTileAI
+UNIT Baddie SwordKnight RaynorBoss Level(8, Enemy, 1) [18,16] 0x02 0x00 0x0 0x00 [IronBlade, IronLance] GuardTileAI
+UNIT Baddie AxeKnight RaynorBoss Level(9, Enemy, 1) [18,14] 0x00 0x00 0x0 0x00 [SteelSword, PoisonAxe] GuardTileAI
+UNIT Baddie AxeKnight RaynorBoss Level(8, Enemy, 1) [18,15] 0x00 0x00 0x0 0x00 [SteelSword, PoisonAxe] GuardTileAI
+UNIT Baddie AxeKnight RaynorBoss Level(10, Enemy, 1) [21,9] 0x00 0x00 0x0 0x00 [BraveSword, Javelin] GuardTileAI
+UNIT Baddie AxeKnight RaynorBoss Level(10, Enemy, 1) [13,10] 0x00 0x00 0x0 0x00 [LightBrand, BattleAxe] GuardTileAI
+UNIT Baddie SwordPegasus RaynorBoss Level(9, Enemy, 1) [16,2] 0x00 0x00 0x0 0x00 [SteelBlade, MasterProof] AttackInRangeAI
+UNIT Baddie SwordPegasus RaynorBoss Level(9, Enemy, 1) [15,3] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
+UNIT Baddie LancePegasus RaynorBoss Level(8, Enemy, 1) [15,1] 0x00 0x00 0x0 0x00 [Horseslayer] AttackInRangeAI
+UNIT Baddie LancePegasus RaynorBoss Level(8, Enemy, 1) [17,3] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+UNIT Baddie SwordPegasus RaynorBoss Level(8, Enemy, 1) [16,4] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
+UNIT Baddie Mercenary RaynorBoss Level(9, Enemy, 1) [14,17] 0x00 0x00 0x0 0x00 [SteelSword] ChaseOnceApproachedAI
+UNIT Baddie Mercenary RaynorBoss Level(9, Enemy, 1) [15,16] 0x00 0x00 0x0 0x00 [IronSword] ChaseOnceApproachedAI
+UNIT Baddie Archer RaynorBoss Level(8, Enemy, 1) [15,17] 0x00 0x00 0x0 0x00 [IronBow] ChaseOnceApproachedAI
+UNIT Baddie Archer RaynorBoss Level(8, Enemy, 1) [16,16] 0x00 0x00 0x0 0x00 [IronBow] ChaseOnceApproachedAI
+UNIT Baddie Archer RaynorBoss Level(8, Enemy, 1) [13,11] 0x00 0x00 0x0 0x00 [Longbow] ChaseOnceApproachedAI
+UNIT Baddie Archer RaynorBoss Level(8, Enemy, 1) [14,10] 0x00 0x00 0x0 0x00 [IronBow] ChaseOnceApproachedAI
+UNIT Baddie Myrmidon RaynorBoss Level(8, Enemy, 1) [7,14] 0x00 0x00 0x0 0x00 [IronSword] ChaseOnceApproachedAI
+UNIT Baddie Mage RaynorBoss Level(8, Enemy, 1) [8,13] 0x02 0x00 0x0 0x00 [Fire] ChaseOnceApproachedAI
+UNIT Baddie Mage RaynorBoss Level(8, Enemy, 1) [8,15] 0x00 0x00 0x0 0x00 [Fire] ChaseOnceApproachedAI
+UNIT Baddie Soldier RaynorBoss Level(8, Enemy, 1) [12,10] 0x00 0x00 0x0 0x00 [IronLance, Javelin] ChaseOnceApproachedAI
+UNIT Baddie Soldier RaynorBoss Level(8, Enemy, 1) [13,9] 0x02 0x00 0x0 0x00 [IronLance, Javelin] ChaseOnceApproachedAI
+UNIT Baddie Pirate RaynorBoss Level(9, Enemy, 1) [10,19] 0x00 0x00 0x0 0x00 [IronAxe] BrigandAI
+UNIT Baddie Pirate RaynorBoss Level(8, Enemy, 1) [9,19] 0x00 0x00 0x0 0x00 [Hammer] BrigandAI
+UNIT Baddie Pirate RaynorBoss Level(8, Enemy, 1) [11,19] 0x00 0x00 0x0 0x00 [IronAxe] BrigandAI
+UNIT Baddie Shaman RaynorBoss Level(9, Enemy, 1) [22,14] 0x00 0x00 0x0 0x00 [Flux] ChaseOnceApproachedAI
+UNIT Baddie Shaman RaynorBoss Level(8, Enemy, 1) [22,15] 0x00 0x00 0x0 0x00 [Flux] ChaseOnceApproachedAI
+UNIT Baddie Shaman RaynorBoss Level(8, Enemy, 1) [7,5] 0x00 0x00 0x0 0x00 [Flux] ChaseOnceApproachedAI
+UNIT Baddie Shaman RaynorBoss Level(8, Enemy, 1) [5,3] 0x00 0x00 0x0 0x00 [Flux] ChaseOnceApproachedAI
+UNIT Baddie Monk RaynorBoss Level(9, Enemy, 1) [6,4] 0x00 0x00 0x0 0x00 [Lightning] ChaseOnceApproachedAI
+UNIT Baddie Monk RaynorBoss Level(8, Enemy, 1) [7,3] 0x02 0x00 0x0 0x00 [Shine] ChaseOnceApproachedAI
+UNIT Baddie SwordCavalier RaynorBoss Level(9, Enemy, 1) [4,4] 0x00 0x00 0x0 0x00 [IronSword] ChaseOnceApproachedAI
+UNIT Baddie SwordCavalier RaynorBoss Level(8, Enemy, 1) [6,6] 0x00 0x00 0x0 0x00 [Zanbato] ChaseOnceApproachedAI
+UNIT Baddie LanceCavalier RaynorBoss Level(8, Enemy, 1) [5,5] 0x00 0x00 0x0 0x00 [IronLance] ChaseOnceApproachedAI
+UNIT Baddie LanceCavalier RaynorBoss Level(8, Enemy, 1) [3,5] 0x00 0x00 0x0 0x00 [IronLance] ChaseOnceApproachedAI
+UNIT Baddie Fighter RaynorBoss Level(9, Enemy, 1) [11,7] 0x00 0x00 0x0 0x00 [SteelAxe] ChaseOnceApproachedAI
+UNIT Baddie Fighter RaynorBoss Level(8, Enemy, 1) [12,6] 0x02 0x00 0x0 0x00 [IronAxe, Hatchet] ChaseOnceApproachedAI
+UNIT Baddie Mercenary RaynorBoss Level(9, Enemy, 1) [10,6] 0x00 0x00 0x0 0x00 [IronBlade] ChaseOnceApproachedAI
+UNIT Baddie Mercenary RaynorBoss Level(8, Enemy, 1) [11,5] 0x00 0x00 0x0 0x00 [IronSword] ChaseOnceApproachedAI
+UNIT
+
+Spawn1:
+ReinforcementEvent(Reinforcements1)
+ENDA
+
+Spawn2:
+ReinforcementEvent(Reinforcements2)
+ENDA
+
+Spawn3:
+ReinforcementEvent(Reinforcements3)
+ENDA
+
+Brigand1:
+ReinforcementEvent(OhHiBrigand)
+ENDA
+
+Brigand2:
+ReinforcementEvent(OhHiBrigando)
+ENDA
+
+Fliers1:
+ReinforcementEvent(AirForcements1)
+ENDA
+
+Fliers2:
+ReinforcementEvent(AirForcements2)
+ENDA
+
+Reinforcements1:
+UNIT Baddie Myrmidon RaynorBoss Level(9, Enemy, 1) [4,1] 0x00 0x00 0x1 REDA_Dort1 [IronSword] PursueWithoutHeed
+UNIT Baddie Mage RaynorBoss Level(9, Enemy, 1) [4,1] 0x00 0x00 0x1 REDA_Dort2 [Fire] PursueWithoutHeed
+UNIT Baddie Myrmidon RaynorBoss Level(9, Enemy, 1) [4,1] 0x00 0x00 0x1 REDA_Dort3 [SteelSword] PursueWithoutHeed
+UNIT Baddie Monk RaynorBoss Level(9, Enemy, 1) [4,1] 0x00 0x00 0x1 REDA_Dort4 [Lightning] PursueWithoutHeed
+UNIT
+
+REDA_Bort1:
+	REDA [4,2] 0 0 0 0
+REDA_Bort2:
+	REDA [3,3] 0 0 0 0
+REDA_Bort3:
+	REDA [3,5] 0 0 0 0
+REDA_Bort4:
+	REDA [4,4] 0 0 0 0
+
+Reinforcements2:
+UNIT Baddie Fighter RaynorBoss Level(9, Enemy, 1) [18,13] 0x00 0x00 0x1 REDA_Bort1 [SteelAxe] PursueWithoutHeed
+UNIT Baddie Fighter RaynorBoss Level(9, Enemy, 1) [18,16] 0x00 0x00 0x1 REDA_Bort2 [HandAxe] PursueWithoutHeed
+UNIT Baddie Soldier RaynorBoss Level(9, Enemy, 1) [18,13] 0x00 0x00 0x1 REDA_Bort3 [IronLance] PursueWithoutHeed
+UNIT Baddie Soldier RaynorBoss Level(9, Enemy, 1) [18,16] 0x00 0x00 0x1 REDA_Bort4 [Javelin] PursueWithoutHeed
+UNIT
+
+REDA_Bort1:
+	REDA [18,13] 0 0 0 0
+REDA_Bort2:
+	REDA [18,16] 0 0 0 0
+REDA_Bort3:
+	REDA [17,14] 0 0 0 0
+REDA_Bort4:
+	REDA [17,15] 0 0 0 0
+
+Reinforcements3:
+UNIT Baddie SwordCavalier RaynorBoss Level(9, Enemy, 1) [25,4] 0x00 0x00 0x1 REDA_Fort1 [IronSword, Javelin] PursueWithoutHeed
+UNIT Baddie AxeCavalier RaynorBoss Level(9, Enemy, 1) [25,3] 0x00 0x00 0x1 REDA_Fort2 [IronLance] PursueWithoutHeed
+UNIT Baddie AxeCavalier RaynorBoss Level(9, Enemy, 1) [25,4] 0x00 0x00 0x1 REDA_Fort3 [IronLance, HandAxe] PursueWithoutHeed
+UNIT Baddie SwordCavalier RaynorBoss Level(9, Enemy, 1) [25,3] 0x00 0x00 0x1 REDA_Fort4 [SteelSword] PursueWithoutHeed
+UNIT
+
+REDA_Fort1:
+	REDA [23,4] 0 0 0 0
+REDA_Fort2:
+	REDA [22,5] 0 0 0 0
+REDA_Fort3:
+	REDA [24,4] 0 0 0 0
+REDA_Fort4:
+	REDA [22,6] 0 0 0 0
+	
+
+OhHiBrigand:
+UNIT Baddie Brigand RaynorBoss Level(9, Enemy, 1) [8,0] 0x00 0x00 0x0 0x00 [HandAxe] PursueWithoutHeed
+UNIT
+
+OhHiBrigando:
+UNIT Baddie Brigand RaynorBoss Level(10, Enemy, 1) [25,16] 0x00 0x00 0x0 0x00 [Tomahawk, Speedwing] PursueWithoutHeed
+UNIT
+
+AirForcements1:
+UNIT Baddie SwordPegasus RaynorBoss Level(10, Enemy, 1) [25,19] 0x00 0x00 0x1 REDA_Mountain1 [SteelSword] PursueWithoutHeed
+UNIT Baddie AxeWyvern RaynorBoss Level(10, Enemy, 1) [25,19] 0x00 0x00 0x1 REDA_Mountain2 [HandAxe] PursueWithoutHeed
+UNIT Baddie LanceWyvern RaynorBoss Level(10, Enemy, 1) [25,19] 0x00 0x00 0x1 REDA_Mountain3 [IronLance] PursueWithoutHeed
+UNIT
+
+REDA_Mountain1:
+	REDA [25,17] 0 0 0 0
+REDA_Mountain2:
+	REDA [24,18] 0 0 0 0
+REDA_Mountain3:
+	REDA [23,19] 0 0 0 0
+
+AirForcements2:
+UNIT Baddie SwordPegasus RaynorBoss Level(10, Enemy, 1) [0,0] 0x02 0x00 0x1 REDA_Bountain1 [Lancereaver, KillingEdge] PursueWithoutHeed
+UNIT Baddie AxeWyvern RaynorBoss Level(10, Enemy, 1) [0,0] 0x00 0x00 0x1 REDA_Bountain2 [SteelAxe] PursueWithoutHeed
+UNIT Baddie LanceWyvern RaynorBoss Level(10, Enemy, 1) [0,0] 0x00 0x00 0x1 REDA_Bountain3 [Axereaver] PursueWithoutHeed
+UNIT Baddie LancePegasus RaynorBoss Level(10, Enemy, 1) [0,0] 0x00 0x00 0x1 REDA_Bountain4 [Spear] PursueWithoutHeed
+UNIT
+
+REDA_Bountain1:
+	REDA [2,2] 0 0 0 0
+REDA_Bountain2:
+	REDA [0,2] 0 0 0 0
+REDA_Bountain3:
+	REDA [2,0] 0 0 0 0	
+REDA_Bountain4:
+	REDA [1,1] 0 0 0 0
+	
+Raynor:
+UNIT Raynor Pirate Kathy Level(8, Ally, 0) [0,0] 0x00 0x00 0x0 0x00 [Halberd, HandAxe] NoAI
+UNIT
+	
+RIPCliff:
+CAM1 [12,14]
+EARTHQUAKE_START 100
+STAL 30
+TILECHANGE 0x6
+STAL 30
+EARTHQUAKE_END
+STAL 30
+
+SETVAL 0x1 0x0000
+CHAI [16,2]
+SETVAL 0x1 0x0000
+CHAI [15,3]
+SETVAL 0x1 0x0000
+CHAI [17,1]
+SETVAL 0x1 0x0000
+CHAI [15,1]
+SETVAL 0x1 0x0000
+CHAI [16,0]
+SETVAL 0x1 0x0000
+CHAI [17,3]
+SETVAL 0x1 0x0000
+CHAI [16,4]
+ENDA
+
+Village1:
+VillageEventItem(VillageText, 0x0, EnergyRing)
+
+Village2:
+VillageEventItem(VillageText, 0x0, BlueGem)
+
+Village3:
+VillageEventItem(VillageText, 0x0, AngelicRobe)
+
+House1:
+Text(0x0,HouseText)
+ENDA
+
+House2:
+Text(0x0,HouseText)
+ENDA
+
+BeginningScene:
+LOAD2 0x1 Units //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+ENUN
+LOAD1 0x1 Bad1
+ENUN
+GotoPrepScreen
+ENDA
+
+EndingScene:
+LOAD1 0x1 Raynor
+MNC2 Chapter9
+ENDA
+
+MESSAGE Events end at offset CURRENTOFFSET

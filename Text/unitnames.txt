@@ -1,0 +1,34 @@
+##Name_Kathy
+Kathy[X]
+
+##Desc_Kathy
+A noble lady. Skilled[N]
+with a sword and staff.[X]
+
+##Name_Morps
+Morps[X]
+
+##Desc_Morps
+The demon slayer.[N]
+Highly experienced.[X]
+
+##Name_Tye
+Tye[X]
+
+##Desc_Tye
+A knight loyal to[N]
+Kathy. Morps' comrade.[X]
+
+##Name_Jet
+Jet[X]
+
+##Desc_Jet
+A lost musician.[N]
+Haughty but soft inside.[X]
+
+##Name_Anna
+Anna[X]
+
+##Desc_Anna
+A gold loving merchant.[N]
+Sister of Luanna.[X]

@@ -79,6 +79,7 @@ LocationBasedEvents:
 Village(0x8,VillageGem,12,3)
 Village(0x9,VillageJet,5,14)
 Seize(1,2)
+Seize(10, 15)
 END_MAIN
 
 VillageGem:

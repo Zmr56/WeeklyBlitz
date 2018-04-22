@@ -12,8 +12,8 @@
 #define weaponAnimEnd "WORD 0"
 #define SetAnimationPointers(class, pointer) "PUSH; ORG 0x807110 + (class*84) + 52; POIN pointer; POP"
 
-SetAnimationPointers(DarkLord, DarkLordAnimPtr)
-DarkLordPtr:
-weaponTypeAnim(animNone, 0x4)
-weaponTypeAnim(animDark, 0x3)
-weaponAnimEnd
+//SetAnimationPointers(DarkLord, DarkLordAnimPtr)
+//DarkLordPtr:
+//weaponTypeAnim(animNone, 0x4)
+//weaponTypeAnim(animDark, 0x3)
+//weaponAnimEnd

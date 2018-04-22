@@ -21,6 +21,9 @@
 
     //Maps
     #include "Maps/Master Map Installer.event"
+	
+	//Graphics
+	#include "Graphics/Master Graphics Installer.event"
     
     MESSAGE Used free space ends at currentOffset
     MESSAGE Proc_Counter

@@ -191,3 +191,13 @@
 #define SD_HeroesDeathBlow 0x99d
 #define SD_HeroesLifeAndDeath 0x99e
 #define SD_CatchEmAll 0x99f
+#define Name_Kathy 0x9a0
+#define Desc_Kathy 0x9a1
+#define Name_Morps 0x9a2
+#define Desc_Morps 0x9a3
+#define Name_Tye 0x9a4
+#define Desc_Tye 0x9a5
+#define Name_Jet 0x9a6
+#define Desc_Jet 0x9a7
+#define Name_Anna 0x9a8
+#define Desc_Anna 0x9a9

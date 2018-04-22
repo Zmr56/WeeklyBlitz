@@ -16,10 +16,14 @@
 
 #include "Engine Hacks/Skill System/skill_definitions.event"
 
+#define Baddie 128
 #define Kathy 1
 #define Morps 2
 #define Tye 3
 #define Jet 4
 #define Anna 5
+#define Raynor 12
+
+#define RaynorBoss 77
 
 // #define __DEBUG__ // Uncomment to get the Debug startup menu :p

@@ -1,0 +1,21 @@
+#include "Tools/Tool Helpers.txt"
+
+Kathy_Mug:
+#incext PortraitFormatter "Kathy.png"
+setMugEntry(0x2, Kathy_Mug, 4, 7, 3, 5)
+
+Morps_Mug:
+#incext PortraitFormatter "Morps.png"
+setMugEntry(0x4, Morps_Mug, 3,5,3,3)
+
+//Tye_Mug:
+//#incext PortraitFormatter "Tye.png"
+//setMugEntry(0x5, Tye_Mug, 2,5,2,3)
+
+//Jet_Mug:
+//#incext PortraitFormatter "Jet.png"
+//setMugEntry(0x6, Jet_Mug, 3,6,3,4)
+
+//Anna_Mug:
+//#incext PortraitFormatter "Anna.png"
+//setMugEntry(0x7, Anna_Mug, 2,5,3,3)

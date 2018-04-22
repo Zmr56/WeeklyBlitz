@@ -7,19 +7,18 @@ BYTE 00 00
 ALIGN 4
 
 EirikaLordSkillList:
-BYTE 255 MoonbowID
+BYTE 255 PivotID
 // BYTE 10 EvenRhythmID
-BYTE 10 RightfulKingID
-BYTE 20 BondID
+BYTE 10 CharmID
 BYTE 00 00
 ALIGN 4
 
 EphraimGreatLordSkillList:
 BYTE 255 BondID
-BYTE 255 AetherID //255 means "automatically given to prepromotes"
+BYTE 255 IntimidateID //255 means "automatically given to prepromotes"
 // BYTE 255 SmiteID
-BYTE 5 RallySpectrumID
-BYTE 15 AxebreakerID
+BYTE 5 SwapID
+BYTE 15 SavageBlowID
 BYTE 00 00
 ALIGN 4
 

@@ -2,14 +2,11 @@
 
 #define AnimTableEntry(index) "ORG ClassAnimTable + (index * 0x20)"
 
-PUSH
-  ORG $8AEFE4
-  BYTE 7 //make goury use anims for dark not swd
-POP
-
-PUSH
-ORG 0x5926F4+(0x80*8)
-#incext Png2Dmp "RignoranIcon.png"
-POP
+//PUSH
+//ORG 0x5926F4+(0x80*8)
+//#incext Png2Dmp "RignoranIcon.png"
+//POP
 
 #include "Master Animation Installer.event"
+
+#include "Mugs/Mug Installer.event"

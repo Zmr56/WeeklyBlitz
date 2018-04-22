@@ -37,3 +37,5 @@ Sirius[X]
 Zeke[X]
 
 #include "skilldesc_text.txt"
+
+#include "unitnames.txt"
