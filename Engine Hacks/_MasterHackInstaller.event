@@ -229,3 +229,5 @@ ALIGN 4
   UM_Supply
   UM_Wait
   UM_Separator 
+
+#include "Raid/Raid.event"
