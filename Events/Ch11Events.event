@@ -1,0 +1,198 @@
+﻿#include EAstdlib.event
+
+EventPointerTable(EventTableID,ThisChapter)
+
+ORG StartOffset
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TURN 0x0 Spawn1 [4,0] 0x0
+TURN 0x0 Spawn1 [6,0] 0x0
+TURN 0x0 Spawn1 [8,0] 0x0
+TURN 0x0 Spawn2 [10,0] 0x0
+TURN 0x0 Spawn2 [12,0] 0x0
+TURN 0x0 OhCrap [12,0] 0x0
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Seize(22,18)
+Village(0x7,KamuisHouse,8,4)
+House(0x8,House,16,6)
+SHOP 0x0 Armory [13,17] 0x16
+
+SHOP 0x0 Vendor [20,16] 0x17
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Kathy Lord 0x00 Level(5, Ally, 0) [3,17] 0x00 0x00 0x0 0x00 [IronSword, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [2,18] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [4,18] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [3,19] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [1,17] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [2,16] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [1,15] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [0,16] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [1,15] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [0,16] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT
+
+Bad1:
+UNIT Ch11Boss AxePaladin 0x00 Level(1, Enemy, 0) [22,18] 0x00 0x00 0x0 0x00 [Swordslayer, Axereaver, Tomahawk, BlueGem] NeverMoveAI
+UNIT Baddie Knight Ch11Boss Level(13, Enemy, 1) [21,17] 0x00 0x00 0x0 0x00 [SteelBow, HandAxe] GuardTileAI
+UNIT Baddie Knight Ch11Boss Level(13, Enemy, 1) [21,19] 0x00 0x00 0x0 0x00 [Longbow, LightBrand] GuardTileAI
+UNIT Baddie Knight Ch11Boss Level(13, Enemy, 1) [21,18] 0x00 0x00 0x0 0x00 [KillerBow, ShortSpear] GuardTileAI
+UNIT Baddie Archer Ch11Boss Level(12, Enemy, 1) [17,5] 0x00 0x00 0x0 0x00 [SteelBow] ChaseOnceApproachedAI
+UNIT Baddie Archer Ch11Boss Level(12, Enemy, 1) [14,9] 0x00 0x00 0x0 0x00 [SteelBow] ChaseOnceApproachedAI
+UNIT Baddie Archer Ch11Boss Level(12, Enemy, 1) [13,12] 0x02 0x00 0x0 0x00 [Longbow] ChaseOnceApproachedAI
+UNIT Baddie Archer Ch11Boss Level(12, Enemy, 1) [12,15] 0x00 0x00 0x0 0x00 [SteelBow] ChaseOnceApproachedAI
+UNIT Baddie Archer Ch11Boss Level(12, Enemy, 1) [14,18] 0x00 0x00 0x0 0x00 [SteelBow] ChaseOnceApproachedAI
+UNIT Baddie Archer Ch11Boss Level(12, Enemy, 1) [18,21] 0x00 0x00 0x0 0x00 [KillerBow] ChaseOnceApproachedAI
+UNIT Baddie AxeCavalier Ch11Boss Level(11, Enemy, 1) [19,18] 0x00 0x00 0x0 0x00 [Swordreaver] BrigandAI
+UNIT Baddie AxeCavalier Ch11Boss Level(11, Enemy, 1) [19,17] 0x00 0x00 0x0 0x00 [Hammer] BrigandAI
+UNIT Baddie AxeCavalier Ch11Boss Level(11, Enemy, 1) [19,19] 0x00 0x00 0x0 0x00 [Halberd] BrigandAI
+UNIT Baddie Knight Ch11Boss Level(11, Enemy, 1) [14,17] 0x00 0x00 0x0 0x00 [SteelBlade, HandAxe] GuardTileAI
+UNIT Baddie Knight Ch11Boss Level(11, Enemy, 1) [15,17] 0x00 0x00 0x0 0x00 [SteelAxe, Javelin] GuardTileAI
+UNIT Baddie Knight Ch11Boss Level(11, Enemy, 1) [15,11] 0x00 0x00 0x0 0x00 [SteelLance, Runesword] GuardTileAI
+UNIT Baddie Knight Ch11Boss Level(11, Enemy, 1) [20,2] 0x02 0x00 0x0 0x00 [ShortSpear] GuardTileAI
+UNIT Baddie LancePegasus Ch11Boss Level(11, Enemy, 1) [0,3] 0x00 0x00 0x0 0x00 [IronLance, Javelin] PursueWithoutHeed
+UNIT Baddie LancePegasus Ch11Boss Level(11, Enemy, 1) [1,2] 0x00 0x00 0x0 0x00 [SteelLance] PursueWithoutHeed
+UNIT Baddie LancePegasus Ch11Boss Level(11, Enemy, 1) [2,3] 0x00 0x00 0x0 0x00 [SteelLance] PursueWithoutHeed
+UNIT Baddie Fighter Ch11Boss Level(11, Enemy, 1) [7,9] 0x00 0x00 0x0 0x00 [ShortAxe] ChaseOnceApproachedAI
+UNIT Baddie Fighter Ch11Boss Level(11, Enemy, 1) [6,10] 0x00 0x00 0x0 0x00 [IronAxe] ChaseOnceApproachedAI
+UNIT Baddie Mercenary Ch11Boss Level(11, Enemy, 1) [7,11] 0x00 0x00 0x0 0x00 [IronBlade] ChaseOnceApproachedAI
+UNIT Baddie Mercenary Ch11Boss Level(11, Enemy, 1) [8,10] 0x00 0x00 0x0 0x00 [IronBlade] ChaseOnceApproachedAI
+UNIT Baddie BowCavalier Ch11Boss Level(11, Enemy, 1) [10,7] 0x00 0x00 0x0 0x00 [Longbow] ChaseOnceApproachedAI
+UNIT Baddie Monk Ch11Boss Level(11, Enemy, 1) [6,6] 0x00 0x00 0x0 0x00 [Shine] ChaseOnceApproachedAI
+UNIT Baddie LanceCavalier Ch11Boss Level(11, Enemy, 1) [5,7] 0x00 0x00 0x0 0x00 [Axereaver] ChaseOnceApproachedAI
+UNIT Baddie SwordCavalier Ch11Boss Level(11, Enemy, 1) [4,8] 0x00 0x00 0x0 0x00 [Lancereaver] ChaseOnceApproachedAI
+UNIT Baddie Monk Ch11Boss Level(11, Enemy, 1) [3,9] 0x00 0x00 0x0 0x00 [Shine] ChaseOnceApproachedAI
+UNIT Baddie Soldier Ch11Boss Level(11, Enemy, 1) [12,2] 0x02 0x00 0x0 0x00 [SteelLance] ChaseOnceApproachedAI
+UNIT Baddie Soldier Ch11Boss Level(11, Enemy, 1) [13,3] 0x00 0x00 0x0 0x00 [SteelLance] ChaseOnceApproachedAI
+UNIT Baddie Mage Ch11Boss Level(11, Enemy, 1) [13,1] 0x00 0x00 0x0 0x00 [Fire] ChaseOnceApproachedAI
+UNIT Baddie Mage Ch11Boss Level(11, Enemy, 1) [14,2] 0x02 0x00 0x0 0x00 [Thunder] ChaseOnceApproachedAI
+UNIT Baddie Mercenary Ch11Boss Level(11, Enemy, 1) [19,1] 0x00 0x00 0x0 0x00 [IronSword] ChaseOnceApproachedAI
+UNIT Baddie Mercenary Ch11Boss Level(11, Enemy, 1) [20,0] 0x00 0x00 0x0 0x00 [SteelBlade] ChaseOnceApproachedAI
+UNIT Baddie Archer Ch11Boss Level(12, Enemy, 1) [21,1] 0x00 0x00 0x0 0x00 [KillerBow] ChaseOnceApproachedAI
+UNIT Baddie Brigand Ch11Boss Level(11, Enemy, 1) [18,13] 0x00 0x00 0x0 0x00 [Hatchet] ChaseOnceApproachedAI
+UNIT Baddie Brigand Ch11Boss Level(11, Enemy, 1) [17,14] 0x00 0x00 0x0 0x00 [Hammer] ChaseOnceApproachedAI
+UNIT
+
+Spawn1:
+ReinforcementEvent(Reinforcements1)
+ENDA
+
+Spawn2:
+ReinforcementEvent(Reinforcements2)
+ENDA
+
+OhCrap:
+Text(0x0,HouseText)
+ReinforcementEvent(AstoliaNTheBoys)
+ENDA
+
+Reinforcements1:
+UNIT Baddie SwordPegasus Ch11Boss Level(11, Enemy, 1) [0,3] 0x00 0x00 0x1 REDA_Fort1 [SteelSword] PursueWithoutHeed
+UNIT Baddie AxeWyvern Ch11Boss Level(11, Enemy, 1) [3,6] 0x00 0x00 0x1 REDA_Fort2 [HandAxe] PursueWithoutHeed
+UNIT
+
+REDA_Fort1:
+	REDA [0,3] 0 0 0 0
+REDA_Fort2:
+	REDA [3,6] 0 0 0 0
+
+Reinforcements2:
+UNIT Baddie Fighter Ch11Boss Level(11, Enemy, 1) [22,4] 0x00 0x00 0x1 REDA_Bort1 [SteelAxe] PursueWithoutHeed
+UNIT Baddie Myrmidon Ch11Boss Level(12, Enemy, 1) [21,5] 0x00 0x00 0x1 REDA_Bort2 [IronBlade] PursueWithoutHeed
+UNIT Baddie Soldier Ch11Boss Level(11, Enemy, 1) [22,5] 0x00 0x00 0x1 REDA_Bort3 [Spear] PursueWithoutHeed
+UNIT
+
+REDA_Bort1:
+	REDA [22,4] 0 0 0 0
+REDA_Bort2:
+	REDA [21,5] 0 0 0 0
+REDA_Bort3:
+	REDA [22,5] 0 0 0 0
+
+AstoliaNTheBoys:
+UNIT Ch18Boss Hero Ch11Boss Level(5, Enemy, 0) [5,21] 0x02 0x00 0x1 REDA_Astolia1 [Audhulma] PursueWithoutHeed
+UNIT Astolias Hero Ch11Boss Level(4, Enemy, 1) [5,21] 0x00 0x00 0x1 REDA_Astolia2 [SilverAxe] PursueWithoutHeed
+UNIT Astolias Hero Ch11Boss Level(4, Enemy, 1) [5,21] 0x00 0x00 0x1 REDA_Astolia3 [Swordslayer, LightBrand] PursueWithoutHeed
+UNIT Astolias Hero Ch11Boss Level(4, Enemy, 1) [5,21] 0x00 0x00 0x1 REDA_Astolia4 [SilverBlade] PursueWithoutHeed
+UNIT Astolias Hero Ch11Boss Level(4, Enemy, 1) [5,21] 0x00 0x00 0x1 REDA_Astolia5 [SilverSword, Tomahawk] PursueWithoutHeed
+UNIT
+
+REDA_Astolia1:
+	REDA [5,20] 0 0 0 0
+REDA_Astolia2:
+	REDA [4,21] 0 0 0 0
+REDA_Astolia3:
+	REDA [6,19] 0 0 0 0	
+REDA_Astolia4:
+	REDA [6,21] 0 0 0 0
+REDA_Astolia5:
+	REDA [4,19] 0 0 0 0
+
+KamuisHouse:
+Text(0x0,VillageText)
+LOAD1 0x1 ICannotBelieveItsNotCorrin
+ENDA
+
+ICannotBelieveItsNotCorrin:
+UNIT Kamui Myrmidon Kathy Level(13, Ally, 0) [8,4] 0x00 0x00 0x1 REDA_Kamui [KillingEdge, SteelBlade, EarthSeal] NoAI
+UNIT
+
+REDA_Kamui:
+	REDA [8,5] 0 0 0 0
+
+House:
+Text(0x0,HouseText)
+ENDA
+
+Armory:
+SHLI SteelSword SteelBlade SteelLance Javelin SteelAxe HandAxe Hammer SteelBow Longbow
+
+Vendor:
+SHLI Fire Thunder Lightning Shine Flux Heal Mend Vulnerary PureWater
+
+BeginningScene:
+LOAD2 0x1 Units //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+ENUN
+LOAD1 0x1 Bad1
+ENUN
+GotoPrepScreen
+ENDA
+
+EndingScene:
+MNC2 Chapter12
+ENDA
+
+MESSAGE Events end at offset CURRENTOFFSET

@@ -1,0 +1,162 @@
+#include EAstdlib.event
+
+//unit definitions
+#ifndef GenericDonatenary
+  #define GenericDonatenary 0x80
+#endif
+
+#ifndef Circles
+  #define Circles Innes
+#endif
+
+//talk text
+
+/*
+#CirclesTalk1
+[MidRight][LoadCurrent]
+[MidLeft][LoadCircles]
+Are you ready to donate?[A][X]
+
+#CirclesTalk2
+[MidLeft][LoadCircles]
+10,000 Gold.[N]
+[Yes][X]
+
+#CirclesTalkYes
+[MidLeft][LoadCircles]
+Great, thanks for donating![A][X]
+
+#CirclesTalkNo
+[MidLeft][LoadCircles]
+Fine, come back when you're ready.[A][X]
+
+#CirclesTalkNotEnoughMoney
+[MidLeft][LoadCircles]
+This... is not enough.[A][X]
+
+*/
+
+
+EventPointerTable(0x27,ThisChapter)
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+Units:
+UNIT Eirika EphraimLord 0x00 Level(2, Ally, 0) [1,2] 0x00 0x00 0x0 0x00 [SilverAxe, Elixir] NoAI 
+UNIT Seth Civilian 0x00 Level(2, Ally, 0) [2,3] 0x00 0x00 0x0 0x00 [SilverAxe, Elixir] NoAI 
+UNIT Seth Civilian 0x00 Level(2, Ally, 0) [3,2] 0x00 0x00 0x0 0x00 [SilverAxe, Elixir] NoAI 
+UNIT Seth Civilian 0x00 Level(2, Ally, 0) [1,4] 0x00 0x00 0x0 0x00 [SilverAxe, Elixir] NoAI 
+UNIT Seth Civilian 0x00 Level(2, Ally, 0) [2,4] 0x00 0x00 0x0 0x00 [SilverAxe, Elixir] NoAI 
+UNIT Seth Civilian 0x00 Level(2, Ally, 0) [1,5] 0x00 0x00 0x0 0x00 [SilverAxe, Elixir] NoAI 
+UNIT
+
+
+TurnBasedEvents:
+END_MAIN
+
+CharacterBasedEvents:
+CharacterEvent(0, BossTalk, 0, Circles)
+END_MAIN
+
+LocationBasedEvents:
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+//DO NOT TOUCH
+WORD $00
+
+Tutorial:
+//DO NOT TOUCH
+WORD $00
+
+TrapData:
+END_MAIN
+
+ALIGN 4
+
+BeginningScene:
+LOAD2 0x1 Units
+ENUN
+LOAD1 0x1 Mooks
+ENUN
+ENDA
+
+EndingScene:
+MNC2 0x9
+ENDA
+
+// Events
+BossTalk:
+TEXTSTART
+TEXTSHOW CirclesTalk1 //hello are you ready to donatee?
+TEXTEND
+TEXTSHOW CirclesTalk2 //10,000 gold. Yes or no?
+TEXTEND
+SVAL r7 True
+BEQ 0 rC r7
+  TEXTSHOW CirclesTalkNo //Ok fine, come back when you're ready to donate
+  TEXTEND
+  REMA
+  ENUF 0x9
+  GOTO 1
+LABEL 0
+  SVAL 3 10000
+  CHECK_MONEY
+  BLT 2 rC r3
+  TEXTSHOW CirclesTalkYes //Coolio gimme that
+  TEXTEND
+  REMA
+  GIVETOSLOT3 //it actually takes that amount of money out of slot 3 lol
+  TurnAlly(0x1E)
+  CALL EndingScene
+  GOTO 1
+    LABEL 2
+    TEXTSHOW CirclesTalkNotEnoughMoney //this... is not enough.
+    TEXTEND
+    REMA
+LABEL 1
+NoFade
+ENDA
+
+// Manual Movement
+
+// Scripted Fights
+
+// Units
+
+Mooks:
+UNIT Circles Berserker 0x00 Level(5, Enemy, 0) [15,3] 0x00 0x00 0x0 0x00 [SilverAxe, Elixir] DoNothing 
+UNIT GenericDonatenary Knight 0x00 Level(5, Enemy, 1) [8,9] 0x02 0x00 0x0 0x00 [Javelin, RedGem] NeverMoveAI 
+UNIT GenericDonatenary Knight 0x00 Level(5, Enemy, 1) [8,2] 0x02 0x00 0x0 0x00 [Javelin, RedGem] NeverMoveAI 
+UNIT GenericDonatenary Knight 0x00 Level(5, Enemy, 1) [11,11] 0x02 0x00 0x0 0x00 [Javelin, RedGem] NeverMoveAI 
+UNIT GenericDonatenary Cavalier 0x00 Level(5, Enemy, 1) [8,3] 0x02 0x00 0x0 0x00 [SteelSword, IronLance, Torch] AttackInRangeAI 
+UNIT GenericDonatenary Cavalier 0x00 Level(5, Enemy, 1) [8,10] 0x02 0x00 0x0 0x00 [SteelLance, IronSword, Vulnerary] AttackInRangeAI 
+UNIT GenericDonatenary Cavalier 0x00 Level(5, Enemy, 1) [10,11] 0x02 0x00 0x0 0x00 [Javelin] AttackInRangeAI 
+UNIT GenericDonatenary Soldier 0x00 Level(5, Enemy, 1) [13,4] 0x02 0x00 0x0 0x00 [SteelLance, Elixir] ChaseOnceApproachedAI 
+UNIT GenericDonatenary Soldier 0x00 Level(5, Enemy, 1) [4,4] 0x02 0x00 0x0 0x00 [KillerLance, Elixir] ChaseOnceApproachedAI 
+UNIT GenericDonatenary Soldier 0x00 Level(5, Enemy, 1) [12,8] 0x02 0x00 0x0 0x00 [Javelin, IronLance, Elixir] ChaseOnceApproachedAI 
+UNIT GenericDonatenary Soldier 0x00 Level(5, Enemy, 1) [7,13] 0x02 0x00 0x0 0x00 [IronLance, Javelin, Elixir] ChaseOnceApproachedAI 
+UNIT GenericDonatenary Pirate 0x00 Level(5, Enemy, 1) [7,14] 0x02 0x00 0x0 0x00 [SteelAxe, RedGem] PursueWithoutHeedAI 
+UNIT GenericDonatenary Pirate 0x00 Level(5, Enemy, 1) [10,4] 0x02 0x00 0x0 0x00 [HandAxe, Vulnerary] PursueWithoutHeedAI 
+UNIT GenericDonatenary Pirate 0x00 Level(5, Enemy, 1) [12,14] 0x02 0x00 0x0 0x00 [SilverAxe, Elixir] PursueWithoutHeedAI 
+UNIT GenericDonatenary Pirate 0x00 Level(5, Enemy, 1) [6,2] 0x00 0x00 0x0 0x00 [HandAxe, IronAxe] PursueWithoutHeedAI 
+UNIT
+
+
+// Shop Data
+
+MESSAGE Events end at offset currentOffset

@@ -45,3 +45,5 @@ Grants Def/Res +2.
 #include "skilldesc_text.txt"
 
 #include "unitnames.txt"
+
+#include "items.txt"
