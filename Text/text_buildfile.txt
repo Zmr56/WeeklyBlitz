@@ -1,3 +1,4 @@
+
 # 0x0094
 HP Bars[.][X]
 
@@ -35,6 +36,11 @@ Sirius[X]
 
 ## nameZeke
 Zeke[X]
+
+#0x39e Vala'sEmber
+Vala's Ember
+#0x44e ValaDesc
+Grants Def/Res +2.
 
 #include "skilldesc_text.txt"
 
