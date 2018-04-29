@@ -1,3 +1,4 @@
+
 ##Name_Kathy
 Kathy[X]
 
@@ -32,3 +33,10 @@ Anna[X]
 ##Desc_Anna
 A gold loving merchant.[N]
 Sister of Luanna.[X]
+
+##Name_Okram
+Okram[X]
+
+##Desc_Okram
+A strong mage from,[N]
+an Outrealm.[X]
