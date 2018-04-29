@@ -23,6 +23,10 @@
 #define Jet 4
 #define Anna 5
 #define Raynor 12
+#define Ryder 18
+#define Kate 19
+#define Luanna 20
+#define Melanie 21
 
 #define RaynorBoss 77
 

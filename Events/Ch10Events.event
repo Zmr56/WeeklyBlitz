@@ -1,0 +1,100 @@
+#include EAstdlib.event
+EventPointerTable(0x07,ItsFuckingThisChapter) //Replace ID
+ItsFuckingThisChapter:
+POIN ItsFuckingTurnBasedEvents
+POIN ItsFuckingCharacterBasedEvents
+POIN ItsFuckingLocationBasedEvents
+POIN ItsFuckingMiscBasedEvents
+POIN ItsFuckingDunno ItsFuckingDunno ItsFuckingDunno
+POIN ItsFuckingTutorial
+POIN ItsFuckingTrapData ItsFuckingTrapData
+POIN ItsFuckingUnits ItsFuckingUnits
+POIN $0 $0 $0 $0 $0 $0
+POIN ItsFuckingBeginningScene ItsFuckingEndingScene
+
+ItsFuckingUnits:
+UNIT Eirika EphraimLord 0x00 Level(1, Ally, 0) [0,9] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Seth Paladin 0x00 Level(1, Ally, 0) [0,0] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT
+
+
+ItsFuckingTurnBasedEvents:
+END_MAIN
+
+ItsFuckingCharacterBasedEvents:
+END_MAIN
+
+ItsFuckingLocationBasedEvents:
+Seize(19, 0)
+END_MAIN
+
+ItsFuckingMiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+ItsFuckingDunno:
+//DO NOT TOUCH
+WORD $00
+
+ItsFuckingTutorial:
+//DO NOT TOUCH
+WORD $00
+
+ItsFuckingTrapData:
+END_MAIN
+
+ALIGN 4
+
+ItsFuckingBeginningScene:
+LOAD1 0x1 ItsFuckingUnits
+LOAD1 0x1 ItsFuckingEnemies
+LOAD1 0x1 ItsFuckingEdgeworth
+NoFade
+GotoPrepScreen
+
+ItsFuckingEndingScene:
+MNCH 0 //Replace with MNC2 if you're using that I guess
+ENDA
+
+// Events
+
+// Manual Movement
+
+// Scripted Fights
+
+// Units
+ItsFuckingEnemies:
+UNIT 0x80 Myrmidon 0x00 Level(10, Enemy, 1) [4,4] 0x00 0x00 0x0 0x00 [IronSword] PursueWithoutHeedAI 
+UNIT 0x80 Myrmidon 0x00 Level(10, Enemy, 1) [4,6] 0x00 0x00 0x0 0x00 [IronSword] PursueWithoutHeedAI 
+UNIT 0x80 Myrmidon 0x00 Level(10, Enemy, 1) [6,6] 0x00 0x00 0x0 0x00 [IronSword] PursueWithoutHeedAI 
+UNIT 0x80 Myrmidon 0x00 Level(10, Enemy, 1) [6,3] 0x00 0x00 0x0 0x00 [IronSword] PursueWithoutHeedAI 
+UNIT 0x80 Myrmidon 0x00 Level(10, Enemy, 1) [9,6] 0x00 0x00 0x0 0x00 [IronSword] PursueWithoutHeedAI 
+UNIT 0x80 Myrmidon 0x00 Level(10, Enemy, 1) [8,3] 0x00 0x00 0x0 0x00 [IronSword] PursueWithoutHeedAI 
+UNIT 0x80 Myrmidon 0x00 Level(10, Enemy, 1) [8,5] 0x00 0x00 0x0 0x00 [IronSword] PursueWithoutHeedAI 
+UNIT 0x80 Myrmidon 0x00 Level(10, Enemy, 1) [6,1] 0x00 0x00 0x0 0x00 [IronSword] PursueWithoutHeedAI 
+UNIT 0x80 Myrmidon 0x00 Level(10, Enemy, 1) [2,3] 0x00 0x00 0x0 0x00 [IronSword] PursueWithoutHeedAI 
+UNIT 0x80 Myrmidon 0x00 Level(10, Enemy, 1) [7,4] 0x00 0x00 0x0 0x00 [IronSword] PursueWithoutHeedAI 
+UNIT 0x80 Myrmidon 0x00 Level(10, Enemy, 1) [12,5] 0x00 0x00 0x0 0x00 [IronSword] PursueWithoutHeedAI 
+UNIT 0x80 Myrmidon 0x00 Level(10, Enemy, 1) [11,4] 0x00 0x00 0x0 0x00 [IronSword] PursueWithoutHeedAI 
+UNIT 0x80 Myrmidon 0x00 Level(10, Enemy, 1) [12,2] 0x00 0x00 0x0 0x00 [IronSword] PursueWithoutHeedAI 
+UNIT 0x80 Myrmidon 0x00 Level(10, Enemy, 1) [10,2] 0x00 0x00 0x0 0x00 [IronSword] PursueWithoutHeedAI 
+UNIT 0x80 Myrmidon 0x00 Level(10, Enemy, 1) [10,7] 0x00 0x00 0x0 0x00 [IronSword] PursueWithoutHeedAI 
+UNIT 0x80 Myrmidon 0x00 Level(10, Enemy, 1) [8,0] 0x00 0x00 0x0 0x00 [IronSword] PursueWithoutHeedAI 
+UNIT 0x80 Myrmidon 0x00 Level(10, Enemy, 1) [8,8] 0x00 0x00 0x0 0x00 [IronSword] PursueWithoutHeedAI 
+UNIT 0x80 Bishop 0x00 Level(10, Enemy, 1) [14,3] 0x00 0x00 0x0 0x00 [Mend] HealUnits 
+UNIT 0x80 Bishop 0x00 Level(10, Enemy, 1) [15,4] 0x00 0x00 0x0 0x00 [Mend] HealUnits 
+UNIT 0x80 Bishop 0x00 Level(10, Enemy, 1) [13,6] 0x00 0x00 0x0 0x00 [Mend] HealUnits 
+UNIT 0x80 Bishop 0x00 Level(10, Enemy, 1) [13,4] 0x00 0x00 0x0 0x00 [Mend] HealUnits 
+UNIT 0x80 Bishop 0x00 Level(10, Enemy, 1) [15,6] 0x00 0x00 0x0 0x00 [Mend] HealUnits 
+UNIT 0x80 Bishop 0x00 Level(10, Enemy, 1) [14,8] 0x00 0x00 0x0 0x00 [Mend] HealUnits 
+UNIT 0x80 Bishop 0x00 Level(10, Enemy, 1) [14,6] 0x00 0x00 0x0 0x00 [Mend] HealUnits 
+UNIT 0x80 Bishop 0x00 Level(10, Enemy, 1) [16,8] 0x00 0x00 0x0 0x00 [Mend] HealUnits 
+UNIT 0x80 Bishop 0x00 Level(10, Enemy, 1) [15,2] 0x00 0x00 0x0 0x00 [Mend] HealUnits 
+UNIT
+
+ItsFuckingEdgeworth:
+UNIT Edgeworth Dancer 0x00 Level(10, Ally, 1) [0,5] 0x00 0x00 0x0 0x00 [0] NoAI 
+UNIT
+
+
+// Shop Data
