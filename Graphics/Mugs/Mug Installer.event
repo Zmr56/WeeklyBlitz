@@ -19,3 +19,7 @@ setMugEntry(0x4, Morps_Mug, 3,5,3,3)
 //Anna_Mug:
 //#incext PortraitFormatter "Anna.png"
 //setMugEntry(0x7, Anna_Mug, 2,5,3,3)
+
+Ephraim_Mug:
+#incext PortraitFormatter "ephraim.png"
+setMugEntry(0xC, Ephraim_Mug, 2,5,3,3)

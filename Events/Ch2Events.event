@@ -1,9 +1,8 @@
 ﻿
 #include EAstdlib.event
 
-EventPointerTable(EventTableID,ThisChapter)
+EventPointerTable(0xa,ThisChapter)
 
-ORG StartOffset
 ThisChapter:
 POIN TurnBasedEvents
 POIN CharacterBasedEvents

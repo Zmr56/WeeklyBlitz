@@ -1,7 +1,7 @@
 INLINE PersonalSkillTable,Skill
 None,0x0
 Eirika,CharismaID
-Seth,SaviorID
+Seth,InspirationID
 Gilliam,RallyDefID
 Franz,SealStrID
 Moulder,RallyResID

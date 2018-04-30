@@ -1,2 +1,8 @@
 ## Name_ShortAxe
 Short Axe[X]
+
+## Name_Vala
+Vala's Ember[X]
+
+## Desc_Vala
+Grants Def/Res +2.[X]

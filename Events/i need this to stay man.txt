@@ -1,0 +1,16 @@
+#include EAstdlib.event
+
+Naiduila:
+SOUN 0x333
+TEXTSTART
+TEXTSHOW 0xAA3
+TEXTEND
+REMA
+EVBIT_T 0x7
+ENDA
+ALIGN 4
+
+ValaEStatBoost:
+//   hp st sk sp df rs lk mv cn
+BYTE 00 00 00 00 02 02 00 00 00 00
+ALIGN 4
