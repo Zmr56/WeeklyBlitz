@@ -2,7 +2,10 @@
 
 EventPointerTable(0x0D,ThisChapter)
 
-ORG 0xE80000
+    ValaEStatBoost:
+    //   hp st sk sp df rs lk mv cn
+    BYTE 00 00 00 00 02 02 00 00 00 00
+    ALIGN 4
 
 ThisChapter:
 POIN TurnBasedEvents
@@ -51,7 +54,46 @@ CharacterBasedEvents:
 END_MAIN
 
 LocationBasedEvents:
+Armory(BuyMyGoodsOrDie,8,13)
+Vendor(VINDORMORE,10,8)
+AREA 0xA MOREPOWA [0,10] [1,10]
+AREA 0xB UNLIMITEDFIRE [18,4] [19,4]
+AREA 0xC PROMOINCH3 [14,14] [14,14]
+AREA 0xD Nyah [17,1] [17,1]
+
+PROMOINCH3:
+//text here
+ITGV MasterSeal
+ENDA
+
+ALIGN 4
+UNLIMITEDFIRE:
+//Text here
+ITGV Elfire
+ENDA
+
+ALIGN 4
+MOREPOWA:
+//text here
+ITGV EnergyRing
+ENDA
+
+ALIGN 4
+Nyah:
+//text here
+ITGV PoisonLance
+ENDA
+
+ALIGN 4
+
 END_MAIN
+
+BuyMyGoodsOrDie:
+SHLI IronSword SteelSword Ironlance SteelLance IronAxe SteelAxe Ironbow SilverBow
+ALIGN 4
+VINDORMORE:
+SHLI Fire Thunder Heal Torch Vulnerary Elfire
+ALIGN 4
 
 MiscBasedEvents:
 CauseGameOverIfLordDies
@@ -75,15 +117,15 @@ LOAD2 0x1 Units
 ENUN
 LOAD1 0x1 Bubba
 ENUN
-LOAD1 0x1 Civ
-ENUN
-TEXTSHOW 0x954
-TEXTEND
-FlashCursor(Ross, 60)
-TEXTSHOW 0x957
+TEXTSHOW 0x954 //Lord: Sir Morps, do you have any knowledge where we are? Morps: It appears as if we have fallen for the oldest trick in the books, a hidden Outrealm entrace right under our feet. Lord: Drats, I should've known it wouldn't have been as easy... Oh look! Ruined houses! Bandits! Villagers with no hope of surviving... I smell free EXP and loot! Morps: Not again... We're going to go into an Outrealm in an Outrealm at this rate!
 TEXTEND
 GotoPrepScreen
-TEXTSHOW 0x955
+LOAD1 0x1 Civ
+ENUN
+FlashCursor(Ross, 60)
+TEXTSHOW 0x957 //Okram: Stay back! Protect the books! They're more important then my health, if they fall into King Atlavum's hands, he'll be able to arm his entire army with powerful spells! Femalevillager: We know this Okram, this is the FIFTH time you've mentioned it, IN AN HOUR! It's not that hard to understand, for the love of Naga stop! Okram: Alright! Alright, I get the point geeze... I was just saying it so the kind and friendly people over there would HELP US FOR THE LOVE OF NAGA! PLEASE! WE'RE ALL GOING TO DIE! OldMan: My hero...
+TEXTEND
+TEXTSHOW 0x955 //Bubba(Bone): Get those filthy villagers! They hold the key to the King's success! We will become the King's favourite warriors, the richest men in the realm! Arm the Pegasus Knight and have her attack quickly! Prepare the Dumb-Dumb Squad which arrived ten minutes late to fight! Should be done in a while...
 TEXTEND
 ENDA
 
@@ -98,17 +140,17 @@ BEQ 0x0 0xC 0x0
 CHECK_ALIVE 0xF9
 BEQ 0x0 0xC 0x0
 MUSC 0x31
-TEXTSHOW 0x962
+TEXTSHOW 0x962 //OldMan: Okram... I on behalf of the village, thank you for all you have done. Okram: Any sane follower of the Divine Saint Naga would protect these tomes and protect innocent people brought into this hell of a war by insane bandits. OldMan: Well put, my boy, well put. As a thank you from the village, I have found a tome which is befitting of your hands and your hands alone, Okram. Okram: Keep it, if it were to fall- OldMan: Stop playing hero for once, boy. Learn to accept gifts. Back in my day, kids were happy to get sent to the fields and accept gifts! Why can't we return- Okram: Alright, alright, I get the point. I'll take the tome and be on my way, see if those kind blokes want me. 
 TEXTEND
 REMA
 MUSCMID 0x7FFF
 CALL APPLE
-SVAL 0x3 0x66
-GIVEITEMTO 0x1 //This is gonna be changed
+SVAL 0x3 0xad //This is Okram's prf. 
+GIVEITEMTO 0x07 
 LABEL 0x0
 REMA
 MUSC 0x2B
-TEXTSHOW 0x963
+TEXTSHOW 0x963 //Okram: Hey! You on the horse with the stupid hair! Morps: What is it? Was saving your lifes not enough for you? You also need to attack my hair? Okram: Yeah, yeah, whatever. I would like to offer my assistance in your journey, wherever it may take me. Morps: Absolutely not- Lord: We would be honoured to have someone with your magical abilities on our side! Okram: Cheers, standard army payment? Morps: Now hold up- Lord: Yep, standard payment. Okram: Let's be going now that that's settled! Morps: Watch your step- And everyone fell into another outrealm portal... Why do I even bother? They need me, so I must join them in the outrealm for one last hooray!
 TEXTEND
 MUSCSLOW 0x7FFF
 STAL 60
