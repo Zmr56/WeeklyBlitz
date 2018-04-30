@@ -18,12 +18,18 @@
     //Events
     #include "Events/Master Events Installer.event"
     #include "Events/World Map Events Installer.event"
+	
+	//Music
+	#include "Music/Music Installer.event"
 
     //Maps
     #include "Maps/Master Map Installer.event"
 	
 	//Graphics
 	#include "Graphics/Master Graphics Installer.event"
+	
+	//Palettes
+    #include "Palettes/Palette Setup.event"   
     
     MESSAGE Used free space ends at currentOffset
     MESSAGE Proc_Counter

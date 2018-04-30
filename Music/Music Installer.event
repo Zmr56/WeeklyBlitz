@@ -1,0 +1,12 @@
+#include "drumfix_fe8.event"
+
+PUSH
+ORG 0x1001860
+#incbin "bin/custom_piano.bin"
+POP
+
+voicegroup000:
+#incbin "FE8_NI_Map_custompiano.bin"
+
+SongTable(0x9,GirlofTheSpiritForest, 1)
+#include "GirlofTheSpiritForest.event"
