@@ -4,7 +4,6 @@
 #endif
 
 
-#define PrologueChName 0x160
 #define LearnedSkillText 0x3A
 #define SS_TalkText 0x3B
 #define SS_SkillsText 0x3c
@@ -34,6 +33,34 @@
 #define UM_RepositionDesc 0x54
 #define UM_Swap 0x55
 #define UM_SwapDesc 0x56
+#define Ch1Name 0x160
+#define Ch2Name 0x161
+#define Ch3Name 0x162
+#define Ch4Name 0x163
+#define Ch5Name 0x164
+#define Ch6Name 0x165
+#define Ch7Name 0x166
+#define Ch8Name 0x167
+#define Ch9Name 0x168
+#define Ch10Name 0x169
+#define Ch11Name 0x16a
+#define Ch12Name 0x16b
+#define Ch13Name 0x16c
+#define Ch14Name 0x16d
+#define Ch15Name 0x16e
+#define Ch16Name 0x16f
+#define Ch17Name 0x170
+#define Ch18Name 0x171
+#define Ch19Name 0x172
+#define Ch20Name 0x173
+#define Ch21Name 0x174
+#define Ch22Name 0x175
+#define Ch23Name 0x176
+#define Ch24Name 0x177
+#define Ch25Name 0x178
+#define Ch26Name 0x179
+#define Ch27Name 0x17a
+#define Ch28Name 0x17b
 #define HouseText 0x903
 #define VillageText 0x904
 #define DV1Desc 0x905
@@ -201,3 +228,8 @@
 #define Desc_Jet 0x9a7
 #define Name_Anna 0x9a8
 #define Desc_Anna 0x9a9
+#define Name_Okram 0x9aa
+#define Desc_Okram 0x9ab
+#define Name_ShortAxe 0x9ac
+#define Name_Vala 0x9ad
+#define Desc_Vala 0x9ae
