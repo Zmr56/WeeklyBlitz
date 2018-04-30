@@ -2,11 +2,6 @@
 
 EventPointerTable(0x0D,ThisChapter)
 
-    ValaEStatBoost:
-    //   hp st sk sp df rs lk mv cn
-    BYTE 00 00 00 00 02 02 00 00 00 00
-    ALIGN 4
-
 ThisChapter:
 POIN TurnBasedEvents
 POIN CharacterBasedEvents
