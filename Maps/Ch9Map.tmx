@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="26" height="22" tilewidth="16" tileheight="16" nextobjectid="1">
+<map version="2017.05.26" orientation="orthogonal" renderorder="right-down" width="26" height="22" tilewidth="16" tileheight="16" nextobjectid="1">
  <tileset firstgid="1" name="3C00CE3E" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
-  <image source="../../rFireEmblem/Maps/FE8/3c00ce3e.png" trans="ffffff" width="512" height="512"/>
+  <image source="../../Tiled map inserter/Tilesets/FE8/3C00CE3E.png" trans="ffffff" width="512" height="512"/>
  </tileset>
  <layer name="Tile Layer 1" width="26" height="22">
   <properties>

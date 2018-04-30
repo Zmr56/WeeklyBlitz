@@ -45,7 +45,7 @@
 214,214,214,214,214,246,213,213,213,969,970,971,969,970,971,969,970,971,213,213,213,245,214,214,214,214,214
 </data>
  </layer>
- <layer name="Tile Layer 2" width="27" height="27" visible="0">
+ <layer name="Tile Layer 2" width="27" height="27">
   <properties>
    <property name="Height" value="21"/>
    <property name="ID" value="0"/>
@@ -83,7 +83,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer name="Tile Layer 3" width="27" height="27" visible="0">
+ <layer name="Tile Layer 3" width="27" height="27">
   <properties>
    <property name="Height" value="21"/>
    <property name="ID" value="2"/>
@@ -121,7 +121,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer name="Tile Layer 4" width="27" height="27" visible="0">
+ <layer name="Tile Layer 4" width="27" height="27">
   <properties>
    <property name="Height" value="21"/>
    <property name="ID" value="1"/>
@@ -159,7 +159,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer name="Button 1" width="27" height="27" visible="0">
+ <layer name="Button 1" width="27" height="27">
   <properties>
    <property name="Height" value="1"/>
    <property name="ID" value="3"/>
@@ -197,7 +197,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer name="Button 2" width="27" height="27" visible="0">
+ <layer name="Button 2" width="27" height="27">
   <properties>
    <property name="Height" value="1"/>
    <property name="ID" value="4"/>
@@ -235,7 +235,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer name="Button 3" width="27" height="27" visible="0">
+ <layer name="Button 3" width="27" height="27">
   <properties>
    <property name="Height" value="1"/>
    <property name="ID" value="5"/>
@@ -273,7 +273,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer name="The Finale" width="27" height="27" visible="0">
+ <layer name="The Finale" width="27" height="27">
   <properties>
    <property name="Height" value="3"/>
    <property name="ID" value="6"/>
