@@ -42,3 +42,9 @@
 
 #include "FE8 Nightmare modules\Item editors\Stat Bonuses Editor.event"
 
+#include "FE8 Nightmare modules\Quote editors\Boss music editor.event"
+
+#include "FE8 Nightmare modules\Quote editors\Boss Quote Editor.event"
+
+#include "FE8 Nightmare modules\Quote editors\Death Quote Editor.event"
+
