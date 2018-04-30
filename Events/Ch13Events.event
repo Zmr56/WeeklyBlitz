@@ -72,7 +72,7 @@ LOAD1 0x1 EnemyUnits
 LOAD2 0x1 FriendUnits
 ENUN
 SetBackground(0x1D)
-//Text(BeginningScene1Text13)
+Text(BeginningScene1Text13)
 EndConvo
 STAL 0x40
 Text(BeginningScene2Text13)
