@@ -2,9 +2,7 @@
 
 Naiduila:
 SOUN 0x333
-TEXTSTART
-TEXTSHOW 0xAA3
-TEXTEND
+Text(YuhuaHamasaki)
 REMA
 EVBIT_T 0x7
 ENDA
