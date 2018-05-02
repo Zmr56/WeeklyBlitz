@@ -11,8 +11,8 @@ Map:
 #incbin "Ch2Map_data.dmp"
 
 MapChanges:
-TileMap(0,1,2,1,1,Village_Broken)
-TileMap(1,0,0,3,3,Village_Saved)
+TileMap(0,0,0,3,3,Village_Broken)
+TileMap(1,1,2,1,1,Village_Saved)
 TileMapEnd
 
 Village_Broken:
