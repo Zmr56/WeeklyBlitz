@@ -1,14 +1,14 @@
 INLINE PersonalSkillTable,Skill
 None,0x0
-Eirika,CharismaID
-Seth,InspirationID
-Gilliam,RallyDefID
-Franz,SealStrID
-Moulder,RallyResID
-Vanessa,SpurSpdID
-Ross,ParagonID
-Neimi,RallyLukID
-Colm,RallySpdID
+Kathy,CharismaID
+Morps,InspirationID
+Tye,PivotID
+Jet,LilysPoiseID
+Anna,CantoID
+George,SwordbreakerID
+Okram,VantageID
+Void,LunaID
+Ephraim,AxebreakerID
 Garcia,ColossusID
 Innes,BowRangeUpID
 Lute,ParagonID
