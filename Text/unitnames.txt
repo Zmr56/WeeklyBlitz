@@ -34,9 +34,72 @@ Anna[X]
 A gold loving merchant.[N]
 Sister of Luanna.[X]
 
+##Name_George
+George[X]
+
+##Desc_George
+A gold loving merchant.[N]
+Sister of Luanna.[X]
+
 ##Name_Okram
 Okram[X]
 
 ##Desc_Okram
 A strong mage from,[N]
 an Outrealm.[X]
+
+##SC_Name
+Swd. Cav.[X]
+
+##SC_Desc
+Mounted knights with swift movement.[N]
+Equip: Swords.[X]
+
+##LC_Name
+Lnc. Cav.[X]
+
+##LC_Desc
+Mounted knights with swift movement.[N]
+Equip: Lances.[X]
+
+##AC_Name
+Axe Cav.[X]
+
+##AC_Desc
+Mounted knights with swift movement.[N]
+Equip: Axes.[X]
+
+##BC_Name
+Bow Cav.[X]
+
+##BC_Desc
+Mounted knights with swift movement.[N]
+Equip: Bows.[X]
+
+##LW_Name
+Lnc. Wyvern[X]
+
+##LW_Desc
+High-flying knights vulnerable only to[N]
+bows and magic. Equip: Lances.[X]
+
+##AW_Name
+Axe Wyvern[X]
+
+##AW_Desc
+High-flying knights vulnerable only to[N]
+bows and magic. Equip: Axes.[X]
+
+##LP_Name
+Lnc. Peg.[X]
+
+##LP_Desc
+Airborne knights who resist magic but[N]
+are weak against bows. Equip: Lances.[X]
+
+##SP_Name
+Swd. Peg.[X]
+
+##SP_Desc
+Airborne knights who resist magic but[N]
+are weak against bows. Equip: Swords.[X]

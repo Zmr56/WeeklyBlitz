@@ -6,11 +6,11 @@ ALIGN 4
 }
 ALIGN 4
 {
-//  #include "Ch2Events.event"
+  #include "Ch2Events.event"
 }
 ALIGN 4
 {
-//  #include "Ch3Events.txt"
+  #include "Ch3Events.txt"
 }
 ALIGN 4
 {

@@ -25,10 +25,22 @@ UNIT
 
 
 TurnBasedEvents:
+TURN 0x0 TurnUno[1,0] 0x0
 TURN 0x0 TurnDos[2,0] 0x0
 TURN 0x0 TurnFith[5,0] 0x0
 TURN 0x0 TurnThird[3,0] 0x0
 END_MAIN
+
+TurnUno:
+LOAD1 0x1 Civ
+ENUN
+CAM1 Ross
+FlashCursor(Ross, 60)
+TEXTSHOW 0x957 //Okram: Stay back! Protect the books! They're more important then my health, if they fall into King Atlavum's hands, he'll be able to arm his entire army with powerful spells! Femalevillager: We know this Okram, this is the FIFTH time you've mentioned it, IN AN HOUR! It's not that hard to understand, for the love of Naga stop! Okram: Alright! Alright, I get the point geeze... I was just saying it so the kind and friendly people over there would HELP US FOR THE LOVE OF NAGA! PLEASE! WE'RE ALL GOING TO DIE! OldMan: My hero...
+TEXTEND
+TEXTSHOW 0x955 //Bubba(Bone): Get those filthy villagers! They hold the key to the King's success! We will become the King's favourite warriors, the richest men in the realm! Arm the Pegasus Knight and have her attack quickly! Prepare the Dumb-Dumb Squad which arrived ten minutes late to fight! Should be done in a while...
+TEXTEND
+ENDA
 
 TurnDos:
 ReinforcementEvent(TurnTwa)
@@ -44,6 +56,7 @@ ENDA
 
 TurnThird:
 ReinforcementEvent(REINHARDTFORCE)
+ENDA
 
 CharacterBasedEvents:
 END_MAIN
@@ -51,46 +64,48 @@ END_MAIN
 LocationBasedEvents:
 Armory(BuyMyGoodsOrDie,8,13)
 Vendor(VINDORMORE,10,8)
-AREA 0xA MOREPOWA [0,10] [1,10]
-AREA 0xB UNLIMITEDFIRE [18,4] [19,4]
-AREA 0xC PROMOINCH3 [14,14] [14,14]
-AREA 0xD Nyah [17,1] [17,1]
+END_MAIN
 
 PROMOINCH3:
 //text here
-ITGV MasterSeal
+SVAL 0x3 MasterSeal
+GIVEITEMTO 0xFFFF
+EVBIT_T 0x7
 ENDA
 
 ALIGN 4
 UNLIMITEDFIRE:
-//Text here
-ITGV Elfire
+SVAL 0x3 Elfire
+GIVEITEMTO 0xFFFF
+EVBIT_T 0x7
 ENDA
 
 ALIGN 4
 MOREPOWA:
-//text here
-ITGV EnergyRing
+SVAL 0x3 EnergyRing
+GIVEITEMTO 0xFFFF
+EVBIT_T 0x7
 ENDA
 
 ALIGN 4
 Nyah:
-//text here
-ITGV PoisonLance
+SVAL 0x3 PoisonLance
+GIVEITEMTO 0xFFFF
+EVBIT_T 0x7
 ENDA
 
-ALIGN 4
-
-END_MAIN
-
 BuyMyGoodsOrDie:
-SHLI IronSword SteelSword Ironlance SteelLance IronAxe SteelAxe Ironbow SilverBow
+SHLI IronSword SteelSword IronLance SteelLance IronAxe SteelAxe IronBow SilverBow
 ALIGN 4
 VINDORMORE:
 SHLI Fire Thunder Heal Torch Vulnerary Elfire
 ALIGN 4
 
 MiscBasedEvents:
+AREA 0xA MOREPOWA [0,10] [1,10]
+AREA 0xB UNLIMITEDFIRE [18,4] [19,4]
+AREA 0xC PROMOINCH3 [14,14] [14,14]
+AREA 0xD Nyah [17,1] [17,1]
 CauseGameOverIfLordDies
 END_MAIN
 
@@ -115,13 +130,6 @@ ENUN
 TEXTSHOW 0x954 //Lord: Sir Morps, do you have any knowledge where we are? Morps: It appears as if we have fallen for the oldest trick in the books, a hidden Outrealm entrace right under our feet. Lord: Drats, I should've known it wouldn't have been as easy... Oh look! Ruined houses! Bandits! Villagers with no hope of surviving... I smell free EXP and loot! Morps: Not again... We're going to go into an Outrealm in an Outrealm at this rate!
 TEXTEND
 GotoPrepScreen
-LOAD1 0x1 Civ
-ENUN
-FlashCursor(Ross, 60)
-TEXTSHOW 0x957 //Okram: Stay back! Protect the books! They're more important then my health, if they fall into King Atlavum's hands, he'll be able to arm his entire army with powerful spells! Femalevillager: We know this Okram, this is the FIFTH time you've mentioned it, IN AN HOUR! It's not that hard to understand, for the love of Naga stop! Okram: Alright! Alright, I get the point geeze... I was just saying it so the kind and friendly people over there would HELP US FOR THE LOVE OF NAGA! PLEASE! WE'RE ALL GOING TO DIE! OldMan: My hero...
-TEXTEND
-TEXTSHOW 0x955 //Bubba(Bone): Get those filthy villagers! They hold the key to the King's success! We will become the King's favourite warriors, the richest men in the realm! Arm the Pegasus Knight and have her attack quickly! Prepare the Dumb-Dumb Squad which arrived ten minutes late to fight! Should be done in a while...
-TEXTEND
 ENDA
 
 EndingScene:
@@ -217,7 +225,7 @@ UNIT 0x82 Shaman 0x00 Level(5, Enemy, 0) [10,0] 0x00 0x00 0x0 0x00 [Flux] ChaseO
 UNIT
 
 TurnTwa:
-UNIT 0x82 PegasusKnight 0x00 Level(5, Enemy, 0) [19,14] 0x00 0x00 0x0 0x00 [SlimLance] PursueWithoutHeedAI 
+UNIT 0x82 LancePegasus 0x00 Level(5, Enemy, 0) [19,14] 0x00 0x00 0x0 0x00 [SlimLance] PursueWithoutHeedAI 
 UNIT
 
 TurnSixFRENCH:

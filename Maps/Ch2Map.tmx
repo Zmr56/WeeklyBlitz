@@ -493,11 +493,11 @@
  </layer>
  <layer name="Village Broken" width="17" height="23">
   <properties>
-   <property name="Height" value="1"/>
+   <property name="Height" value="3"/>
    <property name="ID" value="0"/>
-   <property name="Width" value="1"/>
-   <property name="X" value="1"/>
-   <property name="Y" value="2"/>
+   <property name="Width" value="3"/>
+   <property name="X" value="0"/>
+   <property name="Y" value="0"/>
   </properties>
   <data>
    <tile gid="904"/>
@@ -895,11 +895,11 @@
  </layer>
  <layer name="Village Saved" width="17" height="23">
   <properties>
-   <property name="Height" value="3"/>
+   <property name="Height" value="1"/>
    <property name="ID" value="1"/>
-   <property name="Width" value="3"/>
-   <property name="X" value="0"/>
-   <property name="Y" value="0"/>
+   <property name="Width" value="1"/>
+   <property name="X" value="1"/>
+   <property name="Y" value="2"/>
   </properties>
   <data>
    <tile gid="0"/>
