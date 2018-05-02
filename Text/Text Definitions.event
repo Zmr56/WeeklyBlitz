@@ -33,6 +33,8 @@
 #define UM_RepositionDesc 0x54
 #define UM_Swap 0x55
 #define UM_SwapDesc 0x56
+#define RaidText 0x57
+#define RaidDescriptionText 0x58
 #define Ch1Name 0x160
 #define Ch2Name 0x161
 #define Ch3Name 0x162

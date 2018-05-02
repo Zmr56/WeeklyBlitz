@@ -64,3 +64,10 @@ unit's opposite side.[X]
 ## UM_SwapDesc
 Swap positions with adjacent[N]
 ally.[X]
+
+## RaidText
+ Raid[X]
+
+## RaidDescriptionText
+What does this do?[N]
+idk.[X]

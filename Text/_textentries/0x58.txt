@@ -1,2 +1,2 @@
-Savior: Can rescue[N]
-without penalties.[X]
+What does this do?[N]
+idk.[X]

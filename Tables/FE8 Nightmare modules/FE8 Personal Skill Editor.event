@@ -1,6 +1,6 @@
 #define csvmacro002(arg000) "BYTE arg000 "
 
-#inctext PFinder "C:\Users\wkara\Desktop\purasutikurabu\WeeklyBlitz-master\FE8_clean.gba" 0xe47180 PersonalSkillTable
+#inctext PFinder "C:\Users\lenovo Z70\Desktop\Zaim\FE Hacking 2\WeeklyBlitz\FE8_clean.gba" 0xe47180 PersonalSkillTable
 
 ALIGN 4
 PersonalSkillTable:
