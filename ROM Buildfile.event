@@ -7,15 +7,16 @@
     #include "Text/Install Text Data.event"
     MESSAGE Used text space ends at currentOffset
 
-    //CSV tables
+	//CSV tables
     #include "Tables/Table Installer.event"
     MESSAGE Used table space ends at currentOffset
-
+	
     //Engine Hacks
     #include "Engine Hacks/_MasterHackInstaller.event"
     MESSAGE Used hax space ends at currentOffset
 
     //Events
+	#include "Events/i need this to stay man.txt"
     #include "Events/Master Events Installer.event"
     #include "Events/World Map Events Installer.event"
 	
