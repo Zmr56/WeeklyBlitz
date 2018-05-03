@@ -48,5 +48,17 @@
 
 #define RaynorBoss 77
 
+#define SwordCav 84
+#define LanceCav 85
+#define AxeCav 86
+#define BowCav 87
+#define SwordCavalier 84
+#define LanceCavalier 85
+#define AxeCavalier 86
+#define BowCavalier 87
+#define LanceWyvern 88
+#define AxeWyvern 89
+#define LancePegasus 90
+#define SwordPegasus 91
 
 // #define __DEBUG__ // Uncomment to get the Debug startup menu :p
