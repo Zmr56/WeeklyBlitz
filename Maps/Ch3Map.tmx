@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="2017.05.26" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="16" tileheight="16" nextobjectid="1">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="16" tileheight="16" nextobjectid="1">
  <tileset firstgid="1" name="FE8 - Desert - 42004344" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
-  <image source="../../Tiled map inserter/Tilesets/FE8/42004344.png" trans="ffffff" width="512" height="512"/>
+  <image source="FE8/42004344.png" trans="ffffff" width="512" height="512"/>
  </tileset>
  <layer name="Tile Layer 1" width="20" height="15">
   <properties>

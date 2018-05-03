@@ -48,4 +48,13 @@
 
 #define RaynorBoss 77
 
+#define SwordCav 0x54
+#define LanceCav 0x55
+#define AxeCav 0x56
+#define BowCav 0x57
+#define LanceWyvern 0x58
+#define AxeWyvern 0x59
+#define LancePegasus 0x5a
+#define SwordPegasus 0x5b
+
 // #define __DEBUG__ // Uncomment to get the Debug startup menu :p
