@@ -1,0 +1,252 @@
+#include EAstdlib.event
+
+
+
+EventPointerTable(0x7,ThisChapter)
+
+
+
+ThisChapter:
+
+POIN TurnBasedEvents
+
+POIN CharacterBasedEvents
+
+POIN LocationBasedEvents
+
+POIN MiscBasedEvents
+
+POIN Dunno Dunno Dunno
+
+POIN Tutorial
+
+POIN TrapData TrapData
+
+POIN Units Units
+
+POIN $0 $0 $0 $0 $0 $0
+
+POIN BeginningScene EndingScene
+
+
+
+Units:
+UNIT Eirika EirikaLord 0x00 Level(17, Ally, 0) [7,16] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Seth Cavalier Eirika Level(17, Ally, 0) [6,17] 0x00 0x00 0x0 0x00 [KillingEdge, Vulnerary] NoAI 
+UNIT Seth Cavalier Eirika Level(17, Ally, 0) [8,17] 0x00 0x00 0x0 0x00 [KillingEdge, Vulnerary] NoAI 
+UNIT Seth Cavalier Eirika Level(17, Ally, 0) [7,18] 0x00 0x00 0x0 0x00 [KillingEdge, Vulnerary] NoAI 
+UNIT Seth Cavalier Eirika Level(17, Ally, 0) [6,19] 0x00 0x00 0x0 0x00 [KillingEdge, Vulnerary] NoAI 
+UNIT Seth Cavalier Eirika Level(17, Ally, 0) [8,19] 0x00 0x00 0x0 0x00 [KillingEdge, Vulnerary] NoAI 
+UNIT Seth Cavalier Eirika Level(17, Ally, 0) [9,18] 0x00 0x00 0x0 0x00 [KillingEdge, Vulnerary] NoAI 
+UNIT Seth Cavalier Eirika Level(17, Ally, 0) [4,13] 0x00 0x00 0x0 0x00 [KillingEdge, Vulnerary] NoAI 
+UNIT Seth Cavalier Eirika Level(17, Ally, 0) [5,14] 0x00 0x00 0x0 0x00 [KillingEdge, Vulnerary] NoAI 
+UNIT Seth Cavalier Eirika Level(17, Ally, 0) [4,15] 0x00 0x00 0x0 0x00 [KillingEdge, Vulnerary] NoAI 
+UNIT Seth Cavalier Eirika Level(17, Ally, 0) [3,14] 0x00 0x00 0x0 0x00 [KillingEdge, Vulnerary] NoAI 
+
+UNIT
+
+
+
+TheBadBoisWhatyagonnado:
+UNIT Orson_Boss General 0x00 Level(5, Enemy, 1) [26,1] 0x00 0x00 0x0 0x00 [Tomahawk, BraveAxe, HoplonShield, Elixir] GuardTileAI 
+UNIT 0x80 Priest 0x00 Level(20, Enemy, 0) [2,16] 0x00 0x00 0x0 0x00 [Physic, Silence, HoplonShield, Elixir] GuardTileAI 
+UNIT 0x80 Cleric 0x00 Level(20, Enemy, 0) [14,1] 0x00 0x00 0x0 0x00 [Physic, Sleep, HoplonShield, Elixir] GuardTileAI 
+UNIT 0x8e Cavalier 0x00 Level(20, Enemy, 0) [15,2] 0x2 0x00 0x0 0x00 [KillingEdge, EnergyRing] GuardTileAI 
+UNIT Messenger Sniper 0x00 Level(1, Enemy, 0) [12,14] 0x00 0x00 0x0 0x00 [SilverBow, Vulnerary] GuardTileAI 
+UNIT 0x8e Archer 0x00 Level(1, Enemy, 0) [14,14] 0x00 0x00 0x0 0x00 [PoisonBow, Vulnerary] GuardTileAI 
+UNIT 0x8e Knight 0x00 Level(1, Enemy, 0) [13,13] 0x00 0x00 0x0 0x00 [Halberd, Vulnerary] GuardTileAI 
+UNIT 0x8e Mercenary 0x00 Level(17, Enemy, 1) [8,10] 0x00 0x00 0x0 0x00 [SteelBlade, Vulnerary] AttackInRangeAI 
+UNIT 0x8e WyvernRider 0x00 Level(16, Enemy, 1) [9,1] 0x00 0x00 0x0 0x00 [SilverAxe, Vulnerary] ChaseOnceApproachedAI 
+UNIT 0x8e WyvernRider 0x00 Level(18, Enemy, 1) [11,1] 0x2 0x00 0x0 0x00 [Hammer, Elixir] ChaseOnceApproachedAI 
+UNIT 0x8e WyvernRider 0x00 Level(16, Enemy, 1) [10,0] 0x00 0x00 0x0 0x00 [Horseslayer, Vulnerary] ChaseOnceApproachedAI 
+UNIT 0x8e WyvernRider 0x00 Level(20, Enemy, 1) [10,2] 0x00 0x00 0x0 0x00 [Spear, BraveLance, SlimLance, Elixir] ChaseOnceApproachedAI 
+UNIT 0x8e Mage 0x00 Level(19, Enemy, 1) [15,0] 0x00 0x00 0x0 0x00 [Elfire, Bolting] PursueWithoutHeedAI 
+UNIT 0x8e Fighter 0x00 Level(17, Enemy, 0) [25,8] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI 
+UNIT 0x8e Myrmidon 0x00 Level(18, Enemy, 0) [20,3] 0x00 0x00 0x0 0x00 [Shamshir, MasterProof] ChaseOnceApproachedAI 
+UNIT 0x8e Myrmidon 0x00 Level(17, Enemy, 0) [26,6] 0x2 0x00 0x0 0x00 [Lancereaver, WhiteGem] AttackInRangeAI 
+UNIT 0x8e Knight 0x00 Level(19, Enemy, 0) [25,13] 0x2 0x00 0x0 0x00 [SilverBlade, Elixir, Dragonshield] PursueWithoutHeedAI 
+UNIT
+
+TheBadBoisWhatyagonnadoTwo:
+UNIT 0x8e Mage 0x00 Level(19, Enemy, 0) [21,19] 0x00 0x00 0x0 0x00 [Fimbulvetr, Elixir] PursueWithoutHeedAI 
+UNIT 0x8e Mage 0x00 Level(19, Enemy, 0) [17,15] 0x00 0x00 0x0 0x00 [Fimbulvetr, Elixir] PursueWithoutHeedAI 
+UNIT 0x8e Soldier 0x00 Level(17, Enemy, 0) [10,11] 0x00 0x00 0x0 0x00 [Horseslayer, MasterProof] AttackInRangeAI 
+UNIT 0x8e Soldier 0x00 Level(20, Enemy, 0) [12,8] 0x00 0x00 0x0 0x00 [DragonSpear, MasterProof] AttackInRangeAI 
+UNIT 0x8e Soldier 0x00 Level(20, Enemy, 0) [11,18] 0x2 0x00 0x0 0x00 [HeavySpear, Dragonshield] AttackInRangeAI 
+UNIT 0x8e Knight 0x00 Level(18, Enemy, 0) [15,11] 0x2 0x00 0x0 0x00 [BraveSword, Dragonshield] ChaseOnceApproachedAI 
+UNIT 0x8e Knight 0x00 Level(18, Enemy, 0) [19,12] 0x2 0x00 0x0 0x00 [BraveSword, Tomahawk, Runesword] ChaseOnceApproachedAI 
+UNIT 0x8e Fleet 0x00 Level(20, Enemy, 0) [17,8] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI 
+UNIT 0x8e Fleet 0x00 Level(20, Enemy, 0) [14,3] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI 
+UNIT 0x8e Fleet 0x00 Level(20, Enemy, 0) [10,7] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI 
+UNIT 0x8e Mercenary 0x00 Level(18, Enemy, 0) [18,9] 0x00 0x00 0x0 0x00 [Armourslayer, SilverBlade] AttackInRangeAI 
+UNIT 0x8e Mercenary 0x00 Level(18, Enemy, 0) [17,19] 0x00 0x00 0x0 0x00 [Wyrmslayer, SilverBlade] AttackInRangeAI 
+UNIT 0x8e Cavalier 0x00 Level(18, Enemy, 0) [16,14] 0x00 0x00 0x0 0x00 [SilverBow, Longbow] ChaseOnceApproachedAI 
+UNIT 0x8e Pirate 0x00 Level(17, Enemy, 0) [21,9] 0x00 0x00 0x0 0x00 [SilverAxe, HandAxe, Vulnerary] ChaseOnceApproachedAI 
+UNIT 0x8e Fighter 0x00 Level(17, Enemy, 0) [20,6] 0x00 0x00 0x0 0x00 [SilverAxe, HandAxe, Vulnerary] AttackInRangeAI 
+UNIT
+
+TheBadBoisWhatyagonnadoThree:
+UNIT 0x8e Fighter 0x00 Level(17, Enemy, 0) [22,15] 0x00 0x00 0x0 0x00 [SilverAxe, HandAxe, Vulnerary] AttackInRangeAI 
+UNIT 0x8e Monk 0x00 Level(17, Enemy, 0) [19,5] 0x00 0x00 0x0 0x00 [Shine, Vulnerary] AttackInRangeAI 
+UNIT 0x8e Shaman 0x00 Level(20, Enemy, 0) [24,1] 0x00 0x00 0x0 0x00 [Nosferatu, Flux, Vulnerary] AttackInRangeAI 
+UNIT 0x8e Shaman 0x00 Level(20, Enemy, 0) [27,3] 0x00 0x00 0x0 0x00 [Nosferatu, Luna, Vulnerary] AttackInRangeAI 
+UNIT 0x8e Mercenary 0x00 Level(20, Enemy, 0) [14,16] 0x00 0x00 0x0 0x00 [SilverSword, Wyrmslayer, Vulnerary] ChaseOnceApproachedAI 
+UNIT 0x8e Mercenary 0x00 Level(20, Enemy, 0) [12,10] 0x00 0x00 0x0 0x00 [SilverSword, Lancereaver, Vulnerary] ChaseOnceApproachedAI 
+UNIT 0x8e Myrmidon 0x00 Level(20, Enemy, 0) [23,13] 0x00 0x00 0x0 0x00 [Shamshir, Longsword, Vulnerary] AttackInRangeAI 
+UNIT 0x8e Myrmidon 0x00 Level(20, Enemy, 0) [20,14] 0x00 0x00 0x0 0x00 [Shamshir, Armourslayer, Vulnerary] AttackInRangeAI 
+UNIT 0x8e Monk 0x00 Level(20, Enemy, 0) [21,2] 0x00 0x00 0x0 0x00 [Lightning, Aura, Vulnerary] AttackInRangeAI 
+UNIT 0x8e Monk 0x00 Level(20, Enemy, 0) [27,15] 0x00 0x00 0x0 0x00 [Lightning, Aura, Vulnerary] AttackInRangeAI 
+UNIT 0x8e Priest 0x00 Level(20, Enemy, 0) [24,11] 0x00 0x00 0x0 0x00 [Physic, Silence, HoplonShield, Elixir] GuardTileAI 
+UNIT
+
+AliciaBlock:
+UNIT Knoll FalcoKnight 0x00 Level(2, Ally, 0) [1,1] 0x00 0x00 0x0 0x00 [SilverLance, Mend, Elixir] NoAI 
+UNIT 0x8d PegasusKnight Knoll Level(19, NPC, 1) [5,1] 0x00 0x00 0x0 0x00 [KillerLance, BraveLance, Vulnerary] MoveWithLeaderAI 
+UNIT 0x8d PegasusKnight Knoll Level(20, NPC, 1) [1,4] 0x00 0x00 0x0 0x00 [KillingEdge, SteelSword, Vulnerary] MoveWithLeaderAI 
+UNIT
+
+TheifBlock:
+UNIT 0x8e Thief 0x00 Level(18, Enemy, 0) [18,0] 0x00 0x00 0x0 0x00 [KillingEdge, Elixir, Lockpick] BrigandAI 
+UNIT 0x8e Thief 0x00 Level(18, Enemy, 0) [27,19] 0x00 0x00 0x0 0x00 [KillingEdge, Elixir, Lockpick] BrigandAI 
+UNIT
+
+
+
+TurnBasedEvents:
+
+TURN 0x0 BaddddThief[3,0] 0x0
+
+TURN 0x0 BadCav[2,15] 0x0
+
+TURN 0x0 BadKnights[4,0] 0x0
+
+END_MAIN
+
+
+
+BadCav:
+
+ReinforcementEvent(CAVVV)
+
+ENDA
+
+
+
+CAVVV:
+UNIT 0x8e Cavalier 0x00 Level(19, Enemy, 0) [23,18] 0x2 0x00 0x0 0x00 [SilverLance, Vulnerary, Speedwings] PursueWithoutHeedAI 
+UNIT 0x8e Cavalier 0x00 Level(19, Enemy, 0) [21,0] 0x2 0x00 0x0 0x00 [SilverAxe,Vulnerary] PursueWithoutHeedAI 
+UNIT 0x8e Troubadour 0x00 Level(19, Enemy, 0) [21,0] 0x2 0x00 0x0 0x00 [Sleep,Physic,Silence,Elixir] PursueWithoutHeedAI 
+UNIT 0x8e Shaman 0x00 Level(19, Enemy, 0) [21,0] 0x2 0x00 0x0 0x00 [Luna,Nosferatu,Vulnerary] PursueWithoutHeedAI 
+UNIT
+
+
+
+END_MAIN
+
+
+
+BaddddThief:
+
+ReinforcementEvent(TheifBlock)
+
+ENDA
+
+
+
+KnightBlock:
+
+UNIT 0x8e Knight 0x00 Level(19, Enemy, 1) [25,0] 0x00 0x00 0x0 0x00 [] GuardTileAI
+
+UNIT 0x8e Knight 0x00 Level(3, Enemy, 1) [27,0] 0x00 0x00 0x0 0x00 [SilverAxe] PursueWithoutHeedAI
+
+UNIT
+
+
+
+BadKnights:
+
+ReinforcementEvent(KnightBlock)
+
+ENDA
+
+
+
+CharacterBasedEvents:
+
+END_MAIN
+
+
+
+LocationBasedEvents:
+
+Village(0x8,VillageStaffOfAges,12,3)
+
+Village(0x9,VillageDragoonKilla,5,14)
+END_MAIN
+
+
+
+VillageStaffOfAges:
+
+VillageEventItem(VillageText, Village, Physic)
+
+VillageDragoonKilla:
+VillageEventItem(VillageText, Village, DragonSpear)
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+Survive(EndingScene,16)
+END_MAIN
+
+
+
+Dunno:
+
+//DO NOT TOUCH
+
+WORD $00
+
+
+
+Tutorial:
+
+//DO NOT TOUCH
+
+WORD $00
+
+
+
+TrapData:
+
+END_MAIN
+
+
+
+ALIGN 4
+
+
+
+BeginningScene:
+LOAD2 0x1 Units
+ENUN
+LOAD1 0x1 TheBadBoisWhatyagonnado
+ENUN
+LOAD1 0x1 TheBadBoisWhatyagonnadoTwo
+ENUN
+LOAD1 0x1 TheBadBoisWhatyagonnadoThree
+GotoPrepScreen
+ENUN
+
+NoFade
+
+ENDA
+
+
+
+EndingScene:
+MNCH 17
+ENDA
+
+
+
+MESSAGE Events end at offset currentOffset

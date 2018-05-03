@@ -11,7 +11,11 @@
 PUSH
   //Include essential fixes and autopatches
   #include "_FE8EssentialFixes.event"
+  ORG 0x18a58
+  #incbin "ASM/Melee and Magic Fix_fe8.dmp"
+POP
   
+PUSH
   // Debug Startup Screen
   #ifdef __DEBUG__
     ORG 0x000AD8   // this is somewhere in the startup routine
@@ -125,6 +129,10 @@ POP
   //Change Sick Status to Freeze
   #include "Freeze.event"
 
+  WinRoutine:
+  MESSAGE CURRENTOFFSET
+  #incbin "Skip effect.dmp"
+  
   //Freeze All ASMC
   ALIGN 4
   FreezeAllASMC:
@@ -183,6 +191,8 @@ ALIGN 4
   MenuCommand(UM_Mercy, UM_MercyDesc, NormalText, MercyUsability, MercyEffect, $22c31, $22c99)
   //gamble
   MenuCommand(UM_Gamble, UM_GambleDesc, NormalText, GambleUsability, GambleEffect, $22c31, $22c99)
+  //skip
+  MenuCommand(WinName, WinDesc, OrangeText, 0x0804F449, WinRoutine)
   UM_Staff
   UM_Ride
   UM_Exit

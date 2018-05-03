@@ -15,7 +15,7 @@ POIN $0 $0 $0 $0 $0 $0
 POIN BeginningScene EndingScene
 
 Units:
-UNIT Kathy EirikaLord 0x00 Level(1, Ally, 0) [10,15] 0x00 0x00 0x0 0x00 [Rapier, Heal, Vulnerary] NoAI 
+UNIT Kathy EirikaLord 0x00 Level(1, Ally, 0) [10,15] 0x00 0x00 0x0 0x00 [Rapier, IronSword, Heal, Vulnerary] NoAI 
 UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [11,16] 0x00 0x00 0x0 0x00 [SilverSword, Javelin] NoAI 
 UNIT Tye Knight Kathy Level(5, Ally, 0) [10,14] 0x00 0x00 0x0 0x00 [SilverLance, HandAxe] NoAI
 UNIT Anna Thief Kathy Level(1, Ally, 0) [9,16] 0x00 0x00 0x0 0x00 [IronSword, Vulnerary] NoAI
