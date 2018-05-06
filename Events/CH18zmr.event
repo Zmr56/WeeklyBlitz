@@ -1,0 +1,334 @@
+﻿#include EAstdlib.event
+
+EventPointerTable(EventTableID,ThisChapter)
+
+ORG StartOffset
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TURN 0x0 Spawn1 [4,0] 0x0
+TURN 0x0 Spawn1 [6,0] 0x0
+TURN 0x0 Spawn1 [8,0] 0x0
+TURN 0x0 Spawn1 [10,0] 0x0
+TURN 0x0 Spawn2 [10,0] 0x0
+TURN 0x0 Spawn2 [12,0] 0x0
+TURN 0x0 Spawn2 [14,0] 0x0
+TURN 0x0 Spawn3 [14,0] 0x0
+TURN 0x0 Spawn3 [16,0] 0x0
+TURN 0x0 Spawn3 [18,0] 0x0
+TURN 0x0 Spawn4 [18,0] 0x0
+TURN 0x0 Spawn4 [20,0] 0x0
+TURN 0x0 SpawnZerkans [8,0] 0x0
+TURN 0x0 AstoliaIsFuckingPissed [25,0] 0x0
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEventBothWays(0xd,RecruitCreidne1, Kathy, Creidne)
+CharacterEventBothWays(0xe,RecruitCreidne2, Alicia, Creidne)
+CharacterEventBothWays(0xf,RecruitCreidne3, Raynor, Creidne)
+END_MAIN
+
+LocationBasedEvents:
+Village(0x7,Village1,6,6)
+Village(0x8,Village2,18,12)
+Village(0x9,Village3,12,17)
+House(0xa,House1,19,1)
+House(0xb,House2,8,13)
+House(0xc,House3,9,22)
+SHOP 0x0 Armory [4,18] 0x16
+SHOP 0x0 Vendor [12,13] 0x17
+END_MAIN
+
+MiscBasedEvents:
+DefeatBoss(EndingScene)
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Kathy Lord 0x00 Level(5, Ally, 0) [16,3] 0x00 0x00 0x0 0x00 [IronSword, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [16,1] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [18,1] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [15,2] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [17,2] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [18,3] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [15,4] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [17,4] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [16,5] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT
+
+TeamAstolia:
+UNIT Ch18Boss Hero 0x00 Level(5, Enemy, 0) [18,23] 0x02 0x00 0x0 0x00 [Miraculous] NeverMoveAI
+UNIT Astolias Hero Ch18Boss Level(4, Enemy, 1) [15,21] 0x00 0x00 0x0 0x00 [SilverAxe] AttackInRangeAI
+UNIT Astolias Hero Ch18Boss Level(4, Enemy, 1) [15,23] 0x00 0x00 0x0 0x00 [Swordslayer, LightBrand] AttackInRangeAI
+UNIT Astolias Hero Ch18Boss Level(4, Enemy, 1) [16,22] 0x00 0x00 0x0 0x00 [SilverBlade] AttackInRangeAI
+UNIT Astolias Hero Ch18Boss Level(4, Enemy, 1) [17,22] 0x00 0x00 0x0 0x00 [SilverSword, Tomahawk] AttackInRangeAI
+UNIT
+
+TeamCreidne:
+UNIT Creidne FemMerc 0x00 Level(12, Enemy, 0) [12,21] 0x02 0x00 0x0 0x00 [LightBrand, Zanbato] PursueWithoutHeed
+UNIT Creidnes1 Mercenary Creidne Level(22, Enemy, 1) [11,20] 0x00 0x00 0x0 0x00 [SilverBlade] PursueWithoutHeed
+UNIT Creidnes2 Fighter Creidne Level(22, Enemy, 1) [11,22] 0x00 0x00 0x0 0x00 [SilverAxe, Hatchet] PursueWithoutHeed
+UNIT Creidnes3 Fighter Creidne Level(22, Enemy, 1) [13,20] 0x00 0x00 0x0 0x00 [Tomahawk, SteelAxe] PursueWithoutHeed
+UNIT Creidnes4 Warrior Creidne Level(2, Enemy, 1) [13,22] 0x00 0x00 0x0 0x00 [DevilAxe, KillerBow] PursueWithoutHeed
+UNIT
+
+Donateenaries:
+UNIT Donateenary Sniper Ch18Boss Level(3, Enemy, 1) [17,24] 0x00 0x00 0x0 0x00 [IronBallista, Longbow] GuardTileAI
+UNIT Donateenary Sniper Ch18Boss Level(3, Enemy, 1) [7,23] 0x00 0x00 0x0 0x00 [IronBallista, ShortBow] GuardTileAI
+UNIT Donateenary Sniper Ch18Boss Level(1, Enemy, 1) [10,14] 0x00 0x00 0x0 0x00 [IronBallista, ShortBow] GuardTileAI
+UNIT Barbarian Berserker Ch18Boss Level(2, Enemy, 1) [3,0] 0x00 0x00 0x0 0x00 [SteelAxe] BrigandAI
+UNIT Barbarian Brigand Ch18Boss Level(20, Enemy, 1) [2,1] 0x00 0x00 0x0 0x00 [Tomahawk] BrigandAI
+UNIT Donateenary WyvernLord Ch18Boss Level(2, Enemy, 1) [1,23] 0x02 0x00 0x0 0x00 [Poleaxe, Boots] ChaseOnceApproachedAI
+UNIT Donateenary LanceWyvern Ch18Boss Level(22, Enemy, 1) [1,21] 0x00 0x00 0x0 0x00 [SilverLance] ChaseOnceApproachedAI
+UNIT Donateenary LanceWyvern Ch18Boss Level(22, Enemy, 1) [2,22] 0x00 0x00 0x0 0x00 [ShortSpear] ChaseOnceApproachedAI
+UNIT Donateenary LanceWyvern Ch18Boss Level(22, Enemy, 1) [3,23] 0x00 0x00 0x0 0x00 [SteelLance] ChaseOnceApproachedAI
+UNIT Donateenary Falcoknight Ch18Boss Level(2, Enemy, 1) [0,7] 0x02 0x00 0x0 0x00 [Horseslayer, Fortify, Speedwings] ChaseOnceApproachedAI
+UNIT Donateenary SwordPegasus Ch18Boss Level(22, Enemy, 1) [1,6] 0x00 0x00 0x0 0x00 [SilverSword] ChaseOnceApproachedAI
+UNIT Donateenary SwordPegasus Ch18Boss Level(22, Enemy, 1) [1,8] 0x00 0x00 0x0 0x00 [KillingEdge] ChaseOnceApproachedAI
+UNIT Donateenary Assassin Ch18Boss Level(2, Enemy, 1) [9,16] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeed
+UNIT Donateenary Assassin Ch18Boss Level(2, Enemy, 1) [10,17] 0x02 0x00 0x0 0x00 [WindSword] PursueWithoutHeed
+UNIT Donateenary Swordmaster Ch18Boss Level(2, Enemy, 1) [15,12] 0x00 0x00 0x0 0x00 [Runesword] AttackInRange
+UNIT Donateenary Swordmaster Ch18Boss Level(2, Enemy, 1) [14,13] 0x00 0x00 0x0 0x00 [WoDao] AttackInRange
+UNIT Donateenary BowPaladin Ch18Boss Level(2, Enemy, 1) [10,12] 0x00 0x00 0x0 0x00 [SilverBow, Javelin] ChaseOnceApproachedAI
+UNIT Donateenary AxeCavalier Ch18Boss Level(22, Enemy, 1) [10,10] 0x00 0x00 0x0 0x00 [Tomahawk] ChaseOnceApproachedAI
+UNIT Donateenary SwordCavalier Ch18Boss Level(22, Enemy, 1) [11,11] 0x00 0x00 0x0 0x00 [BraveSword] ChaseOnceApproachedAI
+UNIT Donateenary LanceCavalier Ch18Boss Level(22, Enemy, 1) [12,12] 0x00 0x00 0x0 0x00 [Spear] ChaseOnceApproachedAI
+UNIT Donateenary Halberdier Ch18Boss Level(2, Enemy, 1) [7,8] 0x02 0x00 0x0 0x00 [KillerLance] ChaseOnceApproachedAI
+UNIT Donateenary Soldier Ch18Boss Level(24, Enemy, 1) [8,7] 0x00 0x00 0x0 0x00 [SilverLance] ChaseOnceApproachedAI
+UNIT Donateenary Soldier Ch18Boss Level(24, Enemy, 1) [9,8] 0x00 0x00 0x0 0x00 [Spear] ChaseOnceApproachedAI
+UNIT Donateenary Warrior Ch18Boss Level(1, Enemy, 1) [16,8] 0x00 0x00 0x0 0x00 [BraveAxe] ChaseOnceApproachedAI
+UNIT Donateenary Sniper Ch18Boss Level(1, Enemy, 1) [15,9] 0x00 0x00 0x0 0x00 [SteelBow] ChaseOnceApproachedAI
+UNIT Donateenary Brigand Ch18Boss Level(24, Enemy, 1) [15,7] 0x00 0x00 0x0 0x00 [SilverAxe] ChaseOnceApproachedAI
+UNIT Donateenary Brigand Ch18Boss Level(24, Enemy, 1) [17,9] 0x00 0x00 0x0 0x00 [Halberd, EnergyRing] ChaseOnceApproachedAI
+UNIT Donateenary General Ch18Boss Level(1, Enemy, 1) [6,16] 0x00 0x00 0x0 0x00 [Tomahawk, Longbow] GuardTileAI
+UNIT Donateenary Knight Ch18Boss Level(22, Enemy, 1) [5,15] 0x00 0x00 0x0 0x00 [SteelLance] GuardTileAI
+UNIT Donateenary Knight Ch18Boss Level(22, Enemy, 1) [6,15] 0x00 0x00 0x0 0x00 [SilverLance, ShortAxe] GuardTileAI
+UNIT Donateenary Knight Ch18Boss Level(22, Enemy, 1) [7,15] 0x00 0x00 0x0 0x00 [SteelLance] GuardTileAI
+UNIT
+
+Spawn1:
+ReinforcementEvent(Reinforcements1)
+ENDA
+
+Spawn2:
+ReinforcementEvent(Reinforcements2)
+ENDA
+
+Spawn3:
+ReinforcementEvent(Reinforcements3)
+ENDA
+
+Spawn4:
+ReinforcementEvent(Reinforcements4)
+ENDA
+
+SpawnZerkans:
+ReinforcementEvent(Zerkans)
+ENDA
+
+Reinforcements1:
+UNIT Donateenary FalcoKnight Ch18Boss Level(1, Enemy, 1) [0,4] 0x00 0x00 0x1 REDA_Fort1 [SteelLance] PursueWithoutHeed
+UNIT Donateenary SwordPegasus Ch18Boss Level(22, Enemy, 1) [0,4] 0x00 0x00 0x1 REDA_Fort2 [IronBlade, Mend] PursueWithoutHeed
+UNIT Donateenary LancePegasus Ch18Boss Level(22, Enemy, 1) [0,4] 0x00 0x00 0x1 REDA_Fort3 [Spear, Physic] PursueWithoutHeed
+UNIT
+
+REDA_Fort1:
+	REDA [1,4] 0 0 0 0
+REDA_Fort2:
+	REDA [0,3] 0 0 0 0
+REDA_Fort3:
+	REDA [0,5] 0 0 0 0
+
+Reinforcements2:
+UNIT Donateenary General Ch18Boss Level(3, Enemy, 1) [5,17] 0x00 0x00 0x1 REDA_F1 [SteelAxe, Axereaver] PursueWithoutHeed
+UNIT Donateenary General Ch18Boss Level(3, Enemy, 1) [7,17] 0x00 0x00 0x1 REDA_F2 [IronBlade, HandAxe] PursueWithoutHeed
+UNIT
+
+REDA_F1:
+	REDA [5,17] 0 0 0 0
+REDA_F2:
+	REDA [7,17] 0 0 0 0
+
+Reinforcements3:
+UNIT Donateenary AxePaladin Ch18Boss Level(2, Enemy, 1) [19,18] 0x00 0x00 0x1 REDA_Cav1 [DragonAxe, Javelin] PursueWithoutHeed
+UNIT Donateenary LancePaladin Ch18Boss Level(2, Enemy, 1) [19,19] 0x00 0x00 0x1 REDA_Cav2 [SteelBlade] PursueWithoutHeed
+UNIT
+
+REDA_Cav1:
+	REDA [19,18] 0 0 0 0
+REDA_Cav2:
+	REDA [19,19] 0 0 0 0
+	
+Reinforcements4:
+UNIT Donateenary Berserker Ch18Boss Level(1, Enemy, 1) [10,14] 0x00 0x00 0x1 REDA_Bort1 [BattleAxe] PursueWithoutHeed
+UNIT Donateenary Swordmaster Ch18Boss Level(1, Enemy, 1) [10,14] 0x00 0x00 0x1 REDA_Bort2 [Armorsmasher] PursueWithoutHeed
+UNIT Donateenary Halberdier Ch18Boss Level(2, Enemy, 1) [10,14] 0x00 0x00 0x1 REDA_Bort3 [Spear] PursueWithoutHeed
+UNIT
+
+REDA_Bort1:
+	REDA [10,15] 0 0 0 0
+REDA_Bort2:
+	REDA [9,15] 0 0 0 0
+REDA_Bort3:
+	REDA [11,15] 0 0 0 0
+	
+Zerkans:
+UNIT Bandit Berserker Ch18Boss Level(1, Enemy, 1) [10,24] 0x00 0x00 0x0 0x00 [Swordslayer] BrigandAI
+UNIT Bandit Berserker Ch18Boss Level(2, Enemy, 1) [11,24] 0x00 0x00 0x0 0x00 [Hammer] BrigandAI
+UNIT Bandit Berserker Ch18Boss Level(1, Enemy, 1) [12,24] 0x00 0x00 0x0 0x00 [Halberd] BrigandAI
+UNIT
+	
+AstoliaIsFuckingPissed:
+Text(0x0,HouseText)
+SVAL 0x1 0x0000
+CHAI Ch18Boss
+SVAL 0x1 0x0000
+CHAI Astolias
+
+Village1:
+VillageEventItem(VillageText, 0x0, Swordslayer)
+
+Village2:
+VillageEventItem(VillageText, 0x0, GuardLance)
+
+Village3:
+VillageEventItem(VillageText, 0x0, EarthSeal)
+
+House1:
+Text(0x0,HouseText)
+ENDA
+
+House2:
+Text(0x0,HouseText)
+ENDA
+
+House3:
+Text(0x0,HouseText)
+ENDA
+
+RecruitCreidne1:
+Text(RecruitText)
+CUSA Creidne
+CUSN Creidnes1
+CUSN Creidnes2
+CUSN Creidnes3
+CUSN Creidnes4
+NoFade
+ENDA
+
+RecruitCreidne2:
+Text(RecruitText)
+CUSA Creidne
+CUSN Creidnes1
+CUSN Creidnes2
+CUSN Creidnes3
+CUSN Creidnes4
+NoFade
+ENDA
+
+RecruitCreidne3:
+Text(RecruitText)
+CUSA Creidne
+CUSN Creidnes1
+CUSN Creidnes2
+CUSN Creidnes3
+CUSN Creidnes4
+NoFade
+ENDA
+
+Armory:
+SHLI SteelBlade KillingEdge SteelLance ShortSpear KillerLance SteelAxe ShortAxe KillerAxe SteelBow ShortBow Longbow KillerBow
+
+Vendor:
+SHLI Thunder Elfire Shine Divine Nosferatu Luna Mend Recover Vulnerary Elixir Mine
+
+BeginningScene:
+LOAD2 0x1 Units //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+ENUN
+LOAD1 0x1 TeamAstolia
+ENUN
+LOAD1 0x1 TeamCreidne
+ENUN
+LOAD1 0x1 Donateenaries
+ENUN
+GotoPrepScreen
+ENDA
+
+EndingScene:
+MUSCFAST 0x7FFF
+SVAL 0x2 0x1A
+CALL WeLive
+CHECK_ALIVE Creidnes1
+BEQ 0x0 0xC 0x0
+CHECK_ALIVE Creidnes2
+BEQ 0x0 0xC 0x0
+CHECK_ALIVE Creidnes3
+BEQ 0x0 0xC 0x0
+CHECK_ALIVE Creidnes4
+BEQ 0x0 0xC 0x0
+MUSC 0x31
+TEXTSHOW SurvivalPlaceholder
+TEXTEND
+REMA
+MUSCMID 0x7FFF
+CALL CreidneLives
+SVAL 0x3 0xbb //This Gold Gem... 
+GIVEITEMTO 0x19 //Goes to Creidne 
+LABEL 0x0
+REMA
+MUSC 0x2B
+TEXTSHOW RecruitPlaceholder
+TEXTEND
+MUSCSLOW 0x7FFF
+STAL 60
+MUSCSLOW 0x32
+TEXTCONT
+TEXTSHOW ChEndingPlaceholder
+TEXTEND
+REMA
+FADI 60
+MNC2 Chapter12
+ENDA
+
+WeLive:
+CHECK_EVBIT 0x8
+BNE 0x80D2 0xC 0x0
+FADI 16
+LABEL 0x80D2
+REMOVEPORTRAITS
+BACG 0xFFFF
+FADU 16
+ENDA
+CreidneLives:
+EVBIT_MODIFY 0x1
+EVBIT_F 0x2
+CHECK_EVBIT 0x8
+BEQ 0x0 0xC 0x0
+FADU 16
+LABEL 0x0
+EVBIT_MODIFY 0x0
+ENDA
+
+MESSAGE Events end at offset CURRENTOFFSET

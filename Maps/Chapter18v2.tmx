@@ -8,14 +8,14 @@
  </tileset>
  <layer name="Tile Layer 1" width="20" height="25">
   <properties>
-   <property name="Anims" value="SnowAnims"/>
+   <property name="Anims" value="0"/>
    <property name="ChapterID" value="Chapter18"/>
    <property name="Main" value=""/>
    <property name="MapChangesID" value="Ch18MapChanges"/>
    <property name="MapID" value="Ch18MapID"/>
-   <property name="ObjectType" value="SnowObject"/>
-   <property name="PaletteID" value="SnowPalette"/>
-   <property name="TileConfig" value="SnowTConfig"/>
+   <property name="ObjectType" value="8b"/>
+   <property name="PaletteID" value="8d"/>
+   <property name="TileConfig" value="8c"/>
   </properties>
   <data>
    <tile gid="584"/>
