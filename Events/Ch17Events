@@ -1,0 +1,166 @@
+#include EAstdlib.event
+
+EventPointerTable(0x4B,ThisChapter)
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+Units:
+UNIT Kathy KathyLord 0x00 Level(1, Ally, 0) [4,23] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [3,24] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [2,24] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [6,22] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [5,22] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [3,23] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [2,23] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [3,22] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [6,23] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [5,23] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [5,24] 0x00 0x00 0x0 0x00 [0x00] NoAI
+UNIT
+
+Bad:
+UNIT Dastar Manakete_2 0x00 Level(2, Enemy, 0) [2,1] 0x00 0x00 0x0 0x00 [KillerAxe, HoplonShield] GuardTileAI 
+UNIT 0x80 General Dastar Level(1, Enemy, 1) [10,6] 0x00 0x00 0x0 0x00 [Spear] GuardTileAI 
+UNIT 0x80 Hero Dastar Level(1, Enemy, 1) [10,5] 0x00 0x00 0x0 0x00 [Tomahawk] GuardTileAI 
+UNIT 0x80 Hero Dastar Level(1, Enemy, 1) [3,5] 0x00 0x00 0x0 0x00 [SilverBlade] AttackInRangeAI 
+UNIT 0x80 Ranger Dastar Level(1, Enemy, 1) [1,6] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI 
+UNIT 0x80 Ranger Dastar Level(1, Enemy, 1) [1,4] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI 
+UNIT 0x80 General Dastar Level(1, Enemy, 1) [2,2] 0x00 0x00 0x0 0x00 [Armourslayer, Horseslayer, SilverBow] AttackInRangeAI 
+UNIT 0x80 Sage Dastar Level(1, Enemy, 1) [9,1] 0x00 0x00 0x0 0x00 [Fimbulvetr] AttackInRangeAI 
+UNIT 0x80 Druid_F Dastar Level(1, Enemy, 1) [6,4] 0x00 0x00 0x0 0x00 [Fenrir, Bolting] AttackInRangeAI 
+UNIT 0x80 Druid_F Dastar Level(1, Enemy, 1) [16,0] 0x00 0x00 0x0 0x00 [Fenrir, Bolting] AttackInRangeAI 
+UNIT 0x80 General Dastar Level(1, Enemy, 1) [19,3] 0x00 0x00 0x0 0x00 [Spear] GuardTileAI 
+UNIT 0x80 General Dastar Level(1, Enemy, 1) [13,11] 0x00 0x00 0x0 0x00 [Spear] GuardTileAI 
+UNIT 0x80 Warrior Dastar Level(1, Enemy, 1) [12,11] 0x00 0x00 0x0 0x00 [Tomahawk] GuardTileAI 
+UNIT 0x80 Warrior Dastar Level(1, Enemy, 1) [20,3] 0x00 0x00 0x0 0x00 [Tomahawk] GuardTileAI 
+UNIT 0x80 Sage Dastar Level(1, Enemy, 1) [16,6] 0x00 0x00 0x0 0x00 [Fimbulvetr] AttackInRangeAI 
+UNIT 0x80 Sage Dastar Level(1, Enemy, 1) [16,14] 0x00 0x00 0x0 0x00 [Fimbulvetr] AttackInRangeAI 
+UNIT 0x80 Sage Dastar Level(1, Enemy, 1) [15,20] 0x00 0x00 0x0 0x00 [Fimbulvetr] AttackInRangeAI 
+UNIT 0x80 Paladin Dastar Level(1, Enemy, 1) [13,2] 0x00 0x00 0x0 0x00 [SilverBlade] AttackInRangeAI 
+UNIT 0x80 Paladin Dastar Level(1, Enemy, 1) [21,1] 0x00 0x00 0x0 0x00 [SilverBlade] AttackInRangeAI 
+UNIT 0x80 Knight Dastar Level(1, Enemy, 1) [19,13] 0x00 0x00 0x0 0x00 [Runesword] GuardTileAI 
+UNIT 0x80 Knight Dastar Level(1, Enemy, 1) [7,17] 0x00 0x00 0x0 0x00 [Runesword] GuardTileAI 
+UNIT 0x80 Knight Dastar Level(1, Enemy, 1) [14,25] 0x00 0x00 0x0 0x00 [Runesword] GuardTileAI 
+UNIT 0x80 Cavalier Dastar Level(1, Enemy, 1) [18,20] 0x00 0x00 0x0 0x00 [SilverAxe] AttackInRangeAI 
+UNIT 0x80 Cavalier Dastar Level(1, Enemy, 1) [12,20] 0x00 0x00 0x0 0x00 [SilverAxe] AttackInRangeAI 
+UNIT 0x80 Fighter Dastar Level(1, Enemy, 1) [14,24] 0x00 0x00 0x0 0x00 [Tomahawk] GuardTileAI 
+UNIT 0x80 Fighter Dastar Level(1, Enemy, 1) [9,23] 0x00 0x00 0x0 0x00 [SilverAxe] AttackInRangeAI 
+UNIT 0x80 Fighter Dastar Level(1, Enemy, 1) [8,19] 0x00 0x00 0x0 0x00 [SilverAxe] AttackInRangeAI 
+UNIT 0x80 Mercenary Dastar Level(1, Enemy, 1) [7,11] 0x00 0x00 0x0 0x00 [SilverBlade] AttackInRangeAI 
+UNIT 0x80 Mercenary Dastar Level(1, Enemy, 1) [9,13] 0x00 0x00 0x0 0x00 [SilverBlade] AttackInRangeAI 
+UNIT 0x80 Mercenary Dastar Level(1, Enemy, 1) [13,14] 0x00 0x00 0x0 0x00 [SilverBlade] AttackInRangeAI 
+UNIT 0x80 Mercenary Dastar Level(1, Enemy, 1) [19,8] 0x00 0x00 0x0 0x00 [SilverBlade] AttackInRangeAI 
+UNIT 0x80 Mercenary Dastar Level(1, Enemy, 1) [13,5] 0x00 0x00 0x0 0x00 [SilverBlade] AttackInRangeAI 
+UNIT 0x80 Ranger Dastar Level(1, Enemy, 1) [2,13] 0x00 0x00 0x0 0x00 [BraveBow] AttackInRangeAI 
+UNIT 0x80 Ranger Dastar Level(1, Enemy, 1) [1,14] 0x00 0x00 0x0 0x00 [BraveBow] AttackInRangeAI 
+UNIT
+
+TurnBasedEvents:
+TURN 0x0 BadRogue[2,0] 0x0
+TURN 0x0 BadWyvern[6,0] 0x0
+TURN 0x0 BadRanger[8,0] 0x0
+TURN 0x0 BadWyvgand[4,0] 0x0
+TURN 0x0 BadGeneral[10,0] 0x0
+END_MAIN
+
+FighterBlock:
+UNIT 0x80 Fighter 0x00 Level(3, Enemy, 1) [7,1] 0x00 0x00 0x0 0x00 [IronAxe] PursueWithoutHeedAI
+UNIT 0x80 Fighter 0x00 Level(3, Enemy, 1) [8,1] 0x00 0x00 0x0 0x00 [IronAxe] PursueWithoutHeedAI
+UNIT
+
+BadFighter:
+ReinforcementEvent(FighterBlock)
+ENDA
+
+ThiefBlock:
+UNIT 0x80 Thief 0x00 Level(1, Enemy, 1) [0,9] 0x00 0x00 0x0 0x00 [IronSword] BrigandAI
+UNIT 0x80 Thief 0x00 Level(1, Enemy, 1) [3,8] 0x00 0x00 0x0 0x00 [IronSword] BrigandAI
+UNIT
+
+BadThief:
+ReinforcementEvent(ThiefBlock)
+ENDA
+
+PirateBlock:
+UNIT 0x80 Pirate 0x00 Level(3, Enemy, 1) [0,17] 0x00 0x00 0x0 0x00 [SilverAxe] PursueWithoutHeedAI
+UNIT 0x80 Pirate 0x00 Level(3, Enemy, 1) [14,17] 0x00 0x00 0x0 0x00 [SilverAxe] PursueWithoutHeedAI
+UNIT
+
+BadPirate:
+ReinforcementEvent(PirateBlock)
+ENDA
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Village(0x8,VillageGem,20,21)
+Village(0x9,VillageGenitor,12,19)
+Village(0x10,VillageRescue,7,10)
+Village(0x11,VillageBerserk,16,11)
+Village(0x12,VillageRunesword,7,2)
+Seize(2, 1)
+END_MAIN
+
+VillageGem:
+VillageEventItem(VillageText, Village, BlueGem)
+
+VillageGenitor:
+VillageEventItem(VillageText, Village, Genitor)
+
+VillageRescue:
+VillageEventItem(VillageText, Village, Rescue)
+
+VillageBerserk:
+VillageEventItem(VillageText, Village, Berserk)
+
+VillageRunesword:
+VillageEventItem(VillageText, Village, Runesword)
+
+AjaxBlock:
+UNIT Ajax Warrior 0x00 Level(4, NPC, 0) [9,16] 0x00 0x00 0x0 0x00 [KillerAxe, SilverBow, Longbow] AttackInRangeAI 
+UNIT
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+//DO NOT TOUCH
+WORD $00
+
+Tutorial:
+//DO NOT TOUCH
+WORD $00
+
+TrapData:
+END_MAIN
+
+ALIGN 4
+
+BeginningScene:
+LOAD2 0x1 Units
+ENUN
+LOAD1 0x1 Bad
+ENUN
+LOAD1 0x1 AjaxBlock
+ENUN
+NoFade
+GotoPrepScreen
+ENDA
+
+EndingScene:
+MNC2 17
+ENDA
+
+MESSAGE Events end at offset currentOffset
