@@ -1,0 +1,17 @@
+//No map animations for the water. To use: Set ObjectType to 0x8b, set PaletteID to 0x8d, set TileConfig to 0x8c.
+
+SnowObjects:
+#incext Png2Dmp "Tileset/FE6 Snow.png" --lz77
+ALIGN 4
+
+SnowTiles:
+#incext compress "Tileset/FE6 Snow.mapchip_config"
+ALIGN 4
+
+SnowPalette:
+#incbin "Tileset/SnowPalette.dmp"
+ALIGN 4
+
+EventPointerTable(0x8c, SnowTiles)
+EventPointerTable(0x8b, SnowObjects)
+EventPointerTable(0x8d, SnowPalette)

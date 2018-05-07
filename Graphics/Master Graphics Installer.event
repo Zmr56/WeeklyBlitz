@@ -14,6 +14,8 @@
 
 #include "Mugs/Mug Installer.event"
 
+#include "FE6 Snow Installer.event"
+
 //Stat screen
 PUSH
 ORG $88638

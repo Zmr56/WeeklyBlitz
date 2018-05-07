@@ -45,3 +45,6 @@
 {
 #include "Ch9Map.event"
 }
+{
+#include "Chapter18v2.event"
+}
