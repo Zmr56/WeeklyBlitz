@@ -56,9 +56,9 @@
 {
 #include "Cavaliers + Paladins/lance Installer.event"
 }
-{
-#include "Cavaliers + Paladins/bow Installer.event"
-}
+//{
+//#include "Cavaliers + Paladins/bow Installer.event"
+//}
 {
 #include "Cavaliers + Paladins/disarmedf Installer.event"
 }
