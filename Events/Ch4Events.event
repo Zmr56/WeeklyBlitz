@@ -35,7 +35,7 @@ UNIT 0x80 AxeCav 0x00 Level(5, Enemy, 1) [3,14] 0x00 0x00 0x0 0x00 [IronAxe] Att
 UNIT 0x80 AxeCav 0x00 Level(5, Enemy, 1) [1,14] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI 
 UNIT
 
-Void:
+VoidBlock:
 UNIT Void SoldierF 0x00 Level(5, Enemy, 0) [2,12] 0x00 0x00 0x0 0x00 [IronLance, Axereaver, Vulnerary] AttackInRangeAI 
 UNIT
 
@@ -94,7 +94,7 @@ ALIGN 4
 BeginningScene:
 LOAD1 0x1 Units
 LOAD1 0x1 Bad
-LOAD1 0x1 Void
+LOAD1 0x1 VoidBlock
 //text here
 GotoPrepScreen
 ENDA
