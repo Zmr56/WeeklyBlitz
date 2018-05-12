@@ -1,0 +1,15 @@
+
+#define DeathQuote(Character,Chapter,EventID,TextID) "SHORT Character; BYTE 0xFF Chapter; SHORT EventID TextID 0 0"
+//#define AllChapters 0xFF This definition goes elsewhere
+
+DeathQuoteTable:
+DeathQuote(Valerie,EndgamePart1,0x11,ValerieDeathQuote)
+DeathQuote(Enemok,EndgamePart2,0x12,EnemokDeathQuote)
+DeathQuote(Sat,EndgamePart3,0x02,SatDeathQuote)
+
+
+
+
+DeathQuote(0xFFFF,0,0,0)//Terminator
+
+#incext PFinder Clean.gba 0x9ECD4C DeathQuoteTable

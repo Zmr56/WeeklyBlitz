@@ -1,0 +1,122 @@
+﻿#include EAstdlib.event
+#define Smokey Myrrh
+#define SmokeyBoss 0x72
+#define FireFighter 0x73
+
+EventPointerTable(0x67,ThisChapter)
+
+ORG StartOffset
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventPlayer(0x0,ReinforcementsArrive,7)
+TurnEventPlayer(0x0,ReinforcementsArrive,14)
+TurnEventPlayer(0x0,ReinforcementsArrive,21)
+TurnEventPlayer(0x0,ReinforcementsArrive,28)
+TurnEventPlayer(0x0,ReinforcementsArrive,35)
+TurnEventPlayer(0x0,ReinforcementsArrive,42)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+END_MAIN
+
+MiscBasedEvents:
+DefeatBoss(EndingScene)
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units: //i copied this from chp 23 :}
+UNIT Kathy Lord 0x00 Level(5, Ally, 0) [5,21] 0x00 0x00 0x0 0x00 [IronSword, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [4,20] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [6,20] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [4,22] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [6,22] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [5,19] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [3,21] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [3,19] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [5,23] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [3,23] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT
+
+SmokeyPls:
+UNIT Smokey Manakete 0x00 Level(1, NPC, 0) [8,17] 0x00 0x00 0x0 0x00 [HolyDragonStone, HolyDragonStone] GuardTileAI // Delete
+UNIT
+
+Enemies:
+UNIT SmokeyBoss General 0x00 Level(9, Enemy, 1) [14,3] 0x00 0x00 0x0 0x00 [Spear, SteelAxe, Elixir] GuardTileAI
+UNIT FireFighter General 0x00 Level(5, Enemy, 1) [3,7] 0x00 0x00 0x0 0x00 [Javelin, BraveBow] ChaseOnceApproachedAI
+UNIT FireFighter General 0x00 Level(5, Enemy, 1) [6,13] 0x00 0x00 0x0 0x00 [Javelin, BraveBow] ChaseOnceApproachedAI
+UNIT FireFighter General 0x00 Level(5, Enemy, 1) [15,12] 0x00 0x00 0x0 0x00 [Javelin, BraveBow] ChaseOnceApproachedAI
+UNIT FireFighter General 0x00 Level(5, Enemy, 1) [12,18] 0x00 0x00 0x0 0x00 [Javelin, BraveBow] ChaseOnceApproachedAI
+UNIT FireFighter Sage 0x00 Level(7, Enemy, 1) [16,4] 0x00 0x00 0x0 0x00 [Elfire] AttackInRangeAI // Delete
+UNIT FireFighter Paladin 0x00 Level(7, Enemy, 1) [12,1] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI // Delete
+UNIT FireFighter Sage 0x00 Level(7, Enemy, 1) [9,3] 0x00 0x00 0x0 0x00 [Elfire] AttackInRangeAI // Delete
+UNIT FireFighter Paladin 0x00 Level(7, Enemy, 1) [9,6] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI // Delete
+UNIT FireFighter Sage 0x00 Level(7, Enemy, 1) [3,4] 0x00 0x00 0x0 0x00 [Elfire] AttackInRangeAI // Delete
+UNIT FireFighter Paladin 0x00 Level(7, Enemy, 1) [0,8] 0x00 0x00 0x0 0x00 [SlimSword, LightBrand] AttackInRangeAI // Delete
+UNIT FireFighter Sage 0x00 Level(7, Enemy, 1) [7,10] 0x00 0x00 0x0 0x00 [Elfire] AttackInRangeAI // Delete
+UNIT FireFighter Paladin 0x00 Level(7, Enemy, 1) [1,12] 0x00 0x00 0x0 0x00 [Javelin, SlimLance] AttackInRangeAI // Delete
+UNIT FireFighter Sage 0x00 Level(7, Enemy, 1) [14,11] 0x00 0x00 0x0 0x00 [Elfire] AttackInRangeAI // Delete
+UNIT FireFighter Paladin 0x00 Level(7, Enemy, 1) [17,15] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI // Delete
+UNIT FireFighter Sage 0x00 Level(7, Enemy, 1) [13,19] 0x00 0x00 0x0 0x00 [Elfire] AttackInRangeAI // DeleteUNIT FireFighter Sage 0x00 Level(7, Enemy, 1) 
+UNIT
+
+Reinforcements:
+UNIT FireFighter Paladin 0x00 Level(7, Enemy, 1) [2,23] 0x00 0x00 0x0 0x00 [Javelin, SlimLance] AttackInRangeAI // Delete
+UNIT FireFighter Sage 0x00 Level(7, Enemy, 1) [3,22] 0x00 0x00 0x0 0x00 [Elfire] AttackInRangeAI // Delete
+UNIT FireFighter Paladin 0x00 Level(7, Enemy, 1) [4,23] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI // Delete
+UNIT FireFighter Sage 0x00 Level(7, Enemy, 1) [5,22] 0x00 0x00 0x0 0x00 [Elfire] AttackInRangeAI // DeleteUNIT FireFighter Sage 0x00 Level(7, Enemy, 1) 
+UNIT
+
+BeginningScene:
+LOAD2 0x1 Units 
+ENUN
+LOAD1 0x1 SmokeyPls
+ENUN
+LOAD1 0x1 Enemies
+ENUN
+CUMO Smokey
+//TEXTSHOW SmokeyOmg
+//TEXTEND
+//REMA
+GotoPrepScreen
+ENDA
+
+EndingScene:
+//TEXTSHOW Ch22End
+//TEXTEND
+//REMA
+FADI 60
+MNC2 Chapter23
+ENDA
+
+ReinforcementsArrive:
+ReinforcementEvent(Reinforcements)
+ENDA
+
+MESSAGE Events end at offset CURRENTOFFSET

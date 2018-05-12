@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="23" height="15" tilewidth="16" tileheight="16" nextobjectid="1">
+ <tileset firstgid="1" name="50005152" tilewidth="16" tileheight="16">
+  <image source="../../../../Tools/Tiled/Tiled Inserter/Tilesets/FE8/50005152.png" width="512" height="512"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="23" height="15">
+  <properties>
+   <property name="Anims" value="50Anims"/>
+   <property name="ChapterID" value="EndgamePart1"/>
+   <property name="Main" value=""/>
+   <property name="MapChangesID" value="EndgamePart1Changes"/>
+   <property name="MapID" value="EndgamePart1Map"/>
+   <property name="ObjectType" value="0x50"/>
+   <property name="PaletteID" value="0x51"/>
+   <property name="TileConfig" value="0x52"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJydlL1LA0EQxXdXJGKwsbFOjARjUlhYWAqmEGvR2i6FdcBOsFJJIfj1D4hf+EcoKCbkupQHabQR0qbUt+ws95LcwmnxY4bZ7LvZN5utTil1BxrgHtTAAVgBW2DaKLWpHCfIz8CpRM5bIAY94Vu7/VXRb4Ft0bwFi2CJtB+QP4FHiZw/p2iXRGtgXM/Houn16qTdRt4JEAGFfQXEvmjbPUeozYJ90rR0QA6/mQcz4E0nfYXYAD+kXRIPCqQ9h7UPxHOd8J5Bmz3hPpka1srazXJVctZetl7ohIp44ddzJqzt4VnaXvrUV1E5j4uyZmfp/S5n0K6PacekPX4vYvK7R+dao3ygR8/LvIBXySPR60puz8CeD1FbR9wxLjZTevovC+Aa7IIbcGUmvfurpp9zhXpvSt2fz3vHd4LvQ6jue8tL74fSc95M+haaYZb8EuyJdtrZeE5dmmuobu82z+si8N+yb4h9Kz6Rf+nRNyWtHsndtt/8BU1b0IY=
+  </data>
+ </layer>
+ <layer name="1Door" width="23" height="15">
+  <properties>
+   <property name="Height" value="1"/>
+   <property name="ID" value="2"/>
+   <property name="Width" value="4"/>
+   <property name="X" value="11"/>
+   <property name="Y" value="8"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUgIAXE5BgZmC4CqQ9mQbaNaNguAAAXBgBcg==
+  </data>
+ </layer>
+ <layer name="1RChest" width="23" height="15">
+  <properties>
+   <property name="Height" value="1"/>
+   <property name="ID" value="1"/>
+   <property name="Width" value="1"/>
+   <property name="X" value="17"/>
+   <property name="Y" value="6"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4A+gGmgHTAKRsEAAAALVAAD
+  </data>
+ </layer>
+ <layer name="1LChest" width="23" height="15">
+  <properties>
+   <property name="Height" value="1"/>
+   <property name="ID" value="0"/>
+   <property name="Width" value="1"/>
+   <property name="X" value="15"/>
+   <property name="Y" value="6"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4C2gGmgHTAKRsEAAgALZAAD
+  </data>
+ </layer>
+</map>
