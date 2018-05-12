@@ -1,0 +1,311 @@
+
+EventPointerTable(EndgameEvents,ThisChapter)
+
+// 0x10 = part 1. 0x11 = part 2. 0x12 = part 3.
+#undef WarpIn(X,Y,UnitPointer)
+#define WarpIn(X,Y,UnitPointer) "SVAL 0xB Coords(X,Y) ; WARP_IN ; LOAD1 0x1 UnitPointer ; ENUN"
+#define EndUnit UNIT
+#define EndA2 ENDA
+#define Coords(xcoord,ycoord) "(ycoord<<16)|xcoord"
+#define EndConvo "CALL $9EE2C4"
+#define GuardAI GuardTileAI
+#define Drop 0x2
+#define HealAlliesAI HealUnits
+
+MESSAGE Events are at ThisChapter
+//Label ThisChapter
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN EndMainPointer EndMainPointer EndMainPointer
+POIN EndMainPointer
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+//EndLabel
+
+//Label TurnBasedEvents
+TurnBasedEvents:
+TURN 0x16 Villain1Talks [1,0xFF] 8
+TURN 0x17 SatIlliosWarpStuff [1,0xFF] 0
+END_MAIN
+
+//Label CharacterBasedEvents
+ALIGN 32
+CharacterBasedEvents:
+END_MAIN
+
+//Label LocationBasedEvents
+LocationBasedEvents:
+Door(12,8)
+Door(13,8)
+Chest(MasterSeal,15,6)
+Chest(AngelicRobe,17,6)
+Chest(SilverAxe,21,19)
+Chest(Fenrir,21,20)
+Seize(0x0,EndingScene,26,1)
+END_MAIN
+
+//Label MiscBasedEvents
+MiscBasedEvents:
+AREA 0x13 WhichWay [12,3] [22,12]
+AFEV 0x14 Part1Done 0x11
+AFEV 0x15 Part2Done 0x12
+DefeatBoss(EndingScene)
+CauseGameOverIfLordDies
+END_MAIN
+
+//Label TrapData
+TrapData:
+ENDTRAP
+ALIGN 4
+
+//Label Units
+Units:
+UNIT Morps Mercenary Morps Level(1,Ally,True) [4,5] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Kathy Mercenary Kathy Level(1,Ally,True) [5,7] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Kathy Mercenary Kathy Level(1,Ally,True) [4,7] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Kathy Mercenary Kathy Level(1,Ally,True) [3,6] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Kathy Mercenary Kathy Level(1,Ally,True) [3,7] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Kathy Mercenary Kathy Level(1,Ally,True) [2,7] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Kathy Mercenary Kathy Level(1,Ally,True) [2,6] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Kathy Mercenary Kathy Level(1,Ally,True) [2,5] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Kathy Mercenary Kathy Level(1,Ally,True) [1,5] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Kathy Mercenary Kathy Level(1,Ally,True) [1,6] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Kathy Mercenary Kathy Level(1,Ally,True) [0,7] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Kathy Mercenary Kathy Level(1,Ally,True) [0,5] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Kathy Mercenary Kathy Level(1,Ally,True) [0,4] 0x00 0x00 0x00 0x00 [0] NoAI
+EndUnit
+
+//Label BeginingScene
+BeginningScene:
+ENUT 0x10
+LOAD2 0x1 LoadFriends
+LOAD1 0x1 Part1Enemies
+ENUN
+//SetBackground(0x32)
+//Text(EndgameOpeningText)
+//GotoPrepScreen
+NoFade
+ENDA
+
+//Label EndingScene
+EndingScene:
+ENDA
+
+//Label Villain1Talks
+Villain1Talks:
+CHECK_EVENTID 0x13
+BEQ 0x2 0x0 0xC
+	CAM1 [7,8]
+	//Text(EndgameVillain1Text)
+	GOTO 0x3
+LABEL 0x2
+	ENUF 0x16
+LABEL 0x3
+NoFade
+ENDA
+
+//Label SatIlliosWarpStuff
+SatIlliosWarpStuff:
+CHECK_EVENTID 0x12
+BEQ 0x4 0x0 0xC
+	CAM1 [21,6]
+	//Text(EndgameSatMadText)
+	STAL 0x8
+	WarpIn(26,8,LoadIllios)
+	STAL 0x20
+	//Text(EndgameIlliosHereText)
+	GOTO 0x5
+LABEL 0x4
+	ENUF 0x17
+LABEL 0x5
+NoFade
+ENDA
+
+//Label WhichWay
+WhichWay:
+CHECK_ALLEGIANCE 0xFFFF
+BNE 0x0 0x0 0xC
+	// So it's a player unit
+	//Text(EndgameWhichWay)
+	GOTO 0x1
+	ENUT 0x13
+LABEL 0x0
+	ENUF 0x13
+LABEL 0x1
+NoFade
+ENDA
+
+//Label Switch part
+Part1Done:
+ENUF 0x10
+FADI 0x5
+LOMA EndgamePart2
+LOAD1 0x1 Part2Enemies
+SetBackground(0x32)
+//Text(EndgamePart1DoneText)
+EndConvo
+STAL 0x8
+CAM1 [15,20]
+//Text(Villain2Talks)
+NoFade
+EndA2
+
+Part2Done:
+ENUF 0x11
+FADI 0x5
+LOMA EndgamePart3
+LOAD1 0x1 Part3Enemies
+SetBackground(0x32)
+//Text(EndgamePart2DoneText)
+EndConvo
+NoFade
+ENDA
+
+	/*UNIT DATA*/
+
+//Label EnemyUnits
+LoadFriends:
+UNIT Eirika fwyvernknight Valerie Level(20,Ally,True) [0,6] 0x00 0x00 0x00 0x00 [SilverLance,ShortSpear] GuardAI
+UNIT Seth fwyvernknight Valerie Level(20,Ally,True) [0,7] 0x00 0x00 0x00 0x00 [SilverLance,ShortSpear] GuardAI
+UNIT
+
+Part1Enemies:
+UNIT Valerie fwyvernknight Valerie Level(20,Enemy,True) [2,9] 0x00 0x00 0x00 0x00 [SilverLance,ShortSpear] GuardAI
+UNIT Morph Bishop Valerie Level(19,Enemy,True) [2,11] 0x00 0x00 0x00 0x00 [Shine,Sleep] GuardAI
+UNIT Morph General Valerie Level(18,Enemy,True) [8,3] Drop 0x00 0x00 0x00 [BraveAxe,ChestKey_5] GuardAI
+UNIT Morph General Valerie Level(20,Enemy,True) [9,4] 0x00 0x00 0x00 0x00 [ShortSpear] GuardAI
+UNIT Morph Halberdier Valerie Level(19,Enemy,True) [6,3] 0x00 0x00 0x00 0x00 [Spear] NoAI
+UNIT Morph Halberdier Valerie Level(17,Enemy,True) [7,4] 0x00 0x00 0x00 0x00 [DragonSpear] NoAI
+UNIT Morph Hero Valerie Level(20,Enemy,True) [10,2] 0x00 0x00 0x00 0x00 [KillingEdge,SteelAxe] AttackInRangeAI
+UNIT Morph GreatKnight Valerie Level(20,Enemy,True) [12,4] 0x00 0x00 0x00 0x00 [SteelBlade,HandAxe] NoAI
+UNIT Morph Swordmaster Valerie Level(19,Enemy,True) [13,3] 0x00 0x00 0x00 0x00 [Armorslayer] AttackInRangeAI
+UNIT Morph Sage Valerie Level(20,Enemy,True) [13,5] 0x00 0x00 0x00 0x00 [Elfire] AttackInRangeAI
+UNIT Morph Druid Valerie Level(18,Enemy,True) [16,7] 0x00 0x00 0x00 0x00 [Nosferatu] AttackInRangeAI
+UNIT Morph Warrior Valerie Level(17,Enemy,True) [16,3] 0x00 0x00 0x00 0x00 [SteelAxe,SteelBow] ChaseOnceApproachedAI
+UNIT Morph Berserker Valerie Level(18,Enemy,True) [17,4] Drop 0x00 0x00 0x00 [Tomahawk,DoorKey] GuardAI
+UNIT Morph Paladin Valerie Level(20,Enemy,True) [19,0] 0x00 0x00 0x00 0x00 [SilverSword] AttackInRangeAI
+UNIT Morph Ranger Valerie Level(19,Enemy,True) [20,0] 0x00 0x00 0x00 0x00 [SteelSword,SilverBow] AttackInRangeAI
+UNIT Morph Paladin Valerie Level(19,Enemy,True) [21,0] 0x00 0x00 0x00 0x00 [KillerLance,LightBrand] AttackInRangeAI
+UNIT Morph Halberdier Valerie Level(18,Enemy,True) [22,7] 0x00 0x00 0x00 0x00 [Spear] ChaseOnceApproachedAI
+UNIT Morph Halberdier Valerie Level(18,Enemy,True) [22,9] 0x00 0x00 0x00 0x00 [BraveLance] ChaseOnceApproachedAI
+UNIT Morph MageKnight Valerie Level(20,Enemy,True) [21,6] 0x00 0x00 0x00 0x00 [Thunder] NoAI
+UNIT Morph Hero Valerie Level(20,Enemy,True) [20,5] 0x00 0x00 0x00 0x00 [Zanbato,KillerAxe] NoAI
+UNIT Morph WyvernKnight Valerie Level(17,Enemy,True) [20,5] 0x00 0x00 0x00 0x00 [HeavySpear] NoAI
+UNIT Morph Sniper Valerie Level(19,Enemy,True) [22,12] 0x00 0x00 0x00 0x00 [Longbow] AttackInRangeAI
+UNIT Morph Sniper Valerie Level(20,Enemy,True) [17,13] 0x00 0x00 0x00 0x00 [SilverBow] AttackInRangeAI
+UNIT Morph Sniper Valerie Level(19,Enemy,True) [11,13] 0x00 0x00 0x00 0x00 [SilverBow] AttackInRangeAI
+UNIT Morph GreatKnight Valerie Level(18,Enemy,True) [16,9] 0x00 0x00 0x00 0x00 [ShortSpear,SteelAxe] ChaseOnceApproachedAI
+UNIT Morph Swordmaster Valerie Level(20,Enemy,True) [12,9] 0x00 0x00 0x00 0x00 [Runesword] NoAI
+UNIT Morph Hero Valerie Level(20,Enemy,True) [14,10] 0x00 0x00 0x00 0x00 [SilverSword,HandAxe] AttackInRangeAI
+UNIT Morph General Valerie Level(20,Enemy,True) [10,10] 0x00 0x00 0x00 0x00 [Tomahawk] NoAI
+UNIT Morph Valkyrie Valerie Level(17,Enemy,True) [9,9] 0x00 0x00 0x00 0x00 [Divine,Mend] HealAlliesAI
+UNIT Morph General Valerie Level(16,Enemy,True) [6,12] 0x00 0x00 0x00 0x00 [SilverLance] NoAI
+UNIT Morph Sage Valerie Level(20,Enemy,True) [4,13] 0x00 0x00 0x00 0x00 [Aura] AttackInRangeAI
+UNIT Morph Sage Valerie Level(19,Enemy,True) [5,14] 0x00 0x00 0x00 0x00 [Elfire] AttackInRangeAI
+UNIT
+
+Part2Enemies:
+UNIT Enemok fhalberdier Enemok Level(20,Enemy,True) [21,23] 0x00 0x00 0x00 0x00 [Spear] GuardAI
+UNIT Morph Sage Enemok Level(18,Enemy,True) [13,25] 0x00 0x00 0x00 0x00 [Bolting] AttackInRangeAI
+UNIT Morph Druid Enemok Level(20,Enemy,True) [12,25] 0x00 0x00 0x00 0x00 [Berserk] AttackInRangeAI
+UNIT Morph Sniper Enemok Level(19,Enemy,True) [2,17] 0x00 0x00 0x00 0x00 [BraveBow] NoAI
+UNIT Morph Paladin Enemok Level(17,Enemy,True) [7,19] 0x00 0x00 0x00 0x00 [KillingEdge] NoAI
+UNIT Morph Paladin Enemok Level(18,Enemy,True) [6,20] 0x00 0x00 0x00 0x00 [SilverLance] NoAI
+UNIT Morph Paladin Enemok Level(20,Enemy,True) [5,21] 0x00 0x00 0x00 0x00 [ShortSpear,SteelSword] NoAI
+UNIT Morph Halberdier Enemok Level(19,Enemy,True) [0,22] 0x00 0x00 0x00 0x00 [BraveLance] NoAI
+UNIT Morph General Enemok Level(20,Enemy,True) [2,22] 0x00 0x00 0x00 0x00 [Runesword] ChaseOnceApproachedAI
+UNIT Morph Halberdier Enemok Level(20,Enemy,True) [4,22] 0x00 0x00 0x00 0x00 [ShortSpear] NoAI
+UNIT Morph Bishop Enemok Level(20,Enemy,True) [1,23] 0x00 0x00 0x00 0x00 [Divine,Silence] NoAI
+UNIT Morph Bishop Enemok Level(20,Enemy,True) [3,23] 0x00 0x00 0x00 0x00 [Shine,Mend] HealAlliesAI
+UNIT Morph Ranger Enemok Level(19,Enemy,True) [7,22] 0x00 0x00 0x00 0x00 [BraveSword,SteelBow] ChaseOnceApproachedAI
+UNIT Morph Ranger Enemok Level(20,Enemy,True) [8,21] 0x00 0x00 0x00 0x00 [KillerBow] ChaseOnceApproachedAI
+UNIT Morph GreatKnight Enemok Level(20,Enemy,True) [7,24] 0x00 0x00 0x00 0x00 [SilverAxe] AttackInRangeAI
+UNIT Morph GreatKnight Enemok Level(18,Enemy,True) [9,24] 0x00 0x00 0x00 0x00 [SteelLance,IronBlade] AttackInRangeAI
+UNIT Morph MageKnight Enemok Level(18,Enemy,True) [9,26] 0x00 0x00 0x00 0x00 [Elfire] ChaseOnceApproachedAI
+UNIT Morph Valkyrie Enemok Level(19,Enemy,True) [10,26] 0x00 0x00 0x00 0x00 [Divine] ChaseOnceApproachedAI
+UNIT Morph Swordmaster Enemok Level(20,Enemy,True) [21,23] 0x00 0x00 0x00 0x00 [SilverSword] AttackInRangeAI
+UNIT Morph Warrior Enemok Level(17,Enemy,True) [21,23] 0x00 0x00 0x00 0x00 [SilverAxe] AttackInRangeAI
+UNIT Morph Berserker Enemok Level(20,Enemy,True) [21,23] 0x00 0x00 0x00 0x00 [SilverAxe] AttackInRangeAI
+UNIT Morph Druid Enemok Level(17,Enemy,True) [13,21] 0x00 0x00 0x00 0x00 [Luna] ChaseOnceApproachedAI
+UNIT Morph Sniper Enemok Level(20,Enemy,True) [14,20] 0x00 0x00 0x00 0x00 [BraveBow] AttackInRangeAI
+UNIT Morph Bishop Enemok Level(18,Enemy,True) [14,15] 0x00 0x00 0x00 0x00 [Purge,Lightning] AttackInRangeAI
+UNIT Morph Sniper Enemok Level(19,Enemy,True) [11,15] 0x00 0x00 0x00 0x00 [SilverBow] AttackInRangeAI
+UNIT Morph Sniper Enemok Level(20,Enemy,True) [11,17] 0x00 0x00 0x00 0x00 [BraveBow] AttackInRangeAI
+UNIT Morph Sniper Enemok Level(18,Enemy,True) [17,15] 0x00 0x00 0x00 0x00 [SilverBow] AttackInRangeAI
+UNIT Morph Sniper Enemok Level(20,Enemy,True) [17,17] 0x00 0x00 0x00 0x00 [SteelBow] AttackInRangeAI
+UNIT Morph Sage Enemok Level(20,Enemy,True) [17,17] 0x00 0x00 0x00 0x00 [Thunder] AttackInRangeAI
+UNIT Morph Halberdier Enemok Level(20,Enemy,True) [17,17] 0x00 0x00 0x00 0x00 [ShortSpear] ChaseOnceApproachedAI
+UNIT Morph Warrior Enemok Level(19,Enemy,True) [16,21] 0x00 0x00 0x00 0x00 [KillerAxe,Longbow] NoAI
+UNIT Morph GreatKnight Enemok Level(20,Enemy,True) [16,21] 0x00 0x00 0x00 0x00 [KillingEdge,HandAxe] AttackInRangeAI
+UNIT Morph GreatKnight Enemok Level(19,Enemy,True) [16,21] 0x00 0x00 0x00 0x00 [Tomahawk,SteelSword] AttackInRangeAI
+UNIT Morph GreatKnight Enemok Level(20,Enemy,True) [16,21] 0x00 0x00 0x00 0x00 [BraveSword,Javelin] AttackInRangeAI
+UNIT Morph Valkyrie Enemok Level(20,Enemy,True) [16,21] 0x00 0x00 0x00 0x00 [Aura] NoAI
+UNIT Morph Paladin Enemok Level(18,Enemy,True) [20,1] 0x00 0x00 0x00 0x00 [SteelLance,LightBrand] NoAI
+UNIT Morph Paladin Enemok Level(19,Enemy,True) [19,2] 0x00 0x00 0x00 0x00 [SilverSword] NoAI
+UNIT Morph Ranger Enemok Level(20,Enemy,True) [22,2] 0x00 0x00 0x00 0x00 [SteelBow,SteelSword] NoAI
+UNIT Morph MageKnight Enemok Level(17,Enemy,True) [20,3] Drop 0x00 0x00 0x00 [Elfire,Mend] NoAI
+UNIT Morph Swordmaster Enemok Level(20,Enemy,True) [21,9] Drop 0x00 0x00 0x00 [KillingEdge] NoAI
+UNIT Morph Hero Enemok Level(18,Enemy,True) [20,8] Drop 0x00 0x00 0x00 [SteelBlade,HandAxe] NoAI
+UNIT Morph Warrior Enemok Level(19,Enemy,True) [22,8] Drop 0x00 0x00 0x00 [Tomahawk] NoAI
+UNIT Morph Berserker Enemok Level(20,Enemy,True) [21,7] Drop 0x00 0x00 0x00 [SilverAxe] NoAI
+UNIT Morph WyvernLord Enemok Level(20,Enemy,True) [9,0] Drop 0x00 0x00 0x00 [Runesword] NoAI
+UNIT Morph WyvernLord Enemok Level(19,Enemy,True) [10,0] Drop 0x00 0x00 0x00 [BraveLance] NoAI
+UNIT Morph FalcoKnight Enemok Level(19,Enemy,True) [9,1] Drop 0x00 0x00 0x00 [Horseslayer] NoAI
+UNIT Morph FalcoKnight Enemok Level(20,Enemy,True) [10,1] Drop 0x00 0x00 0x00 [KillerLance] NoAI
+UNIT
+
+Part3Enemies:
+UNIT Sat MageKnight Sat Level(20,Enemy,True) [26,1] 0x00 0x00 0x00 0x00 [Fimbulvetr] GuardAI
+UNIT Morph WyvernLord Sat Level(20,Enemy,True) [26,6] 0x00 0x00 0x00 0x00 [Runesword] ChaseOnceApproachedAI
+UNIT Morph WyvernKnight Sat Level(20,Enemy,True) [25,5] 0x00 0x00 0x00 0x00 [SilverLance] ChaseOnceApproachedAI
+UNIT Morph WyvernKnight Sat Level(20,Enemy,True) [24,5] 0x00 0x00 0x00 0x00 [Spear] ChaseOnceApproachedAI
+UNIT Morph FalcoKnight Sat Level(20,Enemy,True) [26,1] 0x00 0x00 0x00 0x00 [BraveSword] ChaseOnceApproachedAI
+UNIT Morph FalcoKnight Sat Level(20,Enemy,True) [26,1] 0x00 0x00 0x00 0x00 [SilverSword] ChaseOnceApproachedAI
+UNIT Morph WyvernLord Sat Level(20,Enemy,True) [26,1] 0x00 0x00 0x00 0x00 [BraveLance] ChaseOnceApproachedAI
+UNIT Morph WyvernLord Sat Level(20,Enemy,True) [26,1] 0x00 0x00 0x00 0x00 [KillerLance,KillingEdge] ChaseOnceApproachedAI
+UNIT Morph WyvernLord Sat Level(20,Enemy,True) [26,1] 0x00 0x00 0x00 0x00 [SilverLance] ChaseOnceApproachedAI
+UNIT Morph Paladin Sat Level(19,Enemy,True) [28,7] 0x00 0x00 0x00 0x00 [HeavySpear,Zanbato,Wyrmslayer] AttackInRangeAI
+UNIT Morph Ranger Sat Level(19,Enemy,True) [28,8] 0x00 0x00 0x00 0x00 [SilverBow,SlimSword] AttackInRangeAI
+UNIT Morph Ranger Sat Level(20,Enemy,True) [28,9] 0x00 0x00 0x00 0x00 [SteelBlade,Longbow] AttackInRangeAI
+UNIT Morph Paladin Sat Level(18,Enemy,True) [28,10] 0x00 0x00 0x00 0x00 [BraveLance] AttackInRangeAI
+UNIT Morph GreatKnight Sat Level(20,Enemy,True) [28,10] 0x00 0x00 0x00 0x00 [SilverAxe] NoAI
+UNIT Morph GreatKnight Sat Level(20,Enemy,True) [28,10] 0x00 0x00 0x00 0x00 [SilverLance] NoAI
+UNIT Morph GreatKnight Sat Level(19,Enemy,True) [28,10] 0x00 0x00 0x00 0x00 [SilverSword] NoAI
+UNIT Morph General Sat Level(20,Enemy,True) [24,15] 0x00 0x00 0x00 0x00 [Spear] GuardAI
+UNIT Morph General Sat Level(19,Enemy,True) [24,16] 0x00 0x00 0x00 0x00 [Tomahawk] GuardAI
+UNIT Morph Halberdier Sat Level(18,Enemy,True) [21,28] 0x00 0x00 0x00 0x00 [ShortSpear] AttackInRangeAI
+UNIT Morph Halberdier Sat Level(20,Enemy,True) [22,27] 0x00 0x00 0x00 0x00 [DragonSpear] AttackInRangeAI
+UNIT Morph Halberdier Sat Level(20,Enemy,True) [22,29] 0x00 0x00 0x00 0x00 [SilverLance] AttackInRangeAI
+UNIT Morph Druid Sat Level(20,Enemy,True) [26,26] 0x00 0x00 0x00 0x00 [Fenrir] AttackInRangeAI
+UNIT Morph Sage Sat Level(20,Enemy,True) [25,29] 0x00 0x00 0x00 0x00 [Divine] AttackInRangeAI
+UNIT Morph GreatKnight Sat Level(19,Enemy,True) [25,27] 0x00 0x00 0x00 0x00 [SteelBlade,SteelLance] NoAI
+UNIT Morph GreatKnight Sat Level(20,Enemy,True) [26,29] 0x00 0x00 0x00 0x00 [ShortSpear,HandAxe] NoAI
+UNIT Morph Sniper Sat Level(19,Enemy,True) [28,27] 0x00 0x00 0x00 0x00 [ShortBow] AttackInRangeAI
+UNIT Morph Hero Sat Level(20,Enemy,True) [28,24] 0x00 0x00 0x00 0x00 [SilverAxe] ChaseOnceApproachedAI
+UNIT Morph General Sat Level(20,Enemy,True) [25,23] 0x00 0x00 0x00 0x00 [Spear] AttackInRangeAI
+UNIT Morph Valkyrie Sat Level(18,Enemy,True) [26,22] 0x00 0x00 0x00 0x00 [Lightning,Sleep] AttackInRangeAI
+UNIT Morph Swordmaster Sat Level(20,Enemy,True) [25,21] 0x00 0x00 0x00 0x00 [SteelBlade] NoAI
+UNIT Morph Warrior Sat Level(19,Enemy,True) [28,22] 0x00 0x00 0x00 0x00 [SilverBow,SteelAxe] NoAI
+UNIT Morph Halberdier Sat Level(20,Enemy,True) [25,19] 0x00 0x00 0x00 0x00 [ShortSpear] ChaseOnceApproachedAI
+UNIT Morph Warrior Sat Level(18,Enemy,True) [27,18] 0x00 0x00 0x00 0x00 [Hammer,SteelBow] NoAI
+UNIT Morph General Sat Level(20,Enemy,True) [26,17] 0x00 0x00 0x00 0x00 [BraveSword,IronAxe] GuardAI
+UNIT Morph Berserker Sat Level(20,Enemy,True) [26,15] 0x00 0x00 0x00 0x00 [SilverAxe] NoAI
+UNIT Morph Halberdier Sat Level(19,Enemy,True) [25,12] 0x00 0x00 0x00 0x00 [Spear] GuardAI
+UNIT Morph Halberdier Sat Level(20,Enemy,True) [27,12] 0x00 0x00 0x00 0x00 [Spear] GuardAI
+UNIT Morph Druid Sat Level(20,Enemy,True) [23,8] 0x00 0x00 0x00 0x00 [Eclipse,Luna] AttackInRangeAI
+UNIT
+
+LoadIllios:
+UNIT Illios Assassin Illios Level(20,Enemy,True) [26,8] 0x00 0x00 0x00 0x00 [DireThunder] AttackInRangeAI
+EndUnit
+
+EndMainPointer:
+END_MAIN
+
+
+// Force Kathy, Jake
