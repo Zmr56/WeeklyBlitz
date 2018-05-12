@@ -1,5 +1,6 @@
 
 #define DeathQuote(Character,Chapter,EventID,TextID) "SHORT Character; BYTE 0xFF Chapter; SHORT EventID TextID 0 0"
+//#define AllChapters 0xFF This definition goes elsewhere
 
 DeathQuoteTable:
 DeathQuote(Valerie,EndgamePart1,0x11,ValerieDeathQuote)
