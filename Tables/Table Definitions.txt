@@ -145,3 +145,5 @@
 #endif
 
 #include "External Tables.event"
+
+#define AllChapters 0xFF
