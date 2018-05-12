@@ -9,6 +9,123 @@
 
 #define AnimTableEntry(index) "ORG ClassAnimTable + (index * 0x20)"
 
+#define SwordAnim(Animation) "BYTE Swords 0x01 ; SHORT Animation"
+#define SpearAnim(Animation) "BYTE Lances 0x01 ; SHORT Animation"
+#define AxeAnim(Animation) "BYTE Axes 0x01 ; SHORT Animation"
+#define HandAxeAnim(Animation) "BYTE HandAxe 0x00 ; SHORT Animation ; BYTE Tomahawk 0x00 ; SHORT Animation ; BYTE Hatchet 0x00 ; SHORT Animation"
+#define BowAnim(Animation) "BYTE Bows 0x01 ; SHORT Animation"
+#define StaffAnim(Animation) "BYTE Staves 0x01 ; SHORT Animation"
+#define AnimaAnim(Animation) "BYTE Anima 0x01 ; SHORT Animation"
+#define LightAnim(Animation) "BYTE Light 0x01 ; SHORT Animation"
+#define DarkAnim(Animation) "BYTE Dark 0x01 ; SHORT Animation"
+#define UnarmedAnim(Animation) "BYTE Disarmed 0x01 ; SHORT Animation"
+#define SpecialAnim(Animation,Weapon) "BYTE Weapon 0x00 ; SHORT Animation"
+
 //////////////Installed animations go here:
 
-//#include "Mage Lord (Eldritch Abomination)/Magic/DarkLordInstaller.event"
+{
+#include "Cath Thief/sword Installer.event"
+}
+{
+#include "Cath Thief/disarmed Installer.event"
+}
+{
+#include "Knight/sword Installer.event"
+}
+{
+#include "Knight/Axe Installer.event"
+}
+{
+#include "Knight/bow Installer.event"
+}
+{
+#include "Knight/handaxe Installer.event"
+}
+{
+#include "Cavaliers + Paladins/handaxe Installer.event"
+}
+{
+#include "Cavaliers + Paladins/sword Installer.event"
+}
+{
+#include "Cavaliers + Paladins/axecav Installer.event"
+}
+{
+#include "Cavaliers + Paladins/disarmed Installer.event"
+}
+{
+#include "Cavaliers + Paladins/lance Installer.event"
+}
+//{
+//#include "Cavaliers + Paladins/bow Installer.event"
+//}
+{
+#include "Cavaliers + Paladins/disarmedf Installer.event"
+}
+{
+#include "Fliers/wyvernaxe Installer.event"
+}
+{
+#include "Fliers/wyverndisarmed Installer.event"
+}
+{
+#include "Fliers/wyvernhandaxe Installer.event"
+}
+{
+#include "Fliers/wyvernlance Installer.event"
+}
+{
+#include "Fliers/pegasusdisarmed Installer.event"
+}
+{
+#include "Fliers/pegasussword Installer.event"
+}
+{
+#include "Fliers/pegasuslance Installer.event"
+}
+
+//{
+//#include "Bard/bard Installer.event"
+//}
+
+KnightAnim:
+SwordAnim(0xa3)
+SpearAnim(0x40)
+AxeAnim(0xa0)
+HandAxeAnim(0xa2)
+BowAnim(0xa1)
+UnarmedAnim(0x41)
+WORD 0x0    // Seperator
+
+SalvCavAnim:
+SwordAnim(0xa5)
+SpearAnim(0xa6)
+AxeAnim(0xa7)
+HandAxeAnim(0xa9)
+UnarmedAnim(0xa8)
+WORD 0x0    // Seperator
+
+BowCavAnim:
+BowAnim(0xaa)
+UnarmedAnim(0xab)
+WORD 0x0    // Seperator
+
+WyvernAnim:
+SpearAnim(0xb2)
+AxeAnim(0xaf)
+HandAxeAnim(0xb1)
+UnarmedAnim(0xb0)
+WORD 0x0    // Seperator
+
+PegasusAnim:
+SwordAnim(0xae)
+SpearAnim(0xad)
+UnarmedAnim(0xac)
+WORD 0x0    // Seperator
+
+BardAnim:
+//AnimaAnim(0xa4)
+//LightAnim(0xa4)
+//DarkAnim(0xa4)
+//UnarmedAnim(0xa4)
+WORD 0x0    // Seperator

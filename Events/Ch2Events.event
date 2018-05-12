@@ -1,0 +1,91 @@
+﻿
+#include EAstdlib.event
+
+EventPointerTable(0xa,ThisChapter)
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+Units:
+UNIT Kathy EirikaLord 0x00 Level(1, Ally, 0) [7,20] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Morps EphraimMasterLord 0x00 Level(1, Ally, 0) [6,21] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Tye Knight 0x00 Level(1, Ally, 0) [8,21] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Anna Thief 0x00 Level(1, Ally, 0) [6,19] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Jet Bard 0x00 Level(1, Ally, 0) [5,20] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT
+
+Enemies:
+UNIT Breguet Fighter 0x00 Level(3, Enemy, 1) [12,5] 0x00 0x00 0x0 0x00 [HandAxe, IronAxe] GuardTileAI 
+UNIT 0x70 SwordCav 0x00 Level(2, Enemy, 1) [10,11] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI 
+UNIT 0x70 Archer 0x00 Level(2, Enemy, 1) [5,11] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI 
+UNIT 0x70 Fighter 0x00 Level(2, Enemy, 1) [10,15] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI 
+UNIT 0x70 Myrmidon 0x00 Level(2, Enemy, 1) [7,9] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI 
+UNIT 0x71 Archer 0x00 Level(2, Enemy, 1) [12,3] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI 
+UNIT 0x71 Mercenary 0x00 Level(2, Enemy, 1) [3,5] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI 
+UNIT 0x71 Mercenary 0x00 Level(2, Enemy, 1) [5,3] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI 
+UNIT 0x70 Myrmidon 0x00 Level(2, Enemy, 1) [5,6] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI 
+UNIT 0x71 AxeCav 0x00 Level(2, Enemy, 1) [8,5] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI 
+UNIT 0x70 AxeCav 0x00 Level(2, Enemy, 1) [14,9] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI 
+UNIT 0x71 Knight 0x00 Level(2, Enemy, 1) [1,2] 0x00 0x00 0x0 0x00 [Armorslayer] GuardTileAI
+UNIT
+
+George1:
+UNIT George LanceWyvern 0x00 Level(2, Ally, 0) [10,19] 0x00 0x00 0x0 0x00 [IronLance, Javelin] NoAI 
+UNIT
+
+TurnBasedEvents:
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Village(0x5,SwordVillage,1,2)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+DefeatAll(EndingScene)
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+SwordVillage:
+VillageEventItem(VillageText, Village, SteelSword)
+ENDA
+
+BeginningScene:
+LOAD2 0x1 Units
+ENUN
+LOAD1 0x1 George1
+ENUN
+LOAD1 0x1 Enemies
+ENUN
+//text here
+ENDA
+
+EndingScene:
+//text here
+MNCH 0x2
+ENDA
+
+MESSAGE Events end at offset CURRENTOFFSET

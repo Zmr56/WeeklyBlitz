@@ -1,0 +1,84 @@
+# 0x160 Ch1Name
+Ch. 1: Teo Torriatte[X]
+
+# 0x161 Ch2Name
+Ch. 2: Filet Minions[X]
+
+# 0x162 Ch3Name
+Ch. 3: Trial By Ashes[X]
+
+# 0x163 Ch4Name
+Ch. 4: Heir of Darkness[X]
+
+# 0x164 Ch5Name
+Ch. 5: Through the Canopy[X]
+
+# 0x165 Ch6Name
+Ch. 6: Abyss of Madness[X]
+
+# 0x166 Ch7Name
+Ch. 7: Need Money[X]
+
+# 0x167 Ch8Name
+Ch. 8: Gates of Irony[X]
+
+# 0x168 Ch9Name
+Ch. 9: True Throne[X]
+
+# 0x169 Ch10Name
+Ch. 10: True Throne Was Fake[X]
+
+# 0x16a Ch11Name
+Ch. 11: Nigerundayo![X]
+
+# 0x16b Ch12Name
+Ch. 12: Ceaseless Agony[X]
+
+# 0x16c Ch13Name
+Ch. 13: Lack of Sanity[X]
+
+# 0x16d Ch14Name
+Ch. 14: Stone Cold Crazy[X]
+
+# 0x16e Ch15Name
+Ch. 15: Aftermath[X]
+
+# 0x16f Ch16Name
+Ch. 16: The Wrath of Winter[X]
+
+# 0x170 Ch17Name
+Ch. 17: Under Pressure[X]
+
+# 0x171 Ch18Name
+Ch. 18: Unforgiving Cold[X]
+
+# 0x172 Ch19Name
+Ch. 19: Revolt at Water Temple[X]
+
+# 0x173 Ch20Name
+Ch. 20: The Lake at Sunset[X]
+
+# 0x174 Ch21Name
+Ch. 21: Alabaster Pillars[X]
+
+# 0x175 Ch22Name
+Ch. 22: [X]
+
+# 0x176 Ch23Name
+Ch. 23: Erasure[X]
+
+# 0x177 Ch24Name
+Ch. 24: Broken Promise[X]
+
+# 0x178 Ch25Name
+Ch. 25: Wyvern Valley[X]
+
+# 0x179 Ch26Name
+Ch. 26: Void Space[X]
+
+# 0x17a Ch27Name
+Ch. 27: Still Void Space[X]
+
+# 0x17b Ch28Name
+Ch. 28: We Are The Champions[X]
+

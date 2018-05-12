@@ -1,0 +1,346 @@
+﻿#include EAstdlib.event
+
+EventPointerTable(0x67,ThisChapter)
+
+ORG StartOffset
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TURN 0x0 Monithief1 [2,0] 0x0 //Assassin in Treasure Room
+TURN 0x0 Monika1 [3,0] 0x0 //Reinforcements from upper-left stairs
+TURN 0x0 Monika1 [4,0] 0x0
+TURN 0x0 Monika1 [5,0] 0x0
+TURN 0x0 Monithief2 [6,0] 0x0//Assassin in Treasure Room and Hallway
+TURN 0x0 Monika2 [6,0] 0x0 //Reinforcements from lower-left stairs
+TURN 0x0 Monika2 [8,0] 0x0
+TURN 0x0 Monika2 [10,0] 0x0
+// TURN 0x0 DivineMonika [10,0] 0x0 <- For polish phase. I could try something like have Monika warp in/out from Sage to Divinekete. :P
+TURN 0x0 Monika3 [10,0] 0x0 //Reinforcements from top-right corner's stairs and hallway.
+TURN 0x0 Monika3 [12,0] 0x0
+TURN 0x0 Monika3 [14,0] 0x0
+TURN 0x0 Monika4 [14,0] 0x0 //Reinforcements from top-left stairs and Kathy's start point
+TURN 0x0 KillSayori [15,0] 0x0 //The AI-less manaketes are supposed to change AI at this moment
+TURN 0x0 Monika4 [16,0] 0x0
+TURN 0x0 Monika5 [18,0] 0x0 //Reinforcements from the road to the right of Kathy's road.
+TURN 0x0 Monika4 [20,0] 0x0
+TURN 0x0 Monika5 [20,0] 0x0
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEventBothWays(0x7,RecruitSayori1, Kathy, Sayori)
+CharacterEventBothWays(0x8,RecruitSayori2, Void, Sayori)
+END_MAIN
+
+LocationBasedEvents:
+Chest(FireLance,7,12)
+Chest(EarthSeal,10,12)
+Chest(BraveSword,5,17)
+Chest(JunaFruit,8,17)
+Chest(Purge,20,21)
+Door(6,5)
+Door(4,14)
+Door(20,16) //Whoever explains me how to have the Monika's AI change in this room when the door opens, will get my fucking respect.
+Door(9,18)
+END_MAIN
+
+MiscBasedEvents:
+DefeatBoss(EndingScene)
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Kathy Lord 0x00 Level(5, Ally, 0) [8,24] 0x00 0x00 0x0 0x00 [IronSword, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [6,24] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [7,25] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [8,26] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [9,25] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [14,25] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [15,26] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [16,25] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [15,24] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [17,24] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT
+
+SayoriNeedsHelp:
+UNIT Sayori Sage_F 0x00 Level(4, NPC, 0) [21,20] 0x00 0x00 0x0 0x00 [Aura, Elfire, Restore] NoAI
+UNIT NotMonika FireManakete Monika Level(5, Enemy, 0) [20,20] 0x00 0x00 0x0 0x00 [Firestone] NoAI
+UNIT NotMonika FireManakete Monika Level(5, Enemy, 0) [21,19] 0x00 0x00 0x0 0x00 [Firestone] NoAI
+UNIT NotMonika FireManakete Monika Level(5, Enemy, 0) [22,20] 0x00 0x00 0x0 0x00 [Firestone] NoAI
+UNIT NotMonika FireManakete Monika Level(5, Enemy, 0) [21,21] 0x00 0x00 0x0 0x00 [Firestone] NoAI
+UNIT
+
+JustMonika:
+UNIT Monika DivineManakete 0x00 Level(12, Enemy, 0) [3,3] 0x02 0x00 0x0 0x00 [HolyDragonStone, HoplonShield] NeverMoveAI
+UNIT NotMonika FireManakete Monika Level(10, Enemy, 1) [7,9] 0x00 0x00 0x0 0x00 [Firestone] GuardTileAI
+UNIT NotMonika FireManakete Monika Level(10, Enemy, 1) [14,12] 0x00 0x00 0x0 0x00 [Firestone] GuardTileAI
+UNIT NotMonika FireManakete Monika Level(10, Enemy, 1) [13,5] 0x00 0x00 0x0 0x00 [Firestone] ChaseOnceApproachedAI
+UNIT NotMonika FireManakete Monika Level(10, Enemy, 1) [9,19] 0x00 0x00 0x0 0x00 [Firestone] ChaseOnceApproachedAI
+UNIT NotMonika FireManakete Monika Level(10, Enemy, 1) [3,14] 0x00 0x00 0x0 0x00 [Firestone] ChaseOnceApproachedAI
+UNIT NotMonika FireManakete Monika Level(10, Enemy, 1) [19,16] 0x00 0x00 0x0 0x00 [Firestone] GuardTileAI
+UNIT NotMonika FireManakete Monika Level(10, Enemy, 1) [21,8] 0x00 0x00 0x0 0x00 [Firestone] GuardTileAI
+UNIT NotMonika FireManakete Monika Level(10, Enemy, 1) [21,10] 0x00 0x00 0x0 0x00 [Firestone] GuardTileAI
+UNIT NotMonika Swordmaster_F Monika Level(9, Enemy, 1) [1,10] 0x00 0x00 0x0 0x00 [SilverSword] ChaseOnceApproachedAI
+UNIT NotMonika Swordmaster_F Monika Level(9, Enemy, 1) [3,10] 0x00 0x00 0x0 0x00 [SilverSword] ChaseOnceApproachedAI
+UNIT NotMonika Swordmaster_F Monika Level(9, Enemy, 1) [16,5] 0x00 0x00 0x0 0x00 [SilverSword] ChaseOnceApproachedAI
+UNIT NotMonika Swordmaster_F Monika Level(9, Enemy, 1) [2,15] 0x00 0x00 0x0 0x00 [SilverBlade] ChaseOnceApproachedAI
+UNIT NotMonika Halberdier_F Monika Level(9, Enemy, 1) [1,14] 0x00 0x00 0x0 0x00 [SilverLance] ChaseOnceApproachedAI
+UNIT NotMonika Halberdier_F Monika Level(9, Enemy, 1) [3,20] 0x00 0x00 0x0 0x00 [SilverLance] ChaseOnceApproachedAI
+UNIT NotMonika Hero_F Monika Level(9, Enemy, 1) [4,19] 0x02 0x00 0x0 0x00 [DragonAxe] ChaseOnceApproachedAI
+UNIT NotMonika Hero_F Monika Level(9, Enemy, 1) [2,21] 0x00 0x00 0x0 0x00 [SilverAxe, HandAxe] ChaseOnceApproachedAI
+UNIT NotMonika Hero_F Monika Level(9, Enemy, 1) [2,9] 0x2 0x00 0x0 0x00 [SteelBlade, Tomahawk] ChaseOnceApproachedAI
+UNIT NotMonika Hero_F Monika Level(9, Enemy, 1) [5,15] 0x0 0x00 0x0 0x00 [KillerAxe] ChaseOnceApproachedAI
+UNIT NotMonika Hero_F Monika Level(9, Enemy, 1) [10,15] 0x2 0x00 0x0 0x00 [BattleAxe, Elixir] ChaseOnceApproachedAI
+UNIT NotMonika Paladin_F Monika Level(9, Enemy, 1) [14,16] 0x00 0x00 0x0 0x00 [SilverLance, ShortSpear] ChaseOnceApproachedAI
+UNIT NotMonika Paladin_F Monika Level(9, Enemy, 1) [13,15] 0x00 0x00 0x0 0x00 [KillerBow] ChaseOnceApproachedAI
+UNIT NotMonika Paladin_F Monika Level(9, Enemy, 1) [15,15] 0x00 0x00 0x0 0x00 [DragonSpear] ChaseOnceApproachedAI
+UNIT NotMonika Paladin_F Monika Level(9, Enemy, 1) [11,9] 0x00 0x00 0x0 0x00 [Spear] ChaseOnceApproachedAI
+UNIT NotMonika Halberdier_F Monika Level(9, Enemy, 1) [12,8] 0x00 0x00 0x0 0x00 [KillerLance] ChaseOnceApproachedAI
+UNIT NotMonika Halberdier_F Monika Level(9, Enemy, 1) [12,10] 0x00 0x00 0x0 0x00 [BraveLance, Javelin] ChaseOnceApproachedAI
+UNIT NotMonika Sniper_F Monika Level(10, Enemy, 1) [6,14] 0x00 0x00 0x0 0x00 [PoisonBow] ChaseOnceApproachedAI
+UNIT NotMonika Sniper_F Monika Level(10, Enemy, 1) [9,14] 0x00 0x00 0x0 0x00 [SilverBow] ChaseOnceApproachedAI
+UNIT NotMonika NomadTrooperF Monika Level(10, Enemy, 1) [18,15] 0x02 0x00 0x0 0x00 [KillingEdge, Longbow] ChaseOnceApproachedAI
+UNIT NotMonika NomadTrooperF Monika Level(11, Enemy, 1) [16,4] 0x00 0x00 0x0 0x00 [IronBlade, Longbow] ChaseOnceApproachedAI
+UNIT NotMonika NomadTrooperF Monika Level(11, Enemy, 1) [16,6] 0x00 0x00 0x0 0x00 [PoisonSword, SilverBow] ChaseOnceApproachedAI
+UNIT NotMonika General Monika Level(11, Enemy, 1) [17,5] 0x00 0x00 0x0 0x00 [SilverBlade, Spear] ChaseOnceApproachedAI
+UNIT NotMonika General Monika Level(11, Enemy, 1) [7,6] 0x00 0x00 0x0 0x00 [SilverBlade, Spear] GuardTileAI
+UNIT NotMonika General Monika Level(11, Enemy, 1) [7,5] 0x00 0x00 0x0 0x00 [SilverLance, Tomahawk] GuardTileAI
+UNIT NotMonika General Monika Level(11, Enemy, 1) [7,4] 0x00 0x00 0x0 0x00 [SilverAxe, Runesword] GuardTileAI
+UNIT NotMonika Sage_F Monika Level(11, Enemy, 1) [14,14] 0x00 0x00 0x0 0x00 [Elfire] GuardTileAI
+UNIT NotMonika Sage_F Monika Level(11, Enemy, 1) [17,16] 0x02 0x00 0x0 0x00 [Divine, Bolting] GuardTileAI
+UNIT NotMonika Sage_F Monika Level(11, Enemy, 1) [2,4] 0x00 0x00 0x0 0x00 [Fimbulvetr, Purge] GuardTileAI
+UNIT NotMonika Druid_F Monika Level(9, Enemy, 1) [12,4] 0x00 0x00 0x0 0x00 [Thunder, Eclipse] GuardTileAI
+UNIT NotMonika Sage_F Monika Level(9, Enemy, 1) [1,8] 0x00 0x00 0x0 0x00 [Thunder, Recover] HealUnits
+UNIT NotMonika Sage_F Monika Level(9, Enemy, 1) [7,13] 0x00 0x00 0x0 0x00 [Aircalibur, Physic] HealUnits
+UNIT NotMonika Sage_F Monika Level(9, Enemy, 1) [4,4] 0x02 0x00 0x0 0x00 [Aircalibur, Physic] HealUnits
+UNIT NotMonika Bishop_F Monika Level(9, Enemy, 1) [18,8] 0x00 0x00 0x0 0x00 [Divine, Physic] ChaseOnceApproachedAI
+UNIT NotMonika Bishop_F Monika Level(9, Enemy, 1) [18,10] 0x00 0x00 0x0 0x00 [Divine, Physic] ChaseOnceApproachedAI
+UNIT NotMonika Valkyrie Monika Level(9, Enemy, 1) [19,9] 0x02 0x00 0x0 0x00 [Divine, Silence] ChaseOnceApproachedAI
+UNIT
+
+MoniThief1:
+ReinforcementEvent(Thief1)
+ENDA
+
+Thief1:
+UNIT NotMonika Rogue Monika Level(9, Enemy, 1) [8,15] 0x00 0x00 0x0 0x00 [KillingEdge, Lockpick] LootingThiefAI
+UNIT
+
+MoniThief2:
+ReinforcementEvent(Thief2)
+ENDA
+
+Thief2:
+UNIT NotMonika Rogue Monika Level(9, Enemy, 1) [8,15] 0x00 0x00 0x0 0x00 [KillingEdge, Lockpick] LootingThiefAI
+UNIT NotMonika Rogue Monika Level(10, Enemy, 1) [14,9] 0x00 0x00 0x0 0x00 [SilverSword, Lockpick] LootingThiefAI
+UNIT
+
+Monika1:
+ReinforcementEvent(Reinforcements1)
+ENDA
+
+Reinforcements1:
+UNIT NotMonika Paladin_F Monika Level(9, Enemy, 1) [0,9] 0x00 0x00 0x1 REDA_StairwayUp1 [ShortSpear] PursueWithoutHeed
+UNIT NotMonika Valkyrie Monika Level(9, Enemy, 1) [0,10] 0x00 0x00 0x1 REDA_StairwayUp2 [Divine] PursueWithoutHeed
+UNIT
+
+REDA_StairwayUp1:
+	REDA [1,9] 0 0 0 0
+REDA_StairwayUp2:
+	REDA [1,10] 0 0 0 0
+
+Monika2:
+ReinforcementEvent(Reinforcements2)
+ENDA
+
+Reinforcements1:
+UNIT NotMonika FalcoKnight Monika Level(9, Enemy, 1) [0,19] 0x00 0x00 0x1 REDA_StairwayDown1 [LightBrand] PursueWithoutHeed
+UNIT NotMonika WyvernLord Monika Level(9, Enemy, 1) [0,20] 0x00 0x00 0x1 REDA_StairwayDown2 [Tomahawk] PursueWithoutHeed
+UNIT
+
+REDA_StairwayDown1:
+	REDA [1,19] 0 0 0 0
+REDA_StairwayDown2:
+	REDA [1,20] 0 0 0 0
+
+Monika3:
+ReinforcementEvent(Reinforcements3_1)
+ReinforcementEvent(Reinforcements3_2)
+ENDA
+
+Reinforcements3_1:
+UNIT NotMonika Sage_F Monika Level(10, Enemy, 1) [14,9] 0x00 0x00 0x1 REDA_Hallway1 [Elfire] PursueWithoutHeed
+UNIT NotMonika Bishop_F Monika Level(10, Enemy, 1) [14,9] 0x00 0x00 0x1 REDA_Hallway2 [Divine] PursueWithoutHeed
+UNIT NotMonika Druid_F Monika Level(10, Enemy, 1) [14,9] 0x00 0x00 0x1 REDA_Hallway3 [Luna] PursueWithoutHeed
+UNIT
+
+REDA_Hallway1:
+	REDA [13,9] 0 0 0 0
+REDA_Hallway2:
+	REDA [15,9] 0 0 0 0
+REDA_Hallway3:
+	REDA [14,10] 0 0 0 0
+
+Reinforcements3_2:
+UNIT NotMonika FireManakete Monika Level(9, Enemy, 1) [22,0] 0x00 0x00 0x0 0x00 [Firestone] PursueWithoutHeed
+UNIT
+
+Monika4:
+ReinforcementEvent(Reinforcements4_1)
+ReinforcementEvent(Reinforcements4_2)
+ENDA
+
+Reinforcements4_1:
+UNIT NotMonika FalcoKnight Monika Level(9, Enemy, 1) [7,1] 0x00 0x00 0x1 REDA_Stairway1 [Lancereaver, Runesword] PursueWithoutHeed
+UNIT NotMonika WyvernLord Monika Level(9, Enemy, 1) [7,1] 0x00 0x00 0x1 REDA_Stairway2 [Swordreaver, ShortAxe] PursueWithoutHeed
+UNIT NotMonika FalcoKnight Monika Level(9, Enemy, 1) [7,1] 0x00 0x00 0x1 REDA_Stairway3 [Axereaver, Spear] PursueWithoutHeed
+UNIT
+
+REDA_Stairway1:
+	REDA [9,1] 0 0 0 0
+REDA_Stairway2:
+	REDA [8,2] 0 0 0 0
+REDA_Stairway3:
+	REDA [7,3] 0 0 0 0
+
+Reinforcements4_2:
+UNIT NotMonika Paladin_F Monika Level(11, Enemy, 1) [8,27] 0x00 0x00 0x1 REDA_EntranceA1 [Longbow, ShortSpear] PursueWithoutHeed
+UNIT NotMonika Paladin_F Monika Level(11, Enemy, 1) [7,27] 0x00 0x00 0x1 REDA_EntranceA2 [SlayingLance, Javelin] PursueWithoutHeed
+UNIT NotMonika Valkyrie Monika Level(11, Enemy, 1) [8,27] 0x00 0x00 0x1 REDA_EntranceA3 [Rexaura, Recover] PursueWithoutHeed
+UNIT NotMonika Valkyrie Monika Level(11, Enemy, 1) [7,27] 0x00 0x00 0x1 REDA_EntranceA4 [Divine, Recover] PursueWithoutHeed
+UNIT
+
+REDA_EntranceA1:
+	REDA [7,25] 0 0 0 0
+REDA_EntranceA2:
+	REDA [8,25] 0 0 0 0
+REDA_EntranceA3:
+	REDA [6,25] 0 0 0 0
+REDA_EntranceA4:
+	REDA [9,25] 0 0 0 0
+
+Monika5:
+ReinforcementEvent(Reinforcements5)
+ENDA
+
+Reinforcements5:
+UNIT NotMonika Paladin_F Monika Level(11, Enemy, 1) [16,27] 0x00 0x00 0x1 REDA_EntranceB1 [Longbow, ShortSpear] PursueWithoutHeed
+UNIT NotMonika Paladin_F Monika Level(11, Enemy, 1) [15,27] 0x00 0x00 0x1 REDA_EntranceB2 [SlayingLance, Javelin] PursueWithoutHeed
+UNIT NotMonika Valkyrie Monika Level(11, Enemy, 1) [16,27] 0x00 0x00 0x1 REDA_EntranceB3 [Thani, Physic] PursueWithoutHeed
+UNIT NotMonika Valkyrie Monika Level(11, Enemy, 1) [15,27] 0x00 0x00 0x1 REDA_EntranceB4 [Sanctify, Restore] PursueWithoutHeed
+UNIT
+
+REDA_EntranceB1:
+	REDA [15,25] 0 0 0 0
+REDA_EntranceB2:
+	REDA [16,25] 0 0 0 0
+REDA_EntranceB3:
+	REDA [14,25] 0 0 0 0
+REDA_EntranceB4:
+	REDA [17,25] 0 0 0 0
+
+KillSayori:
+//Text(OhShit)
+SETVAL 0x1 0x0000
+CHAI [21,19]
+SETVAL 0x1 0x0000
+CHAI [21,21]
+SETVAL 0x1 0x0000
+CHAI [20,20]
+SETVAL 0x1 0x0000
+CHAI [22,20]
+ENDA
+
+RecruitSayori1:
+Text(RecruitText)
+CUSA Sayori
+NoFade
+ENDA
+
+RecruitSayori2:
+Text(RecruitText)
+CUSA Sayori
+NoFade
+ENDA
+
+BeginningScene:
+LOAD2 0x1 Units //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+ENUN
+LOAD1 0x1 SayoriNeedsHelp
+ENUN
+LOAD1 0x1 JustMonika
+ENUN
+GotoPrepScreen
+ENDA
+
+EndingScene:
+MUSCFAST 0x7FFF
+SVAL 0x2 0x1A
+CALL WeLive
+CHECK_ALIVE Sayori
+BEQ 0x0 0xC 0x0
+MUSC 0x31
+TEXTSHOW SurvivalPlaceholder
+TEXTEND
+REMA
+MUSCMID 0x7FFF
+CALL SayoriLives
+SVAL 0x3 0xb0 //Python Tome 
+GIVEITEMTO 0x1f //Goes to Sayori 
+LABEL 0x0
+REMA
+MUSC 0x2B
+TEXTSHOW RecruitPlaceholder
+TEXTEND
+MUSCSLOW 0x7FFF
+STAL 60
+MUSCSLOW 0x32
+TEXTCONT
+TEXTSHOW ChEndingPlaceholder
+TEXTEND
+REMA
+FADI 60
+MNC2 Chapter24
+ENDA
+
+WeLive:
+CHECK_EVBIT 0x8
+BNE 0x80D2 0xC 0x0
+FADI 16
+LABEL 0x80D2
+REMOVEPORTRAITS
+BACG 0xFFFF
+FADU 16
+ENDA
+CreidneLives:
+EVBIT_MODIFY 0x1
+EVBIT_F 0x2
+CHECK_EVBIT 0x8
+BEQ 0x0 0xC 0x0
+FADU 16
+LABEL 0x0
+EVBIT_MODIFY 0x0
+ENDA
+
+MESSAGE Events end at offset CURRENTOFFSET

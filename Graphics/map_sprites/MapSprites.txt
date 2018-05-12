@@ -1,0 +1,30 @@
+
+Map_CavS_Stand:
+#incext Png2Dmp "CavSword.png" --lz77
+Map_CavS_Move:
+#incext Png2Dmp "CavSwordAnim.png" --lz77
+Map_CavL_Stand:
+#incext Png2Dmp "CavLance.png" --lz77
+Map_CavL_Move:
+#incext Png2Dmp "CavLanceAnim.png" --lz77
+Map_CavA_Stand:
+#incext Png2Dmp "CavAxe.png" --lz77
+Map_CavA_Move:
+#incext Png2Dmp "CavAxeAnim.png" --lz77
+Map_CavB_Stand:
+#incext Png2Dmp "CavBow.png" --lz77
+Map_CavB_Move:
+#incext Png2Dmp "CavBowAnim.png" --lz77
+Map_ThiefF_Stand:
+#incext Png2Dmp "Thief F Stand.png" --lz77
+Map_ThiefF_Move:
+#incext Png2Dmp "Thief F Move.png" --lz77
+Map_PegL_Stand:
+#incext Png2Dmp "lancepegstand.png" --lz77
+Map_PegL_Move:
+#incext Png2Dmp "lancepegmove.png" --lz77
+Map_Wyvern_Stand:
+#incext Png2Dmp "wyvernstand.png" --lz77
+Map_Wyvern_Move:
+#incext Png2Dmp "wyvernmove.png" --lz77
+

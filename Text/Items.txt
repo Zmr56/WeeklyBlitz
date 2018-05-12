@@ -1,0 +1,13 @@
+## Name_ShortAxe
+Short Axe[X]
+
+## Name_Vala
+Vala's Ember[X]
+
+## Desc_Vala
+Grants Def/Res +2.[X]
+
+## YuhuaHamasaki
+[OpenMidLeft][LoadFace][0x30][0x01][OpenMidLeft]My hot and flexible body[N]
+allows me to exercise in all[N]
+different positions![A][X]

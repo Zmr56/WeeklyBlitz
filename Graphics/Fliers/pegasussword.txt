@@ -1,0 +1,228 @@
+#######################################################
+#5A Lnc. Pegasus Sword
+#
+#When importing to FEditorAdv delete # and after each line.
+#######################################################
+/// - Mode 1               #Melee Animation
+C03                               #Start attack animation; should be followed by 0x07
+C07                               #Start attack animation; should be preceeded by 0x03
+5 p- pegasussword_000.png
+4 p- pegasussword_001.png
+4 p- pegasussword_002.png
+4 p- pegasussword_003.png
+C22                               #Play short sword swinging SFE
+C04                               #Prepare HP depletion routine; needed to animate return to standing frame after hit
+C1A                               #Normal hit
+C1F                               #Play hit SFE (sounds like Eliwood with sword's hit)
+10 p- pegasussword_004.png
+C01                               #NOP
+3 p- pegasussword_005.png
+2 p- pegasussword_006.png
+C23                               #Play shorter sword swinging SFE
+3 p- pegasussword_007.png
+5 p- pegasussword_008.png
+5 p- pegasussword_009.png
+C25                               #Play wing flap SFE
+5 p- pegasussword_010.png
+5 p- pegasussword_011.png
+5 p- pegasussword_012.png
+5 p- pegasussword_013.png
+C25                               #Play wing flap SFE
+5 p- pegasussword_014.png
+5 p- pegasussword_015.png
+5 p- pegasussword_016.png
+5 p- pegasussword_017.png
+4 p- pegasussword_018.png
+C35                               #Play longer wing flapping SFE
+3 p- pegasussword_019.png
+3 p- pegasussword_020.png
+3 p- pegasussword_021.png
+3 p- pegasussword_022.png
+3 p- pegasussword_023.png
+5 p- pegasussword_024.png
+C25                               #Play wing flap SFE
+2 p- pegasussword_000.png
+C06                               #Begin opponent's turn after hit.next code 0D.
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 3               #Melee Critical Animation
+C03                               #Start attack animation; should be followed by 0x07
+C07                               #Start attack animation; should be preceeded by 0x03
+5 p- pegasussword_000.png
+1 p- pegasussword_025.png
+1 p- pegasussword_026.png
+C38                               #Play heavy spear spinning SFE
+1 p- pegasussword_027.png
+2 p- pegasussword_028.png
+2 p- pegasussword_029.png
+1 p- pegasussword_026.png
+C38                               #Play heavy spear spinning SFE
+1 p- pegasussword_027.png
+2 p- pegasussword_028.png
+2 p- pegasussword_029.png
+1 p- pegasussword_026.png
+C38                               #Play heavy spear spinning SFE
+1 p- pegasussword_027.png
+2 p- pegasussword_028.png
+2 p- pegasussword_029.png
+1 p- pegasussword_026.png
+C38                               #Play heavy spear spinning SFE
+1 p- pegasussword_027.png
+2 p- pegasussword_028.png
+2 p- pegasussword_029.png
+1 p- pegasussword_030.png
+5 p- pegasussword_000.png
+4 p- pegasussword_001.png
+4 p- pegasussword_002.png
+4 p- pegasussword_003.png
+C22                               #Play short sword swinging SFE
+C04                               #Prepare HP depletion routine; needed to animate return to standing frame after hit
+C08                               #Critical hit
+C1F                               #Play hit SFE (sounds like Eliwood with sword's hit)
+C15                               #Slight vibration of screen
+10 p- pegasussword_004.png
+C01                               #NOP
+3 p- pegasussword_005.png
+2 p- pegasussword_006.png
+C23                               #Play shorter sword swinging SFE
+3 p- pegasussword_007.png
+5 p- pegasussword_008.png
+5 p- pegasussword_009.png
+C25                               #Play wing flap SFE
+5 p- pegasussword_010.png
+5 p- pegasussword_011.png
+5 p- pegasussword_012.png
+5 p- pegasussword_013.png
+C25                               #Play wing flap SFE
+5 p- pegasussword_014.png
+5 p- pegasussword_015.png
+5 p- pegasussword_016.png
+5 p- pegasussword_017.png
+4 p- pegasussword_018.png
+C35                               #Play longer wing flapping SFE
+3 p- pegasussword_019.png
+3 p- pegasussword_020.png
+3 p- pegasussword_021.png
+3 p- pegasussword_022.png
+3 p- pegasussword_023.png
+5 p- pegasussword_024.png
+C25                               #Play wing flap SFE
+2 p- pegasussword_000.png
+C06                               #Begin opponent's turn after hit.next code 0D.
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 5               #Ranged Animation 
+5 p- pegasussword_000.png
+2 p- pegasussword_025.png
+C05                               #Call spell associated with equipped weapon
+5 p- pegasussword_031.png
+C01                               #NOP
+4 p- pegasussword_032.png
+10 p- pegasussword_000.png
+C06                               #Begin opponent's turn after hit.next code 0D.
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 6               #Ranged Critical Animation
+5 p- pegasussword_000.png
+1 p- pegasussword_025.png
+1 p- pegasussword_026.png
+C38                               #Play heavy spear spinning SFE
+1 p- pegasussword_027.png
+2 p- pegasussword_028.png
+2 p- pegasussword_029.png
+1 p- pegasussword_026.png
+C38                               #Play heavy spear spinning SFE
+1 p- pegasussword_027.png
+2 p- pegasussword_028.png
+2 p- pegasussword_029.png
+1 p- pegasussword_026.png
+C38                               #Play heavy spear spinning SFE
+1 p- pegasussword_027.png
+2 p- pegasussword_028.png
+2 p- pegasussword_029.png
+1 p- pegasussword_026.png
+C38                               #Play heavy spear spinning SFE
+1 p- pegasussword_027.png
+2 p- pegasussword_028.png
+2 p- pegasussword_029.png
+C05                               #Call spell associated with equipped weapon
+5 p- pegasussword_031.png
+C01                               #NOP
+4 p- pegasussword_032.png
+10 p- pegasussword_000.png
+C06                               #Begin opponent's turn after hit.next code 0D.
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 7               #Dodge Melee Attack
+C02                               #Start of dodge
+2 p- pegasussword_033.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+9 p- pegasussword_034.png
+C01                               #NOP
+2 p- pegasussword_033.png
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 8               #Dodge Ranged Attack
+C02                               #Start of dodge
+2 p- pegasussword_033.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+9 p- pegasussword_034.png
+C01                               #NOP
+2 p- pegasussword_033.png
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 9               #Equiped with Melee Weapon
+3 p- pegasussword_000.png
+C01                               #NOP
+~~~
+/// - Mode 10               #standing motions?
+3 p- pegasussword_000.png
+C01                               #NOP
+~~~
+/// - Mode 11               #Equiped with Ranged weapon
+3 p- pegasussword_000.png
+C01                               #NOP
+~~~
+/// - Mode 12               #Attack Missed Animation
+C03                               #Start attack animation; should be followed by 0x07
+C07                               #Start attack animation; should be preceeded by 0x03
+5 p- pegasussword_000.png
+4 p- pegasussword_001.png
+4 p- pegasussword_002.png
+4 p- pegasussword_003.png
+C22                               #Play short sword swinging SFE
+C04                               #Prepare HP depletion routine; needed to animate return to standing frame after hit
+3 p- pegasussword_035.png
+3 p- pegasussword_036.png
+10 p- pegasussword_037.png
+C01                               #NOP
+3 p- pegasussword_038.png
+2 p- pegasussword_006.png
+C23                               #Play shorter sword swinging SFE
+3 p- pegasussword_007.png
+5 p- pegasussword_008.png
+5 p- pegasussword_009.png
+C25                               #Play wing flap SFE
+5 p- pegasussword_010.png
+5 p- pegasussword_011.png
+5 p- pegasussword_012.png
+5 p- pegasussword_013.png
+C25                               #Play wing flap SFE
+5 p- pegasussword_014.png
+5 p- pegasussword_015.png
+5 p- pegasussword_016.png
+5 p- pegasussword_017.png
+4 p- pegasussword_018.png
+C35                               #Play longer wing flapping SFE
+3 p- pegasussword_019.png
+3 p- pegasussword_020.png
+3 p- pegasussword_021.png
+3 p- pegasussword_022.png
+3 p- pegasussword_023.png
+3 p- pegasussword_024.png
+C25                               #Play wing flap SFE
+5 p- pegasussword_000.png
+C06                               #Begin opponent's turn after hit.next code 0D.
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - End of animation

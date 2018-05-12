@@ -1,0 +1,2 @@
+Mounted knights with swift movement.[N]
+Equip: Swords.[X]

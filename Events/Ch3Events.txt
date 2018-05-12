@@ -1,0 +1,248 @@
+#include EAstdlib.event
+
+EventPointerTable(0x0D,ThisChapter)
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+Units:
+UNIT Eirika EirikaLord 0x00 Level(2, Ally, 0) [1,1] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Seth Cavalier 0x00 Level(2, Ally, 0) [3,1] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Seth Cavalier 0x00 Level(2, Ally, 0) [2,2] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Seth Cavalier 0x00 Level(2, Ally, 0) [1,3] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Seth Cavalier 0x00 Level(2, Ally, 0) [5,1] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Seth Cavalier 0x00 Level(2, Ally, 0) [4,2] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT
+
+
+TurnBasedEvents:
+TURN 0x0 TurnUno[1,0] 0x0
+TURN 0x0 TurnDos[2,0] 0x0
+TURN 0x0 TurnFith[5,0] 0x0
+TURN 0x0 TurnThird[3,0] 0x0
+END_MAIN
+
+TurnUno:
+LOAD1 0x1 Civ
+ENUN
+CAM1 Ross
+FlashCursor(Ross, 60)
+TEXTSHOW 0x957 //Okram: Stay back! Protect the books! They're more important then my health, if they fall into King Atlavum's hands, he'll be able to arm his entire army with powerful spells! Femalevillager: We know this Okram, this is the FIFTH time you've mentioned it, IN AN HOUR! It's not that hard to understand, for the love of Naga stop! Okram: Alright! Alright, I get the point geeze... I was just saying it so the kind and friendly people over there would HELP US FOR THE LOVE OF NAGA! PLEASE! WE'RE ALL GOING TO DIE! OldMan: My hero...
+TEXTEND
+TEXTSHOW 0x955 //Bubba(Bone): Get those filthy villagers! They hold the key to the King's success! We will become the King's favourite warriors, the richest men in the realm! Arm the Pegasus Knight and have her attack quickly! Prepare the Dumb-Dumb Squad which arrived ten minutes late to fight! Should be done in a while...
+TEXTEND
+ENDA
+
+TurnDos:
+ReinforcementEvent(TurnTwa)
+TEXTSTART
+TEXTSHOW 0x959
+ENDA
+
+TurnFith:
+ReinforcementEvent(TurnSixFRENCH)
+TEXTSHOW 0x95A
+TEXTEND
+ENDA
+
+TurnThird:
+ReinforcementEvent(REINHARDTFORCE)
+ENDA
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Armory(BuyMyGoodsOrDie,18,13)
+Vendor(VINDORMORE,10,8)
+END_MAIN
+
+PROMOINCH3:
+//text here
+SVAL 0x2 0x0
+CALL 0x9EE1B8
+SVAL 0x3 MasterSeal
+GIVEITEMTO 0xFFFF
+EVBIT_T 0x7
+ENDA
+
+ALIGN 4
+UNLIMITEDFIRE:
+SVAL 0x2 0x0
+CALL 0x9EE1B8
+SVAL 0x3 Elfire
+GIVEITEMTO 0xFFFF
+EVBIT_T 0x7
+ENDA
+
+ALIGN 4
+MOREPOWA:
+SVAL 0x2 0x0
+CALL 0x9EE1B8
+SVAL 0x3 EnergyRing
+GIVEITEMTO 0xFFFF
+EVBIT_T 0x7
+ENDA
+
+ALIGN 4
+Nyah:
+SVAL 0x2 0x0
+CALL 0x9EE1B8
+SVAL 0x3 PoisonLance
+GIVEITEMTO 0xFFFF
+EVBIT_T 0x7
+ENDA
+
+BuyMyGoodsOrDie:
+SHLI IronSword SteelSword IronLance SteelLance IronAxe SteelAxe IronBow SilverBow
+ALIGN 4
+VINDORMORE:
+SHLI Fire Thunder Heal Torch Vulnerary Elfire
+ALIGN 4
+
+MiscBasedEvents:
+AREA 0xA MOREPOWA [0,10] [1,10]
+AREA 0xB UNLIMITEDFIRE [18,4] [19,4]
+AREA 0xC PROMOINCH3 [14,14] [14,14]
+AREA 0xD Nyah [17,1] [17,1]
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+//DO NOT TOUCH
+WORD $00
+
+Tutorial:
+//DO NOT TOUCH
+WORD $00
+
+TrapData:
+END_MAIN
+
+ALIGN 4
+
+BeginningScene:
+LOAD2 0x1 Units
+ENUN
+LOAD1 0x1 Bubba
+ENUN
+TEXTSHOW 0x954 //Lord: Sir Morps, do you have any knowledge where we are? Morps: It appears as if we have fallen for the oldest trick in the books, a hidden Outrealm entrace right under our feet. Lord: Drats, I should've known it wouldn't have been as easy... Oh look! Ruined houses! Bandits! Villagers with no hope of surviving... I smell free EXP and loot! Morps: Not again... We're going to go into an Outrealm in an Outrealm at this rate!
+TEXTEND
+GotoPrepScreen
+ENDA
+
+EndingScene:
+MUSCFAST 0x7FFF
+SVAL 0x2 0x1A
+CALL BANANA
+CHECK_ALIVE 0xFA
+BEQ 0x0 0xC 0x0
+CHECK_ALIVE 0xFB
+BEQ 0x0 0xC 0x0
+CHECK_ALIVE 0xF9
+BEQ 0x0 0xC 0x0
+MUSC 0x31
+TEXTSHOW 0x962 //OldMan: Okram... I on behalf of the village, thank you for all you have done. Okram: Any sane follower of the Divine Saint Naga would protect these tomes and protect innocent people brought into this hell of a war by insane bandits. OldMan: Well put, my boy, well put. As a thank you from the village, I have found a tome which is befitting of your hands and your hands alone, Okram. Okram: Keep it, if it were to fall- OldMan: Stop playing hero for once, boy. Learn to accept gifts. Back in my day, kids were happy to get sent to the fields and accept gifts! Why can't we return- Okram: Alright, alright, I get the point. I'll take the tome and be on my way, see if those kind blokes want me. 
+TEXTEND
+REMA
+MUSCMID 0x7FFF
+CALL APPLE
+SVAL 0x3 0xad //This is Okram's prf. 
+GIVEITEMTO 0x07 
+LABEL 0x0
+REMA
+MUSC 0x2B
+TEXTSHOW 0x963 //Okram: Hey! You on the horse with the stupid hair! Morps: What is it? Was saving your lifes not enough for you? You also need to attack my hair? Okram: Yeah, yeah, whatever. I would like to offer my assistance in your journey, wherever it may take me. Morps: Absolutely not- Lord: We would be honoured to have someone with your magical abilities on our side! Okram: Cheers, standard army payment? Morps: Now hold up- Lord: Yep, standard payment. Okram: Let's be going now that that's settled! Morps: Watch your step- And everyone fell into another outrealm portal... Why do I even bother? They need me, so I must join them in the outrealm for one last hooray!
+TEXTEND
+MUSCSLOW 0x7FFF
+STAL 60
+MUSCSLOW 0x32
+TEXTCONT
+TEXTEND
+REMA
+ENUT 0xD4
+ENUT 0xC1
+MNCH 0x8
+ENDA
+
+BANANA:
+CHECK_EVBIT 0x8
+BNE 0x80D2 0xC 0x0
+FADI 16
+LABEL 0x80D2
+REMOVEPORTRAITS
+BACG 0xFFFF
+FADU 16
+ENDA
+APPLE:
+EVBIT_MODIFY 0x1
+EVBIT_F 0x2
+CHECK_EVBIT 0x8
+BEQ 0x0 0xC 0x0
+FADU 16
+LABEL 0x0
+EVBIT_MODIFY 0x0
+ENDA
+// Events
+
+// Manual Movement
+
+// Scripted Fights
+
+// Units
+Bubba:
+UNIT Bone Mage 0x00 Level(5, Enemy, 0) [18,1] 0x00 0x00 0x0 0x00 [Elfire] GuardTileAI 
+UNIT 0x82 Archer 0x00 Level(3, Enemy, 0) [9,9] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI 
+UNIT 0x82 Archer 0x00 Level(3, Enemy, 0) [1,8] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI 
+UNIT 0x82 Archer 0x00 Level(3, Enemy, 0) [8,14] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI 
+UNIT 0x82 Knight 0x00 Level(3, Enemy, 0) [6,9] 0x00 0x00 0x0 0x00 [Hatchet] GuardTileAI 
+UNIT 0x82 Knight 0x00 Level(3, Enemy, 0) [14,13] 0x00 0x00 0x0 0x00 [Javelin] GuardTileAI 
+UNIT 0x82 Mercenary 0x00 Level(3, Enemy, 0) [4,6] 0x00 0x00 0x0 0x00 [SlimSword] AttackInRangeAI 
+UNIT 0x82 Mercenary 0x00 Level(3, Enemy, 0) [11,10] 0x00 0x00 0x0 0x00 [SlimSword] AttackInRangeAI 
+UNIT 0x82 Mage 0x00 Level(4, Enemy, 0) [14,0] 0x00 0x00 0x0 0x00 [Fire] PursueWithoutHeedAI 
+UNIT 0x82 Knight 0x00 Level(5, Enemy, 0) [13,5] 0x00 0x00 0x0 0x00 [Hatchet] ChaseOnceApproachedAI 
+UNIT 0x82 Fighter 0x00 Level(5, Enemy, 0) [11,4] 0x00 0x00 0x0 0x00 [HandAxe] ChaseOnceApproachedAI 
+UNIT 0x82 Fighter 0x00 Level(5, Enemy, 0) [15,6] 0x00 0x00 0x0 0x00 [HandAxe] ChaseOnceApproachedAI 
+UNIT 0x82 Mercenary 0x00 Level(5, Enemy, 0) [15,2] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI 
+UNIT 0x82 Soldier 0x00 Level(3, Enemy, 0) [10,11] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI 
+UNIT 0x82 Knight 0x00 Level(3, Enemy, 0) [14,12] 0x00 0x00 0x0 0x00 [Hatchet] GuardTileAI 
+UNIT 0x82 Mercenary 0x00 Level(5, Enemy, 0) [12,3] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI 
+UNIT 0x82 Knight 0x00 Level(5, Enemy, 0) [18,3] 0x00 0x00 0x0 0x00 [Javelin] GuardTileAI 
+UNIT 0x82 Knight 0x00 Level(5, Enemy, 0) [17,1] 0x00 0x00 0x0 0x00 [Javelin] GuardTileAI 
+UNIT
+
+Civ:
+UNIT 0xFA Civilian_F_2 0x00 Level(1, NPC, 0) [1,14] 0x00 0x00 0x0 0x00 [0x00] GuardTileAI 
+UNIT 0xFB Civilian_F_2 0x00 Level(1, NPC, 0) [3,14] 0x00 0x00 0x0 0x00 [0x00] GuardTileAI 
+UNIT 0xFA Civilian 0x00 Level(1, NPC, 0) [2,13] 0x00 0x00 0x0 0x00 [0x00] GuardTileAI 
+UNIT 0xF9 Civilian_2 0x00 Level(1, NPC, 0) [1,12] 0x00 0x00 0x0 0x00 [0x00] GuardTileAI 
+UNIT Ross Mage 0x00 Level(2, Ally, 0) [4,12] 0x00 0x00 0x0 0x00 [Fire, Elixir] NoAI 
+UNIT
+
+REINHARDTFORCE:
+UNIT 0x82 Shaman 0x00 Level(5, Enemy, 0) [10,0] 0x00 0x00 0x0 0x00 [Flux] ChaseOnceApproachedAI 
+UNIT
+
+TurnTwa:
+UNIT 0x82 LancePegasus 0x00 Level(5, Enemy, 0) [19,14] 0x00 0x00 0x0 0x00 [SlimLance] PursueWithoutHeedAI 
+UNIT
+
+TurnSixFRENCH:
+UNIT 0x82 Mage 0x00 Level(5, Enemy, 0) [18,8] 0x00 0x00 0x0 0x00 [Fire] PursueWithoutHeedAI 
+UNIT 0x82 Monk 0x00 Level(5, Enemy, 0) [12,9] 0x00 0x00 0x0 0x00 [Lightning] AttackInRangeAI 
+UNIT 0x82 Knight 0x00 Level(5, Enemy, 0) [5,7] 0x00 0x00 0x0 0x00 [IronSword, IronBow] AttackInRangeAI 
+UNIT
+
+
+// Shop Data
+
+MESSAGE Events end at offset currentOffset

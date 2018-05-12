@@ -1,0 +1,116 @@
+#include EAstdlib.event
+
+EventPointerTable(0x17,ThisChapter)
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+Units:
+UNIT Kathy Lord 0x0 Level(1,Ally,0) [21,14] 0x00 0x0 0x0 0x0 [0x0,0x0,0x0,0x0] NoAI
+UNIT Morps KnightLord 0x0 Level(1,Ally,0) [21,14] 0x00 0x0 0x0 0x0 [0x0,0x0,0x0,0x0] NoAI
+UNIT Tye SwordKnight 0x0 Level(1,Ally,0) [21,14] 0x00 0x0 0x0 0x0 [0x0,0x0,0x0,0x0] NoAI
+UNIT Anna Thief 0x0 Level(1,Ally,0) [21,14] 0x00 0x0 0x0 0x0 [0x0,0x0,0x0,0x0] NoAI
+UNIT Jet Bard 0x0 Level(1,Ally,0) [21,14] 0x00 0x0 0x0 0x0 [0x0,0x0,0x0,0x0] NoAI
+UNIT Vanessa PegasusKnight 0x0 Level(1,Ally,0) [21,14] 0x00 0x0 0x0 0x0 [0x0,0x0,0x0,0x0] NoAI
+UNIT Edgeworth Mage 0x0 Level(1,Ally,0) [21,14] 0x00 0x0 0x0 0x0 [0x0,0x0,0x0,0x0] NoAI
+UNIT
+
+Bad: 
+UNIT Jack Fighter 0x0 Level(6,Enemy,0) [4,7] 0x00 0x0 0x0 0x00 [Axereaver, Axereaver, Axereaver, Axereaver] NeverMoveAI
+UNIT 0x80 Archer 0x00 Level(5, Enemy, 1) [12,1] 0x00 0x00 0x0 0x00 [Longbow, Vulnerary] AttackInRangeAI 
+UNIT 0x80 Soldier 0x00 Level(5, Enemy, 1) [10,5] 0x00 0x00 0x0 0x00 [IronLance, Javelin] NeverMoveAI
+UNIT 0x80 PegasusKnight 0x00 Level(4, Enemy, 1) [6,2] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI  
+UNIT 0x80 SwordKnight 0x00 Level(5, Enemy, 1) [1,8] 0x00 0x00 0x0 0x00 [IronBlade] AttackInRangeAI 
+UNIT 0x80 Fighter 0x00 Level(4, Enemy, 1) [8,11] 0x00 0x00 0x0 0x00 [Hammer] AttackInRangeAI 
+UNIT 0x80 Fighter 0x00 Level(4, Enemy, 1) [3,10] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI 
+UNIT 0x80 AxeCav 0x00 Level(5, Enemy, 1) [3,14] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI 
+UNIT 0x80 AxeCav 0x00 Level(5, Enemy, 1) [1,14] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI 
+UNIT
+
+VoidBlock:
+UNIT Void SoldierF 0x00 Level(5, Enemy, 0) [2,12] 0x00 0x00 0x0 0x00 [IronLance, Axereaver, Vulnerary] AttackInRangeAI 
+UNIT
+
+TurnBasedEvents:
+END_MAIN
+
+ALIGN 32 
+
+CharacterBasedEvents:
+CHAR 0x9 VoidRecruitmentK [Kathy,Void] 0x0
+CHAR 0x9 VoidRecruitmentM [Morps,Void] 0x0
+END_MAIN
+
+LocationBasedEvents:
+Seize(0xA,EndingScene,4,7)
+Seize(0xA,BackdoorEnding,4,4)
+House(0xB,IsaacHouse,12,4)
+AREA 0xC HiddenItem [11,0] [11,0]
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+VoidRecruitmentK:
+//text here
+CUSA Void
+ENDA
+
+VoidRecruitmentM:
+//text here
+CUSA Void
+ENDA
+
+IsaacHouse:
+//text here
+ENDA
+
+HiddenItem:
+//text here
+ITGV MasterSeal
+ENDA
+
+ALIGN 4
+
+BeginningScene:
+LOAD1 0x1 Units
+LOAD1 0x1 Bad
+LOAD1 0x1 VoidBlock
+//text here
+GotoPrepScreen
+ENDA
+
+EndingScene:
+//text here
+ITGM WhiteGem
+//text here
+ITGC Void BlitzLance
+MNC2 0x5
+ENDA
+
+BackdoorEnding:
+//text here
+ITGC Void BlitzLance
+MNC2 0x5
+ENDA
+
+MESSAGE Events end at offset CURRENTOFFSET

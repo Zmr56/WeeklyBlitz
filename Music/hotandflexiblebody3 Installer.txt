@@ -1,0 +1,14 @@
+hotandflexiblebody3_data:
+BYTE $BE $7F $BC $00 $BB $05 $BD $00 $E7 $3C $40 $98 $B1 $79 $83 $83
+hotandflexiblebody3:
+WORD $01
+POIN hotandflexiblebody3_map
+POIN hotandflexiblebody3_data
+
+hotandflexiblebody3_map:
+WORD $3c00
+POIN hotandflexiblebody3_wav
+WORD $FF00FF
+
+hotandflexiblebody3_wav:
+#incbin "hotandflexiblebody3.bin"

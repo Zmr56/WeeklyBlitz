@@ -19,3 +19,40 @@ setMugEntry(0x4, Morps_Mug, 3,5,3,3)
 //Anna_Mug:
 //#incext PortraitFormatter "Anna.png"
 //setMugEntry(0x7, Anna_Mug, 2,5,3,3)
+
+//Basically added by Der; Who uses which portrait and have they been pointed at the tables? Please, confirm.
+Raynor_Mug:
+#incext PortraitFormatter "Raynor.png"
+setMugEntry(0x10, Raynor_Mug, 2,4,2,2)
+
+Kamui_Mug:
+#incext PortraitFormatter "Kamui.png"
+setMugEntry(0x14, Kamui_Mug, 3,4,2,6)
+
+Creidne_Mug:
+#incext PortraitFormatter "Creidne.png"
+setMugEntry(0x22, Creidne_Mug, 2,6,3,4)
+
+Sayori_Mug:
+#incext PortraitFormatter "Sayori.png"
+setMugEntry(0x29, Sayori_Mug, 3,5,2,6)
+
+Shredde_Mug:
+#incext PortraitFormatter "Shredder2.png"
+setMugEntry(0x3A, Shredde_Mug, 3,6,3,4)
+
+Astolia_Mug:
+#incext PortraitFormatter "Astolia.png"
+setMugEntry(0x42, Astolia_Mug, 3,5,3,3)
+
+Monika_Mug:
+#incext PortraitFormatter "Monika.png"
+setMugEntry(0x49, Monika_Mug, 2,6,3,4)
+
+MoniBeta_Mug:
+#incext PortraitFormatter "MoniBeta2.png"
+setMugEntry(0x6C, MoniBeta_Mug, 2,6,3,4)
+
+Ephraim_Mug:
+#incext PortraitFormatter "ephraim.png"
+setMugEntry(0xC, Ephraim_Mug, 2,5,3,3)

@@ -1,0 +1,235 @@
+#include EAstdlib.event
+
+
+
+EventPointerTable(0x7,ThisChapter)
+
+
+
+ThisChapter:
+
+POIN TurnBasedEvents
+
+POIN CharacterBasedEvents
+
+POIN LocationBasedEvents
+
+POIN MiscBasedEvents
+
+POIN Dunno Dunno Dunno
+
+POIN Tutorial
+
+POIN TrapData TrapData
+
+POIN Units Units
+
+POIN $0 $0 $0 $0 $0 $0
+
+POIN BeginningScene EndingScene
+
+
+Units:
+UNIT Orson_Boss General 0x00 Level(5, Enemy, 0) [30,20] 0x00 0x00 0x0 0x00 [Tomahawk, BraveAxe, HoplonShield, Elixir] GuardTileAI 
+UNIT Fado Druid_F 0x00 Level(6, Enemy, 0) [22,20] 0x00 0x00 0x0 0x00 [Fenrir, Luna, Eclipse, Elixir] GuardTileAI 
+UNIT PegasusMessenger Sniper_F 0x00 Level(6, Enemy, 0) [8,15] 0x00 0x00 0x0 0x00 [SilverBow, BraveBow, Longbow, Elixir] GuardTileAI 
+UNIT 0x8e General 0x00 Level(5, Enemy, 0) [10,19] 0x00 0x00 0x0 0x00 [Tomahawk, Runesword, Spear, Elixir] GuardTileAI 
+UNIT 0x8e General 0x00 Level(5, Enemy, 0) [7,15] 0x00 0x00 0x0 0x00 [Tomahawk, Horseslayer, SilverSword, Elixir] GuardTileAI 
+UNIT 0x8e General 0x00 Level(5, Enemy, 0) [8,14] 0x00 0x00 0x0 0x00 [Spear, Halberd, SilverSword, Elixir] GuardTileAI 
+UNIT 0x8e General 0x00 Level(5, Enemy, 0) [9,15] 0x00 0x00 0x0 0x00 [Runesword, Longsword, SilverLance, Elixir] GuardTileAI 
+UNIT 0x8e Hero 0x00 Level(3, Enemy, 0) [4,11] 0x00 0x00 0x0 0x00 [SilverSword, Tomahawk] GuardTileAI 
+UNIT 0x8e Hero 0x00 Level(3, Enemy, 0) [4,9] 0x00 0x00 0x0 0x00 [SilverAxe, LightBrand] GuardTileAI 
+UNIT 0x8e Pupil_1 0x00 Level(3, Enemy, 0) [5,10] 0x00 0x00 0x0 0x00 [KillerLance, Spear] GuardTileAI 
+UNIT 0x8e Pupil_1 0x00 Level(3, Enemy, 0) [12,11] 0x00 0x00 0x0 0x00 [KillerLance, Spear] AttackInRangeAI 
+UNIT 0x8e Warrior 0x00 Level(3, Enemy, 0) [7,10] 0x00 0x00 0x0 0x00 [BraveAxe, SilverBow] AttackInRangeAI 
+UNIT 0x8e Warrior 0x00 Level(3, Enemy, 0) [7,7] 0x00 0x00 0x0 0x00 [BraveAxe, SilverBow] AttackInRangeAI 
+UNIT 0x8e Sage 0x00 Level(3, Enemy, 0) [9,7] 0x00 0x00 0x0 0x00 [Fimbulvetr, Heal] AttackInRangeAI 
+UNIT 0x8e Sage 0x00 Level(3, Enemy, 0) [9,10] 0x00 0x00 0x0 0x00 [Fimbulvetr, Heal] AttackInRangeAI 
+UNIT 0x8e Sage 0x00 Level(5, Enemy, 0) [13,15] 0x00 0x00 0x0 0x00 [Aircalibur, Heal] AttackInRangeAI 
+UNIT 0x8e Sage 0x00 Level(5, Enemy, 0) [4,15] 0x00 0x00 0x0 0x00 [Aircalibur, Heal] AttackInRangeAI 
+UNIT 0x8e Sage 0x00 Level(5, Enemy, 0) [4,2] 0x00 0x00 0x0 0x00 [Aircalibur, Heal] AttackInRangeAI 
+UNIT 0x8e Sage 0x00 Level(5, Enemy, 0) [8,2] 0x00 0x00 0x0 0x00 [Aircalibur, Heal] AttackInRangeAI 
+UNIT 0x8e Druid 0x00 Level(5, Enemy, 0) [6,16] 0x00 0x00 0x0 0x00 [Fenrir, Luna] AttackInRangeAI 
+UNIT 0x8e Druid 0x00 Level(5, Enemy, 0) [10,16] 0x00 0x00 0x0 0x00 [Fimbulvetr, Luna] AttackInRangeAI 
+UNIT 0x8e Bishop 0x00 Level(5, Enemy, 0) [7,17] 0x00 0x00 0x0 0x00 [Aura, Divine] AttackInRangeAI 
+UNIT 0x8e Bishop 0x00 Level(5, Enemy, 0) [9,17] 0x00 0x00 0x0 0x00 [Aura, Divine] AttackInRangeAI 
+UNIT 0x8e Swordmaster 0x00 Level(5, Enemy, 0) [15,13] 0x00 0x00 0x0 0x00 [BraveSword] AttackInRangeAI 
+UNIT 0x8e Swordmaster 0x00 Level(5, Enemy, 0) [4,13] 0x00 0x00 0x0 0x00 [BraveSword] AttackInRangeAI 
+UNIT 0x8e Swordmaster 0x00 Level(5, Enemy, 0) [5,20] 0x00 0x00 0x0 0x00 [BraveSword] AttackInRangeAI 
+UNIT
+
+bishops:
+UNIT 0x8e Bishop 0x00 Level(6, Enemy, 0) [10,21] 0x00 0x00 0x0 0x00 [Physic, Silence, Sleep, Elixir] GuardTileAI 
+UNIT 0x8e Bishop 0x00 Level(6, Enemy, 0) [30,15] 0x00 0x00 0x0 0x00 [Physic, Silence, Sleep, Elixir] GuardTileAI 
+UNIT
+
+Prison:
+UNIT 0x8e Soldier 0x00 Level(20, Enemy, 0) [21,12] 0x00 0x00 0x0 0x00 [IronLance, Spear] AttackInRangeAI 
+UNIT 0x8e Soldier 0x00 Level(20, Enemy, 0) [23,12] 0x00 0x00 0x0 0x00 [IronLance, Spear] AttackInRangeAI 
+UNIT 0x8e Soldier 0x00 Level(20, Enemy, 0) [17,12] 0x00 0x00 0x0 0x00 [IronLance, Spear] AttackInRangeAI 
+UNIT 0x8e Soldier 0x00 Level(20, Enemy, 0) [19,12] 0x00 0x00 0x0 0x00 [IronLance, Spear] AttackInRangeAI 
+UNIT 0x8e Warrior 0x00 Level(6, Enemy, 0) [13,8] 0x00 0x00 0x0 0x00 [SilverAxe, SilverBow] AttackInRangeAI 
+UNIT 0x8e Warrior 0x00 Level(6, Enemy, 0) [13,6] 0x00 0x00 0x0 0x00 [SilverAxe, SilverBow] AttackInRangeAI 
+UNIT 0x8e Warrior 0x00 Level(6, Enemy, 0) [15,20] 0x00 0x00 0x0 0x00 [SilverAxe, SilverBow] AttackInRangeAI 
+UNIT 0x8e General 0x00 Level(6, Enemy, 0) [13,3] 0x00 0x00 0x0 0x00 [SilverAxe, Tomahawk] GuardTileAI 
+UNIT 0x8e General 0x00 Level(6, Enemy, 0) [12,3] 0x00 0x00 0x0 0x00 [SilverAxe, Tomahawk] GuardTileAI 
+UNIT 0x8e General 0x00 Level(6, Enemy, 0) [28,4] 0x00 0x00 0x0 0x00 [SilverAxe, Tomahawk] GuardTileAI 
+UNIT 0x8e General 0x00 Level(6, Enemy, 0) [30,4] 0x00 0x00 0x0 0x00 [SilverAxe, Tomahawk] GuardTileAI 
+UNIT 0x8e General 0x00 Level(6, Enemy, 0) [16,8] 0x00 0x00 0x0 0x00 [SilverAxe, Tomahawk] GuardTileAI 
+UNIT 0x8e General 0x00 Level(6, Enemy, 0) [16,6] 0x00 0x00 0x0 0x00 [SilverAxe, Tomahawk] GuardTileAI 
+UNIT 0x8e Assassin 0x00 Level(6, Enemy, 0) [18,3] 0x00 0x00 0x0 0x00 [KillingEdge, Runesword] AttackInRangeAI 
+UNIT 0x8e Assassin 0x00 Level(6, Enemy, 0) [18,1] 0x00 0x00 0x0 0x00 [KillingEdge, Runesword] AttackInRangeAI 
+UNIT 0x8e Hero 0x00 Level(6, Enemy, 0) [21,19] 0x00 0x00 0x0 0x00 [BraveSword, Tomahawk] GuardTileAI 
+UNIT 0x8e Hero 0x00 Level(6, Enemy, 0) [21,21] 0x00 0x00 0x0 0x00 [BraveAxe, Runesword] GuardTileAI 
+UNIT 0x8e Swordmaster_F 0x00 Level(6, Enemy, 0) [20,20] 0x00 0x00 0x0 0x00 [BraveSword, Shamshir] AttackInRangeAI 
+UNIT 0x8e Pupil_1 0x00 Level(6, Enemy, 0) [22,22] 0x00 0x00 0x0 0x00 [BraveLance, Spear] GuardTileAI 
+UNIT 0x8e Pupil_1 0x00 Level(6, Enemy, 0) [22,18] 0x00 0x00 0x0 0x00 [BraveLance, Spear] GuardTileAI 
+UNIT
+
+allies:
+UNIT Eirika EirikaLord 0x00 Level(6, Ally, 0) [1,22] 0x00 0x00 0x0 0x00 [BraveLance, Spear] NoAI 
+UNIT Seth Paladin 0x00 Level(6, Ally, 0) [2,21] 0x00 0x00 0x0 0x00 [BraveLance, Spear] NoAI 
+UNIT Seth Paladin 0x00 Level(6, Ally, 0) [0,21] 0x00 0x00 0x0 0x00 [BraveLance, Spear] NoAI 
+UNIT Seth Paladin 0x00 Level(6, Ally, 0) [1,20] 0x00 0x00 0x0 0x00 [BraveLance, Spear] NoAI 
+UNIT Seth Paladin 0x00 Level(6, Ally, 0) [2,19] 0x00 0x00 0x0 0x00 [BraveLance, Spear] NoAI 
+UNIT Seth Paladin 0x00 Level(6, Ally, 0) [0,19] 0x00 0x00 0x0 0x00 [BraveLance, Spear] NoAI 
+UNIT Seth Paladin 0x00 Level(6, Ally, 0) [1,18] 0x00 0x00 0x0 0x00 [BraveLance, Spear] NoAI 
+UNIT Seth Paladin 0x00 Level(6, Ally, 0) [2,17] 0x00 0x00 0x0 0x00 [BraveLance, Spear] NoAI 
+UNIT Seth Paladin 0x00 Level(6, Ally, 0) [0,17] 0x00 0x00 0x0 0x00 [BraveLance, Spear] NoAI 
+UNIT Seth Paladin 0x00 Level(6, Ally, 0) [1,16] 0x00 0x00 0x0 0x00 [BraveLance, Spear] NoAI 
+UNIT Seth Paladin 0x00 Level(6, Ally, 0) [2,15] 0x00 0x00 0x0 0x00 [BraveLance, Spear] NoAI 
+UNIT Seth Paladin 0x00 Level(6, Ally, 0) [0,15] 0x00 0x00 0x0 0x00 [BraveLance, Spear] NoAI 
+UNIT Seth Paladin 0x00 Level(6, Ally, 0) [2,13] 0x00 0x00 0x0 0x00 [BraveLance, Spear] NoAI 
+UNIT Seth Paladin 0x00 Level(6, Ally, 0) [1,14] 0x00 0x00 0x0 0x00 [BraveLance, Spear] NoAI 
+UNIT Seth Paladin 0x00 Level(6, Ally, 0) [0,13] 0x00 0x00 0x0 0x00 [BraveLance, Spear] NoAI 
+UNIT 0x8e WyvernLord 0x00 Level(6, Enemy, 0) [26,21] 0x00 0x00 0x0 0x00 [SilverLance, BraveSword] AttackInRangeAI 
+UNIT 0x8e WyvernLord 0x00 Level(6, Enemy, 0) [26,19] 0x00 0x00 0x0 0x00 [BraveAxe, Spear] AttackInRangeAI 
+UNIT
+
+npcs:
+UNIT LyonCC Cavalier 0x00 Level(15, Ally, 0) [22,15] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT OrsonCC Archer_F 0x00 Level(4, Ally, 0) [26,15] 0x00 0x00 0x0 0x00 [Lockpick] NoAI 
+UNIT 0x8d Mercenary 0x00 Level(20, NPC, 0) [18,15] 0x00 0x00 0x0 0x00 [0x00] GuardTileAI 
+UNIT
+
+
+// Shop Data
+
+MESSAGE Events end at offset currentOffset
+
+
+
+TurnBasedEvents:
+TURN 0x0 WalkTwo[13,0] 0x0
+TURN 0x0 WalkOne[15,0] 0x0
+TURN 0x0 TurnDuex[1,0] 0x0
+END_MAIN
+
+TurnDuex:
+LOAD1 0x1 npcs
+ENUN
+ENDA
+
+END_MAIN
+
+
+
+WalkOne:
+SETVAL 0xB 0x130013
+TILECHANGE 0xFFFF
+NoFade
+ENDA
+
+
+WalkTwo:
+SETVAL 0xB 0x130017
+TILECHANGE 0xFFFF
+NoFade
+ENDA
+
+
+
+CharacterBasedEvents:
+END_MAIN
+
+
+
+LocationBasedEvents:
+Armory(NEEDMONEY,0,10)
+Chest(SilverBow,30,14)
+Chest(SilverAxe,30,16)
+Chest(Tomahawk,22,2)
+Chest(Elixir,20,2)
+Chest(WhiteGem,6,2)
+Chest(BraveLance,5,21)
+ChestMoney(100000,2,2)
+Door(11,5)
+Door(11,8)
+Door(12,4)
+Door(18,13)
+Door(22,13)
+Door(26,13)
+Door(5,18)
+Door(14,18)
+END_MAIN
+
+
+NEEDMONEY:
+SHLI SilverSword KillingEdge Longsword SilverLance KillerLance Horseslayer SilverAxe KillerAxe Halberd
+ALIGN 4
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+Seize(30,20)
+END_MAIN
+
+
+
+Dunno:
+
+//DO NOT TOUCH
+
+WORD $00
+
+
+
+Tutorial:
+
+//DO NOT TOUCH
+
+WORD $00
+
+
+
+TrapData:
+
+END_MAIN
+
+
+
+ALIGN 4
+
+
+
+BeginningScene:
+LOAD2 0x1 allies
+ENUN
+LOAD1 0x1 Units
+ENUN
+LOAD1 0x1 Prison
+ENUN
+LOAD1 0x1 bishops
+ENUN
+GotoPrepScreen
+NoFade
+ENDA
+
+
+
+EndingScene:
+MNCH 20
+ENDA
+
+
+
+MESSAGE Events end at offset currentOffset

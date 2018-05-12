@@ -62,13 +62,14 @@ ALIGN 4
 
 Units:
 UNIT Kathy Lord 0x00 Level(5, Ally, 0) [3,17] 0x00 0x00 0x0 0x00 [IronSword, Vulnerary] NoAI
-UNIT Morps Paladin 0x00 Level(5, Ally, 0) [2,18] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
-UNIT Morps Paladin 0x00 Level(5, Ally, 0) [4,18] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
-UNIT Morps Paladin 0x00 Level(5, Ally, 0) [3,19] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
-UNIT Morps Paladin 0x00 Level(5, Ally, 0) [1,17] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
-UNIT Morps Paladin 0x00 Level(5, Ally, 0) [2,16] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
-UNIT Morps Paladin 0x00 Level(5, Ally, 0) [1,15] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
-UNIT Morps Paladin 0x00 Level(5, Ally, 0) [0,16] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [2,18] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [4,18] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [3,19] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [1,17] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [2,16] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [1,15] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+UNIT Morps Paladin Kathy Level(5, Ally, 0) [0,16] 0x00 0x00 0x0 0x00 [SteelSword, SilverLance, Vulnerary] NoAI
+
 
 Bad1:
 UNIT RaynorBoss Pirate 0x00 Level(8, Enemy, 0) [23,2] 0x02 0x00 0x0 0x00 [Halberd, HandAxe, MasterProof] NeverMoveAI

@@ -1,0 +1,192 @@
+
+EventPointerTable(Chapter13Events,ThisChapter)
+
+#define Raid(EventID,Pointer,X,Y) "LOCA EventID Pointer [X,Y] 0x21"
+#define TileChange(X,Y) "SETVAL 0xB Coords(X,Y) ; TILECHANGE 0xFFFF"
+#define Coords(xcoord,ycoord) "(ycoord<<16)|xcoord"
+#define GiveItem(Item,Character) "SMOV 0x3 Item ; GIVEITEMTO Character"
+#define EndConvo "CALL $9EE2C4"
+#define GuardAI GuardTileAI
+#define Drop 0x2
+#define Every2Turns(CondID1,CondID2,EventID,Pointer) "CHECK_EVENTID EventID;BNE CondID1 0x0 0xC;CALL Pointer;ENUT EventID;GOTO CondID2;LABEL CondID1;ENUF EventID;LABEL CondID2"
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventPlayer(0x0,NewFliers,7,15)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Raid(0x12,DNVillage,1,6)
+Raid(0x13,DShop,9,7)
+Raid(0x14,DSVillage,12,16)
+Raid(0x15,DNHouse,17,17)
+Raid(0x16,DSHouse,14,18)
+END_MAIN
+
+MiscBasedEvents:
+DefeatBoss(EndingScene)
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+BLST [14,17] 0x35
+BLST [9,6] 0x35
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Morps Mercenary Morps Level(1,Ally,True) [5,16] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Kathy Mercenary Morps Level(1,Ally,True) [6,17] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Kathy Mercenary Morps Level(1,Ally,True) [3,16] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Kathy Mercenary Morps Level(1,Ally,True) [4,17] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Kathy Mercenary Morps Level(1,Ally,True) [5,18] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Kathy Mercenary Morps Level(1,Ally,True) [3,18] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Kathy Mercenary Morps Level(1,Ally,True) [2,19] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Kathy Mercenary Morps Level(1,Ally,True) [1,18] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT
+
+BeginningScene:
+LOAD1 0x1 EnemyUnits
+LOAD2 0x1 FriendUnits
+ENUN
+SetBackground(0x1D)
+Text(BeginningScene1Text13)
+EndConvo
+STAL 0x40
+Text(BeginningScene2Text13)
+NoFade
+CLEAN
+GotoPrepScreen
+
+EndingScene:
+SetBackground(0x1D)
+Text(EndingSceneText13)
+MoveToChapter(Chapter14)
+ENDA
+
+NewFliers:
+Every2Turns(0x2,0x3,0x11,LoadFliers)
+NoFade
+ENDA
+
+LoadFliers:
+LOAD1 0x1 GimmeFliers
+ENUN
+NoFade
+ENDA
+
+DNVillage:
+Text(0x2,DNVillageText13)
+GiveItem(Armorslayer,0xFFFF)
+TileChange(0,4)
+NoFade
+ENDA
+
+DShop:
+Text(0x01,DShopText13)
+GiveItem(Vulnerary,0xFFFF)
+TileChange(9,7)
+NoFade
+ENDA
+
+DSVillage:
+Text(0x2,DSVillageText13)
+GiveItem(Elfire,0xFFFF)
+TileChange(11,14)
+NoFade
+ENDA
+
+DNHouse:
+Text(0x1,DNHouseText13)
+GiveItem(Dragonshield,0xFFFF)
+TileChange(17,17)
+NoFade
+ENDA
+
+DSHouse:
+Text(0x1,DSHouseText13)
+GiveItem(MasterSeal,0xFFFF)
+TileChange(14,18)
+NoFade
+ENDA
+
+	/*UNIT DATA*/
+
+EnemyUnits:
+UNIT Rex GreatKnight Rex Level(5,Enemy,True) [6,2] 0x00 0x00 0x00 0x00 [Runesword,Halberd] GuardAI 
+UNIT Oliver Monk Rex Level(13,Enemy,True) [16,4] 0x00 0x00 0x00 0x00 [Divine,Vulnerary] AttackInRangeAI
+UNIT 0x81 Fighter Rex Level(14,Enemy,True) [4,14] 0x00 0x00 0x00 0x00 [DragonAxe] NoAI 
+UNIT 0x81 Fighter Rex Level(13,Enemy,True) [6,14] 0x00 0x00 0x00 0x00 [IronAxe] NoAI 
+UNIT 0x81 Warrior Rex Level(3,Enemy,True) [7,13] 0x00 0x00 0x00 0x00 [SteelAxe,SteelBow] NoAI 
+UNIT 0x81 Fighter Rex Level(16,Enemy,True) [4,12] 0x00 0x00 0x00 0x00 [HandAxe] NoAI 
+UNIT 0x81 Knight Rex Level(14,Enemy,True) [3,12] 0x00 0x00 0x00 0x00 [Javelin] GuardAI
+UNIT 0x81 Knight Rex Level(15,Enemy,True) [4,11] 0x00 0x00 0x00 0x00 [Horseslayer] GuardAI
+UNIT 0x81 Archer Rex Level(14,Enemy,True) [2,10] 0x00 0x00 0x00 0x00 [SteelBow] AttackInRangeAI 
+UNIT 0x81 Soldier Rex Level(17,Enemy,True) [8,11] 0x00 0x00 0x00 0x00 [SteelLance] NoAI 
+UNIT 0x81 Knight Rex Level(12,Enemy,True) [9,12] 0x00 0x00 0x00 0x00 [DragonSpear] NoAI 
+UNIT 0x81 Soldier Rex Level(16,Enemy,True) [10,13] 0x00 0x00 0x00 0x00 [IronLance] NoAI 
+UNIT 0x81 Knight Rex Level(15,Enemy,True) [12,10] 0x00 0x00 0x00 0x00 [ShortSpear] GuardAI
+UNIT 0x81 Knight Rex Level(16,Enemy,True) [13,10] 0x00 0x00 0x00 0x00 [IronLance] GuardAI 
+UNIT 0x81 WyvernRider Rex Level(14,Enemy,True) [19,9] 0x00 0x00 0x00 0x00 [SteelLance] ChaseOnceApproachedAI
+UNIT 0x81 Mage Rex Level(12,Enemy,True) [11,11] 0x00 0x00 0x00 0x00 [Elfire] NoAI 
+UNIT 0x81 Mercenary Rex Level(16,Enemy,True) [11,12] 0x00 0x00 0x00 0x00 [Zanbato] ChaseOnceApproachedAI
+UNIT 0x81 Myrmidon Rex Level(16,Enemy,True) [12,11] 0x00 0x00 0x00 0x00 [SlimSword] AttackInRangeAI 
+UNIT 0x81 Fighter Rex Level(14,Enemy,True) [12,13] 0x00 0x00 0x00 0x00 [HandAxe] NoAI
+UNIT 0x81 Paladin Rex Level(5,Enemy,True) [13,12] 0x00 0x00 0x00 0x00 [SteelLance,Armorslayer] AttackInRangeAI 
+UNIT 0x81 Archer Rex Level(16,Enemy,True) [14,17] 0x00 0x00 0x00 0x00 [SteelBow] AttackInRangeAI
+UNIT 0x81 Archer Rex Level(13,Enemy,True) [9,6] 0x00 0x00 0x00 0x00 [IronBow] AttackInRangeAI
+UNIT 0x81 Fighter Rex Level(18,Enemy,True) [14,16] 0x00 0x00 0x00 0x00 [DevilAxe] ChaseOnceApproachedAI
+UNIT 0x81 Soldier Rex Level(13,Enemy,True) [15,15] 0x00 0x00 0x00 0x00 [SteelLance] ChaseOnceApproachedAI
+UNIT 0x81 Mercenary Rex Level(10,Enemy,True) [16,14] 0x00 0x00 0x00 0x00 [IronBlade] ChaseOnceApproachedAI
+UNIT 0x81 Hero Rex Level(2,Enemy,True) [18,16] 0x00 0x00 0x00 0x00 [SteelBlade,HandAxe] AttackInRangeAI
+UNIT 0x81 PegasusKnight Rex Level(14,Enemy,True) [17,18] 0x00 0x00 0x00 0x00 [SlimLance] NoAI 
+UNIT 0x81 PegasusKnight Rex Level(15,Enemy,True) [16,19] 0x00 0x00 0x00 0x00 [KillerLance] NoAI 
+UNIT 0x81 Archer Rex Level(14,Enemy,True) [9,8] 0x00 0x00 0x00 0x00 [Longbow] AttackInRangeAI 
+UNIT 0x81 Archer Rex Level(17,Enemy,True) [11,8] 0x00 0x00 0x00 0x00 [Longbow] AttackInRangeAI 
+UNIT 0x81 Archer Rex Level(14,Enemy,True) [12,7] 0x00 0x00 0x00 0x00 [KillerBow] AttackInRangeAI 
+UNIT 0x81 Mage Rex Level(13,Enemy,True) [14,7] 0x00 0x00 0x00 0x00 [Thunder] AttackInRangeAI 
+UNIT 0x81 Mercenary Rex Level(12,Enemy,True) [13,8] 0x00 0x00 0x00 0x00 [SteelSword] ChaseOnceApproachedAI 
+UNIT 0x81 Fighter Rex Level(14,Enemy,True) [14,5] 0x00 0x00 0x00 0x00 [IronAxe] ChaseOnceApproachedAI 
+UNIT 0x81 WyvernRider Rex Level(13,Enemy,True) [16,1] 0x00 0x00 0x00 0x00 [Javelin] AttackInRangeAI
+UNIT 0x81 WyvernKnight Rex Level(3,Enemy,True) [17,2] 0x00 0x00 0x00 0x00 [SteelLance] AttackInRangeAI
+UNIT 0x81 WyvernRider Rex Level(17,Enemy,True) [18,3] 0x00 0x00 0x00 0x00 [HeavySpear] AttackInRangeAI
+UNIT 0x81 Cavalier Rex Level(15,Enemy,True) [8,7] 0x00 0x00 0x00 0x00 [SteelSword] NoAI
+UNIT 0x81 General Rex Level(6,Enemy,True) [3,6] 0x00 0x00 0x00 0x00 [Tomahawk] GuardAI
+UNIT 0x81 Shaman Rex Level(13,Enemy,True) [5,6] 0x00 0x00 0x00 0x00 [Nosferatu,Eclipse] AttackInRangeAI
+UNIT 0x81 Myrmidon Rex Level(16,Enemy,True) [1,7] 0x00 0x00 0x00 0x00 [KillingEdge] AttackInRangeAI
+UNIT 0x81 Troubadour Rex Level(18,Enemy,True) [6,4] 0x00 0x00 0x00 0x00 [Physic] HealUnits
+UNIT 0x81 MageKnight Rex Level(6,Enemy,True) [7,4] 0x00 0x00 0x00 0x00 [Thunder] ChaseOnceApproachedAI
+UNIT 0x81 PegasusKnight Rex Level(17,Enemy,True) [11,1] 0x00 0x00 0x00 0x00 [IronLance] ChaseOnceApproachedAI
+UNIT 0x81 PegasusKnight Rex Level(17,Enemy,True) [13,1] 0x00 0x00 0x00 0x00 [SteelLance] ChaseOnceApproachedAI
+UNIT
+
+FriendUnits:
+UNIT Morps Mercenary Morps Level(1,Ally,True) [5,16] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Kathy Mercenary Morps Level(1,Ally,True) [6,17] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT
+
+GimmeFliers:
+UNIT 0x81 WyvernRider Rex Level(14,Enemy,True) [19,9] 0x00 0x00 0x00 0x00 [SteelLance] ChaseOnceApproachedAI
+UNIT

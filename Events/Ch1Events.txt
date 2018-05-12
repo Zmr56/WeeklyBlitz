@@ -15,7 +15,7 @@ POIN $0 $0 $0 $0 $0 $0
 POIN BeginningScene EndingScene
 
 Units:
-UNIT Kathy EirikaLord 0x00 Level(1, Ally, 0) [10,15] 0x00 0x00 0x0 0x00 [Rapier, Heal, Vulnerary] NoAI 
+UNIT Kathy EirikaLord 0x00 Level(1, Ally, 0) [10,15] 0x00 0x00 0x0 0x00 [Rapier, IronSword, Heal, Vulnerary] NoAI 
 UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [11,16] 0x00 0x00 0x0 0x00 [SilverSword, Javelin] NoAI 
 UNIT Tye Knight Kathy Level(5, Ally, 0) [10,14] 0x00 0x00 0x0 0x00 [SilverLance, HandAxe] NoAI
 UNIT Anna Thief Kathy Level(1, Ally, 0) [9,16] 0x00 0x00 0x0 0x00 [IronSword, Vulnerary] NoAI
@@ -27,12 +27,12 @@ UNIT 0x80 Fighter ONeill Level(1, Enemy, 1) [6,16] 0x00 0x00 0x0 0x00 [HandAxe] 
 UNIT 0x80 Shaman ONeill Level(2, Enemy, 1) [11,6] 0x00 0x00 0x0 0x00 [Nosferatu] GuardTileAI 
 UNIT 0x80 Shaman ONeill Level(1, Enemy, 1) [3,14] 0x00 0x00 0x0 0x00 [Flux] AttackInRangeAI 
 UNIT 0x80 Mercenary ONeill Level(1, Enemy, 1) [3,11] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI 
-UNIT 0x80 Cavalier ONeill Level(1, Enemy, 1) [6,8] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI 
+UNIT 0x80 LanceCav ONeill Level(1, Enemy, 1) [6,8] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI 
 UNIT 0x80 Archer ONeill Level(2, Enemy, 1) [14,3] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI 
 UNIT 0x80 Mercenary ONeill Level(1, Enemy, 1) [8,6] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI 
 UNIT 0x80 Pirate ONeill Level(2, Enemy, 1) [5,5] 0x00 0x00 0x0 0x00 [Tomahawk] GuardTileAI 
 UNIT 0x80 Fighter ONeill Level(2, Enemy, 1) [5,4] 0x00 0x00 0x0 0x00 [Tomahawk] GuardTileAI 
-UNIT 0x80 Cavalier ONeill Level(2, Enemy, 1) [0,5] 0x00 0x00 0x0 0x00 [Horseslayer, HeavySpear] AttackInRangeAI 
+UNIT 0x80 LanceCav ONeill Level(2, Enemy, 1) [0,5] 0x00 0x00 0x0 0x00 [Horseslayer, HeavySpear] AttackInRangeAI 
 UNIT 0x80 Mercenary ONeill Level(2, Enemy, 1) [4,0] 0x00 0x00 0x0 0x00 [Armourslayer, Longsword] AttackInRangeAI 
 UNIT ONeill Shaman 0x00 Level(3, Enemy, 0) [1,2] 0x2 0x00 0x0 0x00 [Luna, Vulnerary] GuardTileAI 
 UNIT
@@ -122,7 +122,7 @@ NoFade
 ENDA
 
 EndingScene:
-MNCH 1
+MNC2 1
 ENDA
 
 MESSAGE Events end at offset currentOffset

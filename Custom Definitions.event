@@ -3,6 +3,7 @@
 
 #define ChapterTileset(chapter, object, palette, config) "PUSH; ORG 0x8b0890 + (148* chapter) + 4; SHORT object; BYTE palette config; POP"
 #define ChapterTileAnims(chapter, anim1, anim2) "PUSH; ORG 0x8b0890 + (148* chapter) + 9; BYTE anim1 anim2; POP"
+#define ForceCharacter(Character,Chapter) "SHORT Character ; BYTE 0xFF Chapter"
 
 #ifndef ItemTable
   #define ItemTable 0x809B10
@@ -22,8 +23,43 @@
 #define Tye 3
 #define Jet 4
 #define Anna 5
+#define George 6
+#define Okram 7
+#define Void 8
+#define Ephraim 9
+#define Kao 10
+#define Circles 11
 #define Raynor 12
+#define Issac 13
+#define Throne 14
+#define Kamui 15
+#define Tirado 16
+#define Oliver 17
+#define Ryder 18
+#define Kate 19
+#define Luanna 20
+#define Melanie 21
+#define Dude 22
+#define Alicia 23
+#define Ajax 24
+#define Creidne 25
+#define Karli 26
+#define Ilmr 27
+#define Elk 28
 
 #define RaynorBoss 77
+
+#define SwordCav 84
+#define LanceCav 85
+#define AxeCav 86
+#define BowCav 87
+#define SwordCavalier 84
+#define LanceCavalier 85
+#define AxeCavalier 86
+#define BowCavalier 87
+#define LanceWyvern 88
+#define AxeWyvern 89
+#define LancePegasus 90
+#define SwordPegasus 91
 
 // #define __DEBUG__ // Uncomment to get the Debug startup menu :p
