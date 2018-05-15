@@ -48,7 +48,3 @@
 
 #include "FE8 Nightmare modules\Quote editors\Boss music editor.event"
 
-#include "FE8 Nightmare modules\Quote editors\Battle Quote Table.event"
-
-#include "FE8 Nightmare modules\Quote editors\Death Quote Table.event"
-

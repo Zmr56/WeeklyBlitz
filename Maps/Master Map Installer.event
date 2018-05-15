@@ -48,9 +48,9 @@
 //{
 //#include "Chapter18v2.event"
 //}
-{
-#include "Chp22Map.event"
-}
+//{
+//#include "Chp22Map.event"
+//}
 {
 #include "Endgame Part 1.event"
 }
