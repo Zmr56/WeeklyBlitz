@@ -1,0 +1,159 @@
+#include EAstdlib.event
+
+EventPointerTable(0x21,ThisChapter)
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+Units:
+UNIT Kathy KathyLord 0x00 Level(1, Ally, 0) [14,4] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [14,5] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [12,4] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [12,5] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [11,6] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [13,7] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [15,7] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [17,6] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [16,5] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [16,4] 0x00 0x00 0x0 0x00 [0x00] NoAI 
+UNIT
+
+Bad:
+UNIT 0x80 Cavalier Pablo Level(10, Enemy, 1) [4,1] 0x00 0x00 0x0 0x00 [SteelLance] PursueWithoutHeedAI 
+UNIT 0x80 Cavalier Pablo Level(10, Enemy, 1) [24,1] 0x00 0x00 0x0 0x00 [SteelAxe] PursueWithoutHeedAI 
+UNIT 0x80 Cavalier Pablo Level(10, Enemy, 1) [3,0] 0x00 0x00 0x0 0x00 [SteelAxe] PursueWithoutHeedAI 
+UNIT 0x80 Cavalier Pablo Level(10, Enemy, 1) [25,0] 0x00 0x00 0x0 0x00 [SteelLance] PursueWithoutHeedAI 
+UNIT 0x80 Mercenary Pablo Level(10, Enemy, 1) [10,11] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI 
+UNIT 0x80 Mercenary Pablo Level(10, Enemy, 1) [18,11] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI 
+UNIT 0x80 Knight Pablo Level(10, Enemy, 1) [13,14] 0x00 0x00 0x0 0x00 [Tomahawk] GuardTileAI 
+UNIT 0x80 Knight Pablo Level(10, Enemy, 1) [15,14] 0x00 0x00 0x0 0x00 [Tomahawk] GuardTileAI 
+UNIT 0x80 Knight Pablo Level(10, Enemy, 1) [14,14] 0x00 0x00 0x0 0x00 [Spear] GuardTileAI 
+UNIT 0x80 Fighter Pablo Level(10, Enemy, 1) [12,16] 0x00 0x00 0x0 0x00 [SilverAxe] AttackInRangeAI 
+UNIT 0x80 Fighter Pablo Level(10, Enemy, 1) [16,16] 0x00 0x00 0x0 0x00 [SilverAxe] AttackInRangeAI 
+UNIT 0x80 Archer Pablo Level(10, Enemy, 1) [11,17] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI 
+UNIT 0x80 Archer Pablo Level(10, Enemy, 1) [17,17] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI 
+UNIT 0x80 Mage Pablo Level(10, Enemy, 1) [0,4] 0x00 0x00 0x0 0x00 [Elfire] PursueWithoutHeedAI 
+UNIT 0x80 Fighter Pablo Level(10, Enemy, 1) [1,4] 0x00 0x00 0x0 0x00 [Tomahawk] PursueWithoutHeedAI 
+UNIT 0x80 Shaman Pablo Level(10, Enemy, 1) [1,7] 0x00 0x00 0x0 0x00 [Flux] PursueWithoutHeedAI 
+UNIT 0x80 Fighter Pablo Level(10, Enemy, 1) [3,14] 0x00 0x00 0x0 0x00 [SteelAxe] PursueWithoutHeedAI 
+UNIT 0x80 Fighter Pablo Level(10, Enemy, 1) [1,11] 0x00 0x00 0x0 0x00 [SteelAxe] PursueWithoutHeedAI 
+UNIT 0x80 Mercenary Pablo Level(10, Enemy, 1) [3,8] 0x00 0x00 0x0 0x00 [SteelSword] PursueWithoutHeedAI 
+UNIT 0x80 Mercenary Pablo Level(10, Enemy, 1) [4,15] 0x00 0x00 0x0 0x00 [SteelSword] PursueWithoutHeedAI 
+UNIT 0x80 WyvernRider Pablo Level(10, Enemy, 1) [28,4] 0x00 0x00 0x0 0x00 [Tomahawk] PursueWithoutHeedAI 
+UNIT 0x80 Cavalier Pablo Level(10, Enemy, 1) [27,4] 0x00 0x00 0x0 0x00 [Spear] PursueWithoutHeedAI 
+UNIT 0x80 Myrmidon Pablo Level(10, Enemy, 1) [27,6] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI 
+UNIT 0x80 Soldier Pablo Level(10, Enemy, 1) [24,6] 0x00 0x00 0x0 0x00 [SilverLance] PursueWithoutHeedAI 
+UNIT 0x80 Soldier Pablo Level(10, Enemy, 1) [27,9] 0x00 0x00 0x0 0x00 [SilverLance] PursueWithoutHeedAI 
+UNIT 0x80 Monk Pablo Level(10, Enemy, 1) [26,13] 0x00 0x00 0x0 0x00 [Shine] PursueWithoutHeedAI 
+UNIT 0x80 Fighter Pablo Level(10, Enemy, 1) [25,15] 0x00 0x00 0x0 0x00 [SteelAxe] PursueWithoutHeedAI 
+UNIT
+
+TurnBasedEvents:
+TURN 0x0 BadDudes[2,0] 0x0
+TURN 0x0 BadCav[4,0] 0x0
+TURN 0x0 BadMerc[6,0] 0x0
+TURN 0x0 BadMagicalBuffMan[9,0] 0x0
+END_MAIN
+
+DudesBlock:
+UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [7,10] 0x00 0x00 0x0 0x00 [IronAxe] BrigandAI 
+UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [4,13] 0x00 0x00 0x0 0x00 [IronAxe] BrigandAI 
+UNIT 0x80 Thief Novala Level(6, Enemy, 1) [1,10] 0x00 0x00 0x0 0x00 [IronSword] LootingThiefAI  
+UNIT
+
+BadDudes:
+ReinforcementEvent(DudesBlock)
+ENDA
+
+CavBlock:
+UNIT 0x80 Cavalier Novala Level(7, Enemy, 1) [22,17] 0x00 0x00 0x0 0x00 [SilverLance] PursueWithoutHeedAI 
+UNIT 0x80 Cavalier Novala Level(7, Enemy, 1) [15,17] 0x00 0x00 0x0 0x00 [SilverLance] PursueWithoutHeedAI
+UNIT 0x80 Thief Novala Level(6, Enemy, 1) [16,5] 0x00 0x00 0x0 0x00 [IronSword] LootingThiefAI
+UNIT
+
+BadCav:
+ReinforcementEvent(CavBlock)
+ENDA
+
+MercBlock:
+UNIT 0x80 Mercenary Novala Level(7, Enemy, 1) [12,0] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI 
+UNIT 0x80 Mercenary Novala Level(7, Enemy, 1) [5,0] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI 
+UNIT
+
+BadMerc:
+ReinforcementEvent(MercBlock)
+ENDA
+
+MagicalBuffManBlock:
+UNIT 0x80 Fighter Novala Level(8, Enemy, 1) [17,4] 0x00 0x00 0x0 0x00 [SilverAxe] PursueWithoutHeedAI 
+UNIT 0x80 Fighter Novala Level(8, Enemy, 1) [18,5] 0x00 0x00 0x0 0x00 [SilverAxe] PursueWithoutHeedAI 
+UNIT 0x80 Mage Novala Level(8, Enemy, 1) [16,5] 0x00 0x00 0x0 0x00 [Fimbulvetr] PursueWithoutHeedAI 
+UNIT
+
+BadMagicalBuffMan:
+ReinforcementEvent(MagicalBuffManBlock)
+ENDA
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Village(0x8,VillageOkram,8,17)
+Village(0x9,VillageGem,12,11)
+Seize(18, 1)
+END_MAIN
+
+VillageGem:
+VillageEventItem(VillageText, Village, RedGem)
+
+VillageOkram:
+Text(VillageText)
+LOAD1 0x1 OkramBlock
+ENUN
+NoFade
+ENDA
+
+OkramBlock:
+UNIT Okram FireMage Kathy Level(2, Ally, 0) [8,18] 0x00 0x00 0x0 0x00 [Fire, Elixir] NoAI 
+UNIT
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+//DO NOT TOUCH
+WORD $00
+
+Tutorial:
+//DO NOT TOUCH
+WORD $00
+
+TrapData:
+END_MAIN
+
+ALIGN 4
+
+BeginningScene:
+LOAD2 0x1 Units
+ENUN
+LOAD1 0x1 Bad
+ENUN
+NoFade
+GotoPrepScreen
+ENDA
+
+EndingScene:
+MNC2 10
+ENDA
+
+MESSAGE Events end at offset currentOffset
