@@ -231,7 +231,7 @@ REDA_Bountain3:
 REDA_Bountain4:
 	REDA [1,1] 0 0 0 0
 	
-Raynor:
+RaynorBlock:
 UNIT Raynor Pirate Kathy Level(8, Ally, 0) [0,0] 0x00 0x00 0x0 0x00 [Halberd, HandAxe] NoAI
 UNIT
 	
@@ -286,7 +286,7 @@ GotoPrepScreen
 ENDA
 
 EndingScene:
-LOAD1 0x1 Raynor
+LOAD1 0x1 RaynorBlock
 MNC2 Chapter9
 ENDA
 
