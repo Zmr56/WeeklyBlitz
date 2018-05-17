@@ -49,17 +49,24 @@
 
 #define RaynorBoss 77
 
-#define SwordCav 84
-#define LanceCav 85
-#define AxeCav 86
+#define SwordCav 6
+#define LanceCav 7
+#define AxeCav 11
+#define AxePaladin 14
+#define Nomad 30
+#define LanceWyvernRider 32
+#define SwordPegasus 33
+#define SwordFalco 35
+#define AxeWyvernRider 36
+#define FireMage 38
+#define WindMage 39
+#define ThunderMage 43
+#define LancePegasus 73
+#define LanceFalco 74
+#define Halberdier 85
 #define BowCav 87
-#define SwordCavalier 84
-#define LanceCavalier 85
-#define AxeCavalier 86
-#define BowCavalier 87
-#define LanceWyvern 88
-#define AxeWyvern 89
-#define LancePegasus 90
-#define SwordPegasus 91
+#define BowPaladin 88
+#define FireManakete 100
+#define IceManakete 101
 
 // #define __DEBUG__ // Uncomment to get the Debug startup menu :p

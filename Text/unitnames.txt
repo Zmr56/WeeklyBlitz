@@ -17,8 +17,8 @@ Highly experienced.[X]
 Tye[X]
 
 ##Desc_Tye
-A knight loyal to[N]
-Kathy. Morps' comrade.[X]
+A knight loyal to Kathy.[N]
+Morps' former comrade.[X]
 
 ##Name_Jet
 Jet[X]
@@ -69,6 +69,13 @@ Axe Cav.[X]
 Mounted knights with swift movement.[N]
 Equip: Axes.[X]
 
+##AP_Name
+Axe Cav.[X]
+
+##AP_Desc
+Mounted knights with swift movement.[N]
+Equip: Axes, Lances.[X]
+
 ##BC_Name
 Bow Cav.[X]
 
@@ -89,13 +96,6 @@ Axe Wyvern[X]
 ##AW_Desc
 High-flying knights vulnerable only to[N]
 bows and magic. Equip: Axes.[X]
-
-##LP_Name
-Lnc. Peg.[X]
-
-##LP_Desc
-Airborne knights who resist magic but[N]
-are weak against bows. Equip: Lances.[X]
 
 ##SP_Name
 Swd. Peg.[X]
