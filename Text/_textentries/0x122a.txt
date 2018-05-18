@@ -1,2 +1,2 @@
-A knight loyal to[N]
-Kathy. Morps' comrade.[X]
+A knight loyal to Kathy.[N]
+Morps' former comrade.[X]

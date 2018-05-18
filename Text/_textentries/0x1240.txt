@@ -1,2 +1,2 @@
-Airborne knights who resist magic but[N]
-are weak against bows. Equip: Lances.[X]
+High-flying knights vulnerable only to[N]
+bows and magic. Equip: Axes.[X]
