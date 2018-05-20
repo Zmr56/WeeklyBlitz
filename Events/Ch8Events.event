@@ -73,15 +73,15 @@ UNIT Morps Paladin Kathy Level(5, Ally, 0) [0,16] 0x00 0x00 0x0 0x00 [SteelSword
 
 Bad1:
 UNIT RaynorBoss Pirate 0x00 Level(8, Enemy, 0) [23,2] 0x02 0x00 0x0 0x00 [Halberd, HandAxe, MasterProof] NeverMoveAI
-UNIT Baddie SwordKnight RaynorBoss Level(9, Enemy, 1) [22,3] 0x00 0x00 0x0 0x00 [IronSword, SteelLance] ChaseOnceApproachedAI
-UNIT Baddie SwordKnight RaynorBoss Level(9, Enemy, 1) [24,3] 0x02 0x00 0x0 0x00 [IronSword, SteelLance] ChaseOnceApproachedAI
-UNIT Baddie SwordKnight RaynorBoss Level(9, Enemy, 1) [23,4] 0x00 0x00 0x0 0x00 [IronSword, SteelLance] ChaseOnceApproachedAI
-UNIT Baddie SwordKnight RaynorBoss Level(8, Enemy, 1) [18,13] 0x00 0x00 0x0 0x00 [IronBlade, Javelin] GuardTileAI
-UNIT Baddie SwordKnight RaynorBoss Level(8, Enemy, 1) [18,16] 0x02 0x00 0x0 0x00 [IronBlade, IronLance] GuardTileAI
-UNIT Baddie AxeKnight RaynorBoss Level(9, Enemy, 1) [18,14] 0x00 0x00 0x0 0x00 [SteelSword, PoisonAxe] GuardTileAI
-UNIT Baddie AxeKnight RaynorBoss Level(8, Enemy, 1) [18,15] 0x00 0x00 0x0 0x00 [SteelSword, PoisonAxe] GuardTileAI
-UNIT Baddie AxeKnight RaynorBoss Level(10, Enemy, 1) [21,9] 0x00 0x00 0x0 0x00 [BraveSword, Javelin] GuardTileAI
-UNIT Baddie AxeKnight RaynorBoss Level(10, Enemy, 1) [13,10] 0x00 0x00 0x0 0x00 [LightBrand, BattleAxe] GuardTileAI
+UNIT Baddie Knight RaynorBoss Level(9, Enemy, 1) [22,3] 0x00 0x00 0x0 0x00 [IronSword, SteelLance] ChaseOnceApproachedAI
+UNIT Baddie Knight RaynorBoss Level(9, Enemy, 1) [24,3] 0x02 0x00 0x0 0x00 [IronSword, SteelLance] ChaseOnceApproachedAI
+UNIT Baddie Knight RaynorBoss Level(9, Enemy, 1) [23,4] 0x00 0x00 0x0 0x00 [IronSword, SteelLance] ChaseOnceApproachedAI
+UNIT Baddie Knight RaynorBoss Level(8, Enemy, 1) [18,13] 0x00 0x00 0x0 0x00 [IronBlade, Javelin] GuardTileAI
+UNIT Baddie Knight RaynorBoss Level(8, Enemy, 1) [18,16] 0x02 0x00 0x0 0x00 [IronBlade, IronLance] GuardTileAI
+UNIT Baddie Knight RaynorBoss Level(9, Enemy, 1) [18,14] 0x00 0x00 0x0 0x00 [SteelSword, PoisonAxe] GuardTileAI
+UNIT Baddie Knight RaynorBoss Level(8, Enemy, 1) [18,15] 0x00 0x00 0x0 0x00 [SteelSword, PoisonAxe] GuardTileAI
+UNIT Baddie Knight RaynorBoss Level(10, Enemy, 1) [21,9] 0x00 0x00 0x0 0x00 [SteelSword, Javelin] GuardTileAI
+UNIT Baddie Knight RaynorBoss Level(10, Enemy, 1) [13,10] 0x00 0x00 0x0 0x00 [SteelBlade, HandAxe] GuardTileAI
 UNIT Baddie SwordPegasus RaynorBoss Level(9, Enemy, 1) [16,2] 0x00 0x00 0x0 0x00 [SteelBlade, MasterProof] AttackInRangeAI
 UNIT Baddie SwordPegasus RaynorBoss Level(9, Enemy, 1) [15,3] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
 UNIT Baddie LancePegasus RaynorBoss Level(8, Enemy, 1) [15,1] 0x00 0x00 0x0 0x00 [Horseslayer] AttackInRangeAI
@@ -199,7 +199,7 @@ UNIT Baddie Brigand RaynorBoss Level(9, Enemy, 1) [8,0] 0x00 0x00 0x0 0x00 [Hand
 UNIT
 
 OhHiBrigando:
-UNIT Baddie Brigand RaynorBoss Level(10, Enemy, 1) [25,16] 0x00 0x00 0x0 0x00 [Tomahawk, Speedwing] PursueWithoutHeed
+UNIT Baddie Brigand RaynorBoss Level(10, Enemy, 1) [25,16] 0x00 0x00 0x0 0x00 [HandAxe, Speedwing] PursueWithoutHeed
 UNIT
 
 AirForcements1:
