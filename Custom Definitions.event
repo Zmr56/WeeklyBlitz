@@ -53,6 +53,9 @@
 #define LanceCav 7
 #define AxeCav 11
 #define AxePaladin 14
+#define SwordCavalier 6
+#define LanceCavalier 7
+#define AxeCavalier 11
 #define Nomad 30
 #define LanceWyvernRider 32
 #define SwordPegasus 33
