@@ -31,37 +31,37 @@ Bad:
 UNIT 0x80 Archer Novala Level(6, Enemy, 1) [7,14] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI 
 UNIT 0x80 Archer Novala Level(6, Enemy, 1) [13,1] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI 
 UNIT 0x80 Archer Novala Level(7, Enemy, 1) [12,1] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI 
-UNIT 0x80 Knight Novala Level(6, Enemy, 1) [6,8] 0x00 0x00 0x0 0x00 [Spear] GuardTileAI 
-UNIT 0x80 Knight Novala Level(6, Enemy, 1) [2,8] 0x00 0x00 0x0 0x00 [Spear] GuardTileAI 
+UNIT 0x80 Knight Novala Level(6, Enemy, 1) [6,8] 0x00 0x00 0x0 0x00 [Javelin] GuardTileAI 
+UNIT 0x80 Knight Novala Level(6, Enemy, 1) [2,8] 0x00 0x00 0x0 0x00 [Javelin] GuardTileAI 
 UNIT 0x80 Shaman Novala Level(7, Enemy, 1) [5,8] 0x00 0x00 0x0 0x00 [Nosferatu] GuardTileAI 
-UNIT 0x80 Shaman Novala Level(6, Enemy, 1) [3,8] 0x00 0x00 0x0 0x00 [Nosferatu] GuardTileAI 
-UNIT 0x80 Mage Novala Level(6, Enemy, 1) [10,4] 0x00 0x00 0x0 0x00 [Elfire] AttackInRangeAI 
+UNIT 0x80 Shaman Novala Level(6, Enemy, 1) [3,8] 0x00 0x00 0x0 0x00 [Flux] GuardTileAI 
+UNIT 0x80 Mage Novala Level(6, Enemy, 1) [10,4] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI 
 UNIT 0x80 Mage Novala Level(7, Enemy, 1) [7,1] 0x00 0x00 0x0 0x00 [Elfire] AttackInRangeAI 
-UNIT 0x80 Monk Novala Level(6, Enemy, 1) [0,3] 0x00 0x00 0x0 0x00 [Shine] AttackInRangeAI 
+UNIT 0x80 Monk Novala Level(6, Enemy, 1) [0,3] 0x00 0x00 0x0 0x00 [Lightning] AttackInRangeAI 
 UNIT 0x80 Monk Novala Level(6, Enemy, 1) [16,19] 0x00 0x00 0x0 0x00 [Shine] AttackInRangeAI 
-UNIT 0x80 Fighter Novala Level(7, Enemy, 1) [2,2] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI 
+UNIT 0x80 Fighter Novala Level(7, Enemy, 1) [2,2] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI 
 UNIT 0x80 Fighter Novala Level(6, Enemy, 1) [9,5] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI 
-UNIT 0x80 Fighter Novala Level(6, Enemy, 1) [21,0] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI 
+UNIT 0x80 Fighter Novala Level(6, Enemy, 1) [21,0] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI 
 UNIT 0x80 Fighter Novala Level(7, Enemy, 1) [21,19] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI 
-UNIT 0x80 Fighter Novala Level(6, Enemy, 1) [1,18] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI 
+UNIT 0x80 Fighter Novala Level(6, Enemy, 1) [1,18] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI 
 UNIT 0x80 Fighter Novala Level(6, Enemy, 1) [1,14] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI 
-UNIT 0x80 Fighter Novala Level(7, Enemy, 1) [10,13] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI 
+UNIT 0x80 Fighter Novala Level(7, Enemy, 1) [10,13] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI 
 UNIT 0x80 Fighter Novala Level(6, Enemy, 1) [10,18] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI 
-UNIT 0x80 Mage Novala Level(6, Enemy, 1) [5,16] 0x00 0x00 0x0 0x00 [Fimbulvetr] AttackInRangeAI 
-UNIT 0x80 Myrmidon Novala Level(7, Enemy, 1) [6,12] 0x00 0x00 0x0 0x00 [SilverSword] AttackInRangeAI 
-UNIT 0x80 Myrmidon Novala Level(6, Enemy, 1) [1,13] 0x00 0x00 0x0 0x00 [SilverSword] AttackInRangeAI 
-UNIT 0x80 Myrmidon Novala Level(7, Enemy, 1) [1,17] 0x00 0x00 0x0 0x00 [SilverSword] AttackInRangeAI 
-UNIT 0x80 Mercenary Novala Level(6, Enemy, 1) [3,2] 0x00 0x00 0x0 0x00 [SteelBlade] AttackInRangeAI 
-UNIT 0x80 Mercenary Novala Level(6, Enemy, 1) [10,0] 0x00 0x00 0x0 0x00 [SteelBlade] AttackInRangeAI 
-UNIT 0x80 Mercenary Novala Level(7, Enemy, 1) [11,5] 0x00 0x00 0x0 0x00 [SteelBlade] AttackInRangeAI 
+UNIT 0x80 Mage Novala Level(6, Enemy, 1) [5,16] 0x00 0x00 0x0 0x00 [Elfire] AttackInRangeAI 
+UNIT 0x80 Myrmidon Novala Level(7, Enemy, 1) [6,12] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI 
+UNIT 0x80 Myrmidon Novala Level(6, Enemy, 1) [1,13] 0x00 0x00 0x0 0x00 [KillingEdge] AttackInRangeAI 
+UNIT 0x80 Myrmidon Novala Level(7, Enemy, 1) [1,17] 0x00 0x00 0x0 0x00 [Ironsword] AttackInRangeAI 
+UNIT 0x80 Mercenary Novala Level(6, Enemy, 1) [3,2] 0x00 0x00 0x0 0x00 [WyvrnSlayer] AttackInRangeAI 
+UNIT 0x80 Mercenary Novala Level(6, Enemy, 1) [10,0] 0x00 0x00 0x0 0x00 [IronBlade] AttackInRangeAI 
+UNIT 0x80 Mercenary Novala Level(7, Enemy, 1) [11,5] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI 
 UNIT 0x80 Mercenary Novala Level(6, Enemy, 1) [16,17] 0x00 0x00 0x0 0x00 [SteelBlade] AttackInRangeAI 
-UNIT 0x80 Soldier Novala Level(6, Enemy, 1) [21,17] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI 
+UNIT 0x80 Soldier Novala Level(6, Enemy, 1) [21,17] 0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI 
 UNIT 0x80 Soldier Novala Level(7, Enemy, 1) [12,15] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI 
-UNIT 0x80 Soldier Novala Level(6, Enemy, 1) [17,2] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI 
-UNIT 0x80 Knight Novala Level(6, Enemy, 1) [16,3] 0x00 0x00 0x0 0x00 [DragonAxe, Horseslayer] AttackInRangeAI 
-UNIT 0x80 Knight Novala Level(7, Enemy, 1) [18,3] 0x00 0x00 0x0 0x00 [DragonAxe, Horseslayer] AttackInRangeAI 
-UNIT Novala Shaman 0x00 Level(8, Enemy, 0) [18,1] 0x00 0x00 0x0 0x00 [Fenrir] GuardTileAI 
-UNIT Murray Fighter Novala Level(8, Enemy, 0) [16,1] 0x00 0x00 0x0 0x00 [Tomahawk] GuardTileAI  
+UNIT 0x80 Soldier Novala Level(6, Enemy, 1) [17,2] 0x00 0x00 0x0 0x00 [SteelLance, Vulnerary] AttackInRangeAI 
+UNIT 0x80 Knight Novala Level(6, Enemy, 1) [16,3] 0x00 0x00 0x0 0x00 [WyvrnSlayer, Horseslayer] AttackInRangeAI 
+UNIT 0x80 Knight Novala Level(7, Enemy, 1) [18,3] 0x00 0x00 0x0 0x00 [WyvrnSlayer, Horseslayer] AttackInRangeAI 
+UNIT Novala Shaman 0x00 Level(8, Enemy, 0) [18,1] 0x00 0x00 0x0 0x00 [Luna, Vulnerary] GuardTileAI 
+UNIT Murray Fighter Novala Level(8, Enemy, 0) [16,1] 0x00 0x00 0x0 0x00 [HandAxe] GuardTileAI  
 UNIT
 
 TurnBasedEvents:
@@ -82,8 +82,8 @@ ReinforcementEvent(DudesBlock)
 ENDA
 
 CavBlock:
-UNIT 0x80 Cavalier Novala Level(7, Enemy, 1) [22,17] 0x00 0x00 0x0 0x00 [SilverLance] PursueWithoutHeedAI 
-UNIT 0x80 Cavalier Novala Level(7, Enemy, 1) [15,17] 0x00 0x00 0x0 0x00 [SilverLance] PursueWithoutHeedAI
+UNIT 0x80 LanceCavalier Novala Level(7, Enemy, 1) [22,17] 0x00 0x00 0x0 0x00 [SteelLance] PursueWithoutHeedAI 
+UNIT 0x80 LanceCavalier Novala Level(7, Enemy, 1) [15,17] 0x00 0x00 0x0 0x00 [Javelin] PursueWithoutHeedAI
 UNIT 0x80 Thief Novala Level(6, Enemy, 1) [16,5] 0x00 0x00 0x0 0x00 [IronSword] LootingThiefAI
 UNIT
 
@@ -92,8 +92,8 @@ ReinforcementEvent(CavBlock)
 ENDA
 
 MercBlock:
-UNIT 0x80 Mercenary Novala Level(7, Enemy, 1) [12,0] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI 
-UNIT 0x80 Mercenary Novala Level(7, Enemy, 1) [5,0] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI 
+UNIT 0x80 Mercenary Novala Level(7, Enemy, 1) [12,0] 0x00 0x00 0x0 0x00 [SteelLance] PursueWithoutHeedAI 
+UNIT 0x80 Mercenary Novala Level(7, Enemy, 1) [5,0] 0x00 0x00 0x0 0x00 [ArmorSlayer] PursueWithoutHeedAI 
 UNIT
 
 BadMerc:
@@ -101,9 +101,9 @@ ReinforcementEvent(MercBlock)
 ENDA
 
 MagicalBuffManBlock:
-UNIT 0x80 Fighter Novala Level(8, Enemy, 1) [17,4] 0x00 0x00 0x0 0x00 [SilverAxe] PursueWithoutHeedAI 
-UNIT 0x80 Fighter Novala Level(8, Enemy, 1) [18,5] 0x00 0x00 0x0 0x00 [SilverAxe] PursueWithoutHeedAI 
-UNIT 0x80 Mage Novala Level(8, Enemy, 1) [16,5] 0x00 0x00 0x0 0x00 [Fimbulvetr] PursueWithoutHeedAI 
+UNIT 0x80 Fighter Novala Level(8, Enemy, 1) [17,4] 0x00 0x00 0x0 0x00 [HandAxe] PursueWithoutHeedAI 
+UNIT 0x80 Fighter Novala Level(8, Enemy, 1) [18,5] 0x00 0x00 0x0 0x00 [SteelAxe] PursueWithoutHeedAI 
+UNIT 0x80 Mage Novala Level(8, Enemy, 1) [16,5] 0x00 0x00 0x0 0x00 [Elfire] PursueWithoutHeedAI 
 UNIT
 
 BadMagicalBuffMan:
