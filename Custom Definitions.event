@@ -50,18 +50,25 @@
 #define RaynorBoss 77
 
 #define SwordCav 6
+#define SwordCavalier 6
 #define LanceCav 7
+#define LanceCavalier 7
 #define AxeCav 11
+#define AxeCavalier 11
 #define AxePaladin 14
 #define Nomad 30
 #define LanceWyvernRider 32
+#define LanceWyvern 32
 #define SwordPegasus 33
+#define SwordPeg33
 #define SwordFalco 35
 #define AxeWyvernRider 36
+#define AxeWyvern 36
 #define FireMage 38
 #define WindMage 39
 #define ThunderMage 43
 #define LancePegasus 73
+#define LancePeg 73
 #define LanceFalco 74
 #define Halberdier 85
 #define BowCav 87

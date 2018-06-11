@@ -1,0 +1,71 @@
+Wave1Block:
+UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [7,10] 0x00 0x00 0x0 0x00 [IronAxe] PursueWithoutHeedAI 
+UNIT
+
+Wave1:
+ReinforcementEvent(Wave1Block)
+ENDA
+
+Wave2Block:
+UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [7,10] 0x00 0x00 0x0 0x00 [IronAxe] PursueWithoutHeedAI 
+UNIT
+
+Wave2:
+ReinforcementEvent(Wave2Block)
+ENDA
+
+Wave3Block:
+UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [7,10] 0x00 0x00 0x0 0x00 [IronAxe] PursueWithoutHeedAI 
+UNIT
+
+Wave3:
+ReinforcementEvent(Wave3Block)
+ENDA
+
+Wave4Block:
+UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [7,10] 0x00 0x00 0x0 0x00 [IronAxe] PursueWithoutHeedAI 
+UNIT
+
+Wave4:
+ReinforcementEvent(Wave4Block)
+ENDA
+
+Wave5Block:
+UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [7,10] 0x00 0x00 0x0 0x00 [IronAxe] PursueWithoutHeedAI 
+UNIT
+
+Wave5:
+ReinforcementEvent(Wave5Block)
+ENDA
+
+Wave6Block:
+UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [7,10] 0x00 0x00 0x0 0x00 [IronAxe] PursueWithoutHeedAI 
+UNIT
+
+Wave6:
+ReinforcementEvent(Wave6Block)
+ENDA
+
+Wave7Block:
+UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [7,10] 0x00 0x00 0x0 0x00 [IronAxe] PursueWithoutHeedAI 
+UNIT
+
+Wave7:
+ReinforcementEvent(Wave7Block)
+ENDA
+
+Wave8Block:
+UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [7,10] 0x00 0x00 0x0 0x00 [IronAxe] PursueWithoutHeedAI 
+UNIT
+
+Wave8:
+ReinforcementEvent(Wave8Block)
+ENDA
+
+Wave9Block:
+UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [7,10] 0x00 0x00 0x0 0x00 [IronAxe] PursueWithoutHeedAI 
+UNIT
+
+Wave9:
+ReinforcementEvent(Wave9Block)
+ENDA

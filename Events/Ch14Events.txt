@@ -64,6 +64,105 @@ UNIT 0x80 Bishop Breguet Level(1, Enemy, 1) [1,17] 0x00 0x00 0x0 0x00 [Physic] H
 UNIT 0x80 Bishop Breguet Level(1, Enemy, 1) [6,0] 0x00 0x00 0x0 0x00 [Physic] HealUnits 
 UNIT
 
+Wave1Block:
+UNIT 0x80 Mercenary Breguet Level(14, Enemy, 1) [4,16] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI
+UNIT 0x80 Fighter Breguet Level(14, Enemy, 1) [6,16] 0x00 0x00 0x0 0x00 [SilverAxe] PursueWithoutHeedAI
+UNIT 0x80 Mage Breguet Level(14, Enemy, 1) [5,20] 0x00 0x00 0x0 0x00 [Elfire] PursueWithoutHeedAI
+UNIT
+
+Wave1:
+ReinforcementEvent(Wave1Block)
+ENDA
+
+Wave2Block:
+UNIT 0x80 Myrmidon Breguet Level(14, Enemy, 1) [13,5] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI // Delete
+UNIT 0x80 Knight Breguet Level(14, Enemy, 1) [0,3] 0x00 0x00 0x0 0x00 [SilverLance] PursueWithoutHeedAI // Delete
+UNIT 0x80 Archer Breguet Level(14, Enemy, 1) [0,4] 0x00 0x00 0x0 0x00 [SilverBow] PursueWithoutHeedAI // Delete
+UNIT 0x80 Fighter Breguet Level(14, Enemy, 1) [15,12] 0x00 0x00 0x0 0x00 [SilverAxe] PursueWithoutHeedAI // Delete
+UNIT
+
+Wave2:
+ReinforcementEvent(Wave2Block)
+ENDA
+
+Wave3Block:
+UNIT 0x80 Fighter Breguet Level(14, Enemy, 1) [8,3] 0x00 0x00 0x0 0x00 [SilverAxe] PursueWithoutHeedAI // Delete
+UNIT 0x80 Shaman Breguet Level(14, Enemy, 1) [16,16] 0x00 0x00 0x0 0x00 [Nosferatu] PursueWithoutHeedAI // Delete
+UNIT 0x80 Monk Breguet Level(14, Enemy, 1) [16,17] 0x00 0x00 0x0 0x00 [Divine] PursueWithoutHeedAI // Delete
+UNIT
+
+Wave3:
+ReinforcementEvent(Wave3Block)
+ENDA
+
+Wave4Block:
+UNIT 0x80 Soldier Breguet Level(14, Enemy, 1) [2,27] 0x00 0x00 0x0 0x00 [SilverLance] PursueWithoutHeedAI // Delete
+UNIT 0x80 Fighter Breguet Level(14, Enemy, 1) [3,27] 0x00 0x00 0x0 0x00 [SilverAxe] PursueWithoutHeedAI // Delete
+UNIT 0x80 Myrmidon Breguet Level(14, Enemy, 1) [12,27] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI // Delete
+UNIT 0x80 Mercenary Breguet Level(14, Enemy, 1) [13,27] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI // Delete
+UNIT
+
+Wave4:
+ReinforcementEvent(Wave4Block)
+ENDA
+
+Wave5Block:
+UNIT 0x80 Mercenary Breguet Level(14, Enemy, 1) [0,9] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI // Delete
+UNIT 0x80 Fighter Breguet Level(14, Enemy, 1) [0,10] 0x00 0x00 0x0 0x00 [SilverAxe] PursueWithoutHeedAI // Delete
+UNIT 0x80 Soldier Breguet Level(14, Enemy, 1) [12,0] 0x00 0x00 0x0 0x00 [SilverLance] PursueWithoutHeedAI // Delete
+UNIT 0x80 Archer Breguet Level(14, Enemy, 1) [13,0] 0x00 0x00 0x0 0x00 [SilverBow] PursueWithoutHeedAI // Delete
+UNIT
+
+Wave5:
+ReinforcementEvent(Wave5Block)
+ENDA
+
+Wave6Block:
+UNIT 0x80 Shaman Breguet Level(14, Enemy, 1) [8,27] 0x00 0x00 0x0 0x00 [Luna] PursueWithoutHeedAI // Delete
+UNIT 0x80 Mage Breguet Level(14, Enemy, 1) [0,16] 0x00 0x00 0x0 0x00 [Elfire] PursueWithoutHeedAI // Delete
+UNIT 0x80 Soldier Breguet Level(14, Enemy, 1) [0,17] 0x00 0x00 0x0 0x00 [SilverLance] PursueWithoutHeedAI // Delete
+UNIT
+
+Wave6:
+ReinforcementEvent(Wave6Block)
+ENDA
+
+Wave7Block:
+UNIT 0x80 Fighter Breguet Level(14, Enemy, 1) [16,7] 0x00 0x00 0x0 0x00 [SilverAxe] PursueWithoutHeedAI // Delete
+UNIT 0x80 Knight Breguet Level(14, Enemy, 1) [16,8] 0x00 0x00 0x0 0x00 [SilverLance] PursueWithoutHeedAI // Delete
+UNIT 0x80 Myrmidon Breguet Level(14, Enemy, 1) [0,9] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI // Delete
+UNIT 0x80 Archer Breguet Level(14, Enemy, 1) [0,10] 0x00 0x00 0x0 0x00 [SilverBow] PursueWithoutHeedAI // Delete
+UNIT
+
+Wave7:
+ReinforcementEvent(Wave7Block)
+ENDA
+
+Wave8Block:
+UNIT 0x80 Archer Breguet Level(14, Enemy, 1) [2,27] 0x00 0x00 0x0 0x00 [SilverBow] PursueWithoutHeedAI // Delete
+UNIT 0x80 Mercenary Breguet Level(14, Enemy, 1) [3,27] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI // Delete
+UNIT 0x80 Soldier Breguet Level(14, Enemy, 1) [12,27] 0x00 0x00 0x0 0x00 [SilverLance] PursueWithoutHeedAI // Delete
+UNIT 0x80 Fighter Breguet Level(14, Enemy, 1) [13,27] 0x00 0x00 0x0 0x00 [SilverAxe] PursueWithoutHeedAI // Delete
+UNIT
+
+Wave8:
+ReinforcementEvent(Wave8Block)
+ENDA
+
+Wave9Block:
+UNIT 0x80 Monk Breguet Level(14, Enemy, 1) [16,16] 0x00 0x00 0x0 0x00 [Aura] PursueWithoutHeedAI // Delete
+UNIT 0x80 Mage Breguet Level(14, Enemy, 1) [16,17] 0x00 0x00 0x0 0x00 [Fimbulvetr] PursueWithoutHeedAI // Delete
+UNIT 0x80 Shaman Breguet Level(14, Enemy, 1) [4,16] 0x00 0x00 0x0 0x00 [Luna] PursueWithoutHeedAI // Delete
+UNIT 0x80 Knight Breguet Level(14, Enemy, 1) [6,16] 0x00 0x00 0x0 0x00 [SilverLance] PursueWithoutHeedAI // Delete
+UNIT 0x80 Mercenary Breguet Level(14, Enemy, 1) [5,20] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI // Delete
+UNIT 0x80 Myrmidon Breguet Level(14, Enemy, 1) [0,3] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI // Delete
+UNIT 0x80 Fighter Breguet Level(14, Enemy, 1) [0,4] 0x00 0x00 0x0 0x00 [SilverAxe] PursueWithoutHeedAI // Delete
+UNIT
+
+Wave9:
+ReinforcementEvent(Wave9Block)
+ENDA
+
 TurnBasedEvents:
 TURN 0xA EndingScene [10,0] 0x0
 END_MAIN

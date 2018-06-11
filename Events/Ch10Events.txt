@@ -58,73 +58,101 @@ UNIT 0x80 Fighter Pablo Level(10, Enemy, 1) [25,15] 0x00 0x00 0x0 0x00 [SteelAxe
 UNIT
 
 TurnBasedEvents:
-TURN 0x0 BadDudes[2,0] 0x0
-TURN 0x0 BadCav[4,0] 0x0
-TURN 0x0 BadMerc[6,0] 0x0
-TURN 0x0 BadMagicalBuffMan[9,0] 0x0
+TURN 0x0 Wave1[1,0] 0x0
+TURN 0x0 Wave2[2,0] 0x0
+TURN 0x0 Wave3[3,0] 0x0
+TURN 0x0 Wave4[4,0] 0x0
+TURN 0x0 Wave5[5,0] 0x0
+TURN 0x0 Wave6[6,0] 0x0
+TURN 0x0 Wave7[7,0] 0x0
+TURN 0x0 Wave8[8,0] 0x0
+TURN 0x0 Wave9[9,0] 0x0
 END_MAIN
 
-DudesBlock:
-UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [7,10] 0x00 0x00 0x0 0x00 [IronAxe] BrigandAI 
-UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [4,13] 0x00 0x00 0x0 0x00 [IronAxe] BrigandAI 
-UNIT 0x80 Thief Novala Level(6, Enemy, 1) [1,10] 0x00 0x00 0x0 0x00 [IronSword] LootingThiefAI  
+Wave1Block:
+UNIT Bone Cavalier Pablo Level(11, Enemy, 1) [1,0] 0x00 0x00 0x0 0x00 [SteelSword] PursueWithoutHeedAI 
+UNIT Bone Cavalier Pablo Level(11, Enemy, 1) [0,0] 0x00 0x00 0x0 0x00 [SteelSword] PursueWithoutHeedAI 
+UNIT Bone PegasusKnight Pablo Level(11, Enemy, 1) [28,0] 0x00 0x00 0x0 0x00 [IronLance] PursueWithoutHeedAI 
+UNIT Bone PegasusKnight Pablo Level(11, Enemy, 1) [27,0] 0x00 0x00 0x0 0x00 [IronLance] PursueWithoutHeedAI 
+UNIT Bone PegasusKnight Pablo Level(11, Enemy, 1) [0,10] 0x00 0x00 0x0 0x00 [IronLance] PursueWithoutHeedAI 
+UNIT Bone PegasusKnight Pablo Level(11, Enemy, 1) [0,9] 0x00 0x00 0x0 0x00 [IronLance] PursueWithoutHeedAI 
+UNIT Bone Cavalier Pablo Level(11, Enemy, 1) [28,9] 0x00 0x00 0x0 0x00 [IronLance] PursueWithoutHeedAI 
+UNIT Bone Cavalier Pablo Level(11, Enemy, 1) [28,11] 0x00 0x00 0x0 0x00 [IronLance] PursueWithoutHeedAI
 UNIT
 
-BadDudes:
-ReinforcementEvent(DudesBlock)
+Wave1:
+ReinforcementEvent(Wave1Block)
 ENDA
 
-CavBlock:
-UNIT 0x80 Cavalier Novala Level(7, Enemy, 1) [22,17] 0x00 0x00 0x0 0x00 [SilverLance] PursueWithoutHeedAI 
-UNIT 0x80 Cavalier Novala Level(7, Enemy, 1) [15,17] 0x00 0x00 0x0 0x00 [SilverLance] PursueWithoutHeedAI
-UNIT 0x80 Thief Novala Level(6, Enemy, 1) [16,5] 0x00 0x00 0x0 0x00 [IronSword] LootingThiefAI
+Wave2Block:
+UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [7,10] 0x00 0x00 0x0 0x00 [IronAxe] PursueWithoutHeedAI 
 UNIT
 
-BadCav:
-ReinforcementEvent(CavBlock)
+Wave2:
+ReinforcementEvent(Wave2Block)
 ENDA
 
-MercBlock:
-UNIT 0x80 Mercenary Novala Level(7, Enemy, 1) [12,0] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI 
-UNIT 0x80 Mercenary Novala Level(7, Enemy, 1) [5,0] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI 
+Wave3Block:
+UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [7,10] 0x00 0x00 0x0 0x00 [IronAxe] PursueWithoutHeedAI 
 UNIT
 
-BadMerc:
-ReinforcementEvent(MercBlock)
+Wave3:
+ReinforcementEvent(Wave3Block)
 ENDA
 
-MagicalBuffManBlock:
-UNIT 0x80 Fighter Novala Level(8, Enemy, 1) [17,4] 0x00 0x00 0x0 0x00 [SilverAxe] PursueWithoutHeedAI 
-UNIT 0x80 Fighter Novala Level(8, Enemy, 1) [18,5] 0x00 0x00 0x0 0x00 [SilverAxe] PursueWithoutHeedAI 
-UNIT 0x80 Mage Novala Level(8, Enemy, 1) [16,5] 0x00 0x00 0x0 0x00 [Fimbulvetr] PursueWithoutHeedAI 
+Wave4Block:
+UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [7,10] 0x00 0x00 0x0 0x00 [IronAxe] PursueWithoutHeedAI 
 UNIT
 
-BadMagicalBuffMan:
-ReinforcementEvent(MagicalBuffManBlock)
+Wave4:
+ReinforcementEvent(Wave4Block)
+ENDA
+
+Wave5Block:
+UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [7,10] 0x00 0x00 0x0 0x00 [IronAxe] PursueWithoutHeedAI 
+UNIT
+
+Wave5:
+ReinforcementEvent(Wave5Block)
+ENDA
+
+Wave6Block:
+UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [7,10] 0x00 0x00 0x0 0x00 [IronAxe] PursueWithoutHeedAI 
+UNIT
+
+Wave6:
+ReinforcementEvent(Wave6Block)
+ENDA
+
+Wave7Block:
+UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [7,10] 0x00 0x00 0x0 0x00 [IronAxe] PursueWithoutHeedAI 
+UNIT
+
+Wave7:
+ReinforcementEvent(Wave7Block)
+ENDA
+
+Wave8Block:
+UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [7,10] 0x00 0x00 0x0 0x00 [IronAxe] PursueWithoutHeedAI 
+UNIT
+
+Wave8:
+ReinforcementEvent(Wave8Block)
+ENDA
+
+Wave9Block:
+UNIT 0x80 Brigand Novala Level(6, Enemy, 1) [7,10] 0x00 0x00 0x0 0x00 [IronAxe] PursueWithoutHeedAI 
+UNIT
+
+Wave9:
+ReinforcementEvent(Wave9Block)
 ENDA
 
 CharacterBasedEvents:
 END_MAIN
 
 LocationBasedEvents:
-Village(0x8,VillageOkram,8,17)
-Village(0x9,VillageGem,12,11)
-Seize(18, 1)
 END_MAIN
-
-VillageGem:
-VillageEventItem(VillageText, Village, RedGem)
-
-VillageOkram:
-Text(VillageText)
-LOAD1 0x1 OkramBlock
-ENUN
-NoFade
-ENDA
-
-OkramBlock:
-UNIT Okram FireMage Kathy Level(2, Ally, 0) [8,18] 0x00 0x00 0x0 0x00 [Fire, Elixir] NoAI 
-UNIT
 
 MiscBasedEvents:
 CauseGameOverIfLordDies
