@@ -28,31 +28,31 @@ UNIT Morps EphraimMasterLord Kathy Level(1, Ally, 0) [16,4] 0x00 0x00 0x0 0x00 [
 UNIT
 
 Bad:
-UNIT 0x80 Cavalier Pablo Level(10, Enemy, 1) [4,1] 0x00 0x00 0x0 0x00 [SteelLance] PursueWithoutHeedAI 
-UNIT 0x80 Cavalier Pablo Level(10, Enemy, 1) [24,1] 0x00 0x00 0x0 0x00 [SteelAxe] PursueWithoutHeedAI 
-UNIT 0x80 Cavalier Pablo Level(10, Enemy, 1) [3,0] 0x00 0x00 0x0 0x00 [SteelAxe] PursueWithoutHeedAI 
-UNIT 0x80 Cavalier Pablo Level(10, Enemy, 1) [25,0] 0x00 0x00 0x0 0x00 [SteelLance] PursueWithoutHeedAI 
+UNIT 0x80 LanceCavalier Pablo Level(10, Enemy, 1) [4,1] 0x00 0x00 0x0 0x00 [SteelLance] PursueWithoutHeedAI 
+UNIT 0x80 AxeCavalier Pablo Level(10, Enemy, 1) [24,1] 0x00 0x00 0x0 0x00 [SteelAxe] PursueWithoutHeedAI 
+UNIT 0x80 AxeCavalier Pablo Level(10, Enemy, 1) [3,0] 0x00 0x00 0x0 0x00 [SteelAxe] PursueWithoutHeedAI 
+UNIT 0x80 LanceCavalier Pablo Level(10, Enemy, 1) [25,0] 0x00 0x00 0x0 0x00 [SteelLance] PursueWithoutHeedAI 
 UNIT 0x80 Mercenary Pablo Level(10, Enemy, 1) [10,11] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI 
 UNIT 0x80 Mercenary Pablo Level(10, Enemy, 1) [18,11] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI 
-UNIT 0x80 Knight Pablo Level(10, Enemy, 1) [13,14] 0x00 0x00 0x0 0x00 [Tomahawk] GuardTileAI 
-UNIT 0x80 Knight Pablo Level(10, Enemy, 1) [15,14] 0x00 0x00 0x0 0x00 [Tomahawk] GuardTileAI 
-UNIT 0x80 Knight Pablo Level(10, Enemy, 1) [14,14] 0x00 0x00 0x0 0x00 [Spear] GuardTileAI 
-UNIT 0x80 Fighter Pablo Level(10, Enemy, 1) [12,16] 0x00 0x00 0x0 0x00 [SilverAxe] AttackInRangeAI 
-UNIT 0x80 Fighter Pablo Level(10, Enemy, 1) [16,16] 0x00 0x00 0x0 0x00 [SilverAxe] AttackInRangeAI 
-UNIT 0x80 Archer Pablo Level(10, Enemy, 1) [11,17] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI 
-UNIT 0x80 Archer Pablo Level(10, Enemy, 1) [17,17] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI 
+UNIT 0x80 Knight Pablo Level(10, Enemy, 1) [13,14] 0x00 0x00 0x0 0x00 [Handaxe] GuardTileAI 
+UNIT 0x80 Knight Pablo Level(10, Enemy, 1) [15,14] 0x00 0x00 0x0 0x00 [Handaxe] GuardTileAI 
+UNIT 0x80 Knight Pablo Level(10, Enemy, 1) [14,14] 0x00 0x00 0x0 0x00 [Javelin] GuardTileAI 
+UNIT 0x80 Fighter Pablo Level(10, Enemy, 1) [12,16] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI 
+UNIT 0x80 Fighter Pablo Level(10, Enemy, 1) [16,16] 0x00 0x00 0x0 0x00 [SeelAxe] AttackInRangeAI 
+UNIT 0x80 Archer Pablo Level(10, Enemy, 1) [11,17] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI 
+UNIT 0x80 Archer Pablo Level(10, Enemy, 1) [17,17] 0x00 0x00 0x0 0x00 [ShortBow] AttackInRangeAI 
 UNIT 0x80 Mage Pablo Level(10, Enemy, 1) [0,4] 0x00 0x00 0x0 0x00 [Elfire] PursueWithoutHeedAI 
-UNIT 0x80 Fighter Pablo Level(10, Enemy, 1) [1,4] 0x00 0x00 0x0 0x00 [Tomahawk] PursueWithoutHeedAI 
+UNIT 0x80 Fighter Pablo Level(10, Enemy, 1) [1,4] 0x00 0x00 0x0 0x00 [Handaxe] PursueWithoutHeedAI 
 UNIT 0x80 Shaman Pablo Level(10, Enemy, 1) [1,7] 0x00 0x00 0x0 0x00 [Flux] PursueWithoutHeedAI 
 UNIT 0x80 Fighter Pablo Level(10, Enemy, 1) [3,14] 0x00 0x00 0x0 0x00 [SteelAxe] PursueWithoutHeedAI 
 UNIT 0x80 Fighter Pablo Level(10, Enemy, 1) [1,11] 0x00 0x00 0x0 0x00 [SteelAxe] PursueWithoutHeedAI 
 UNIT 0x80 Mercenary Pablo Level(10, Enemy, 1) [3,8] 0x00 0x00 0x0 0x00 [SteelSword] PursueWithoutHeedAI 
 UNIT 0x80 Mercenary Pablo Level(10, Enemy, 1) [4,15] 0x00 0x00 0x0 0x00 [SteelSword] PursueWithoutHeedAI 
-UNIT 0x80 WyvernRider Pablo Level(10, Enemy, 1) [28,4] 0x00 0x00 0x0 0x00 [Tomahawk] PursueWithoutHeedAI 
-UNIT 0x80 Cavalier Pablo Level(10, Enemy, 1) [27,4] 0x00 0x00 0x0 0x00 [Spear] PursueWithoutHeedAI 
-UNIT 0x80 Myrmidon Pablo Level(10, Enemy, 1) [27,6] 0x00 0x00 0x0 0x00 [SilverSword] PursueWithoutHeedAI 
-UNIT 0x80 Soldier Pablo Level(10, Enemy, 1) [24,6] 0x00 0x00 0x0 0x00 [SilverLance] PursueWithoutHeedAI 
-UNIT 0x80 Soldier Pablo Level(10, Enemy, 1) [27,9] 0x00 0x00 0x0 0x00 [SilverLance] PursueWithoutHeedAI 
+UNIT 0x80 WyvernRider Pablo Level(10, Enemy, 1) [28,4] 0x00 0x00 0x0 0x00 [Handaxe] PursueWithoutHeedAI 
+UNIT 0x80 Cavalier Pablo Level(10, Enemy, 1) [27,4] 0x00 0x00 0x0 0x00 [Javelin] PursueWithoutHeedAI 
+UNIT 0x80 Myrmidon Pablo Level(10, Enemy, 1) [27,6] 0x00 0x00 0x0 0x00 [KillingEdge] PursueWithoutHeedAI 
+UNIT 0x80 Soldier Pablo Level(10, Enemy, 1) [24,6] 0x00 0x00 0x0 0x00 [SteelLance] PursueWithoutHeedAI 
+UNIT 0x80 Soldier Pablo Level(10, Enemy, 1) [27,9] 0x00 0x00 0x0 0x00 [SteelLance] PursueWithoutHeedAI 
 UNIT 0x80 Monk Pablo Level(10, Enemy, 1) [26,13] 0x00 0x00 0x0 0x00 [Shine] PursueWithoutHeedAI 
 UNIT 0x80 Fighter Pablo Level(10, Enemy, 1) [25,15] 0x00 0x00 0x0 0x00 [SteelAxe] PursueWithoutHeedAI 
 UNIT
